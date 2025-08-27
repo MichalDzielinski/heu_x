@@ -10,10 +10,8 @@ WSGI_APPLICATION = "heureka.wsgi.application"
 
 #region BASE SETTINGS
 
-AUTH_USER_MODEL = 'staff.CustomUser'
-
 ROOT_URLCONF = "heureka.urls"
-
+AUTH_USER_MODEL = 'staff.CustomUser'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #endregion 
@@ -25,12 +23,22 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    #third party apps
+    "tailwind",
+    'theme',
     
     #custom apps
     'clinic',
     'services',
     'staff',
 ]
+
+#region TAILWIND SETTINGS
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+TAILWIND_APP_NAME = 'theme'
+
+#endregion
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -89,6 +97,7 @@ USE_TZ = True
 #region STATIC & MEDIA FILES
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / 'theme/static']
 
 #endregion
 
