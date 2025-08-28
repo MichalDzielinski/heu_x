@@ -1,4 +1,62 @@
+
+@font-face {font-family: 'Oswald'; 
+  src: url('/static/fonts/Oswald-Regular.ttf') format('truetype'); 
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {font-family: 'DMSans Regular'; 
+  src: url('/static/fonts/DMSans-Regular.ttf') format('truetype'); 
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap; 
+}
+
+@font-face {font-family: 'Nunito Medium'; 
+  src: url('/static/fonts/Nunito-Medium.ttf') format('truetype'); 
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {font-family: "OptimaPro"; 
+  src: url('/static/fonts/OptimaNovaLTProTitlingInit.otf') format('opentype'); 
+  font-weight: 400; 
+  font-style: normal; 
+  font-display: swap; 
+} 
+
+@font-face {font-family: "OptimaNovaLTProRegular"; 
+  src: url('/static/fonts/OptimaNovaLTProRegular.otf') format('opentype'); 
+  /* font-weight: 400; */
+  /* font-style: normal; */
+  font-display: swap; 
+} 
+
+@font-face {
+  font-family: 'ppneue';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('/static/fonts/ppneuemontreal-medium.woff') format('woff');
+  }
+
+
 @import "tailwindcss";
+@theme{
+  --font-primary: 'Oswald', sans-serif;
+  --font-secondary: 'DMSans Regular', sand-serif;
+  --font-tertiary: 'Nunito Medium', sans-serif;
+
+  --font-heureka-1: "OptimaPro", serif;
+  --font-heureka-2: "OptimaNovaLTProRegular";
+  --font-heureka-3:'ppneue', sans-serif;
+}
+
+.custom-bg-frame {
+  @apply bg-linear-to-tr from-sky-900 to-slate-800
+}
+
 @plugin "daisyui";
 
 /**
