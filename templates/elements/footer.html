@@ -1,4 +1,63 @@
-<footer id="footer" class="min-h-[200px] bg-red-200">
+{% load static %}
+<footer id="footer" class="w-full frame-gradient">
 
-    <h2>FOOTER</h2>
+    <section class="frame-sizing ">
+        <div class='p-5'>
+            <div class="flex gap-2 justify-center sm:justify-start items-center">
+                <a href="/" class="flex gap-2 relative group justify-center md:justify-start items-center">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="logo z-20 size-16 mb-2 -ml-2 justify-center drop-shadow-orange-500 shadow-2xl">
+                    <h1 class=" font-heureka-2 text-5xl uppercase z-20 -ml-2">heureka</h1>
+                </a>
+            </div>
+        
+            <div>
+                <h3 class="font-tertiary text-gray-200 -mt-3  text-lg">Ośrodek urologii czynnościowej</h3>
+                <h3 class="text-gray-100  text-xl font-primary">Pawła Szaleckiego</h3>
+            </div>
+        </div>
+
+        <div class="frame-h-divider"></div>
+
+        <!-- footer's info grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-9 p-5 py-12 ">
+            <!-- column 1 - the address -->
+             <div class="col-span-4 md:col-span-1 text-left ">
+                <h1 class="footer-subtitle">Adres</h1>
+                <p class="footer-subtitle-point">Ludowa 5</p>
+                <p class="footer-subtitle-point">Piaseczno k/Warszawy</p>
+                <p class="footer-subtitle-point">3. piętro</p>
+             </div>
+
+             <!-- column 2 - about us -->
+             <div class="col-span-4 md:col-span-1 text-left ">
+                <h1 class="footer-subtitle">O nas</h1>
+                <a href="#"><p class="footer-subtitle-point">Nasz zespół</p></a>
+                <a href="#"><p class="footer-subtitle-point">Jak nas znaleźć</p></a>
+                <a href="#"><p class="footer-subtitle-point">wizyta</p></a>
+                <a href="#"><p class="footer-subtitle-point">Kontakt</p></a>
+             </div>
+
+            <!-- column 3 - open hours -->
+            <div class="col-span-4 md:col-span-1 text-left ">
+                <h1 class="footer-subtitle ">Klinika czynna</h1>
+                <p class="text-2xl font-secondary mt-5  ">od poniedziałku</p>
+                <p class="text-2xl font-secondary   ">do piątku</p>
+                <h1 class="text-4xl font-secondary mt-6 ">9:00 - 17:00</h1>
+             </div>
+
+            <!-- column 4 -  phone numbers -->
+             <div class="col-span-4 md:col-span-1 text-right ">
+                <h1 class="footer-subtitle ">Zapisy</h1>
+                <p class="text-4xl font-secondary  text-orange-200 hover:text-gray-200">+22 750 61 10</p>
+                <p class="footer-subtitle-point my-2">lub</p>
+                <p class="text-4xl font-secondary  text-orange-200 hover:text-gray-200">+48 600 401 106</p>
+             </div>
+
+        </div>
+
+        <div class="frame-h-divider"></div>
+        
+        <div class="text-center font-heureka-2 uppercase text-lg p-3">&#169; Heureka {% now 'Y' %}</div>
+
+    </section>
 </footer>

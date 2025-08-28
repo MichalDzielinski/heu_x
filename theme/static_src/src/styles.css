@@ -34,8 +34,7 @@
   font-display: swap; 
 } 
 
-@font-face {
-  font-family: 'ppneue';
+@font-face {font-family: 'ppneue';
   font-style: normal;
   font-weight: normal;
   src:  url('/static/fonts/ppneuemontreal-medium.woff') format('woff');
@@ -53,8 +52,24 @@
   --font-heureka-3:'ppneue', sans-serif;
 }
 
-.custom-bg-frame {
+.frame-gradient {
   @apply bg-linear-to-tr from-sky-900 to-slate-800
+}
+
+.frame-sizing{
+  @apply w-[95%] xl:w-[80%] mx-auto;
+}
+
+.frame-h-divider{
+  @apply hidden sm:block border-b-1 border-red-100 mx-auto
+}
+
+.footer-subtitle{
+  @apply font-primary text-3xl  pb-2 mb-3 text-gray-300  lowercase
+}
+
+.footer-subtitle-point{
+  @apply font-secondary text-2xl py-1 
 }
 
 @plugin "daisyui";
