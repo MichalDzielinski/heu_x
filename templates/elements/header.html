@@ -1,2 +1,81 @@
 
+{% load static %}
+
+<header id="header" class="w-full fixed top-0   custom-bg-frame">
+    <section class="w-[95%] xl:w-[80%] mx-auto ">
+<!-- HEADER TITLE GROUP -->
+    <div class="p-5 pt-7">
+<!-- LOGO & NAME -->
+        <div class="title flex gap-2 justify-center sm:justify-start items-center">
+            <a href="" class="flex gap-2 relative group justify-center md:justify-start items-center">
+                <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="logo z-20 size-14 mb-2 justify-center drop-shadow-orange-500 shadow-2xl">
+                <h1 class="font-heureka-2 text-6xl uppercase z-20">heureka</h1>
+<!-- light blob -->
+                <div  class="sh1 rounded-full absolute -left-1  bg-pink-100 blur-xl z-1 hover:delay-150 transition duration-300 ease-in-out flex-none w-[55px] h-[55px]"></div>
+                <div  class="sh2 rounded-full absolute -left-1  bg-sky-500 blur-xl z-1 hidden  group-hover:inline  flex-none w-[75px] h-[55px]"></div>
+            </a>
+        </div>
+<!-- sub name -->
+        <div class="subheader">
+            <h3 class="font-tertiary text-gray-200 pt-2 text-xl">Ośrodek urologii czynnościowej</h3>
+            <h3 class="text-gray-100  text-2xl font-primary">Pawła Szaleckiego</h3>
+        </div>
+    </div>    
+        
+    <div class="hidden sm:block border-b-1 border-red-100 mx-auto "></div>
     
+<!-- #navbar links -->
+        <ul class="hidden sm:flex sm:text-white justify-around font-semibold py-3 mx-auto transition-all ">
+            <li class="mr-2">
+                <div class="sample-transition-1">
+                    <a href="#" class="flex group items-center">
+                        <h2 class="uppercase text-md flex group-hover:text-orange-300">
+                            <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
+                            Badanie urodynamiczne
+                        </h2>
+                    </a>
+                </div>
+            </li>
+            <li class="mr-2 ">
+                <div class="sample-transition-1">
+                    <a href="#" class="flex group items-center">
+                        <h2 class="uppercase text-md flex group-hover:text-orange-300">
+                            <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
+                            Badanie urologiczne
+                        </h2>
+                    </a>
+                </div>
+            </li>
+            <li class="mr-2 hidden md:flex">
+                <div class="sample-transition-1">
+                    <a href="#" class="flex group items-center">
+                        <h2 class="uppercase text-md flex group-hover:text-orange-300">
+                            <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
+                            Pozostałe badanie
+                        </h2>
+                    </a>
+                </div>
+            </li>
+            <li class="mr-2 hidden md:flex">
+                <div class="sample-transition-1">
+                    <a href="#" class="flex group items-center">
+                        <h2 class="uppercase text-md  flex group-hover:text-orange-300">
+                            <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
+                            Strefa pacjenta
+                        </h2>
+                    </a>
+                </div>
+            </li>
+            <li class="mr-2">
+                <div class="sample-transition-1">
+                    <a href="#" class="flex group items-center">
+                        <h2 class="uppercase text-md flex group-hover:text-orange-300">
+                            <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
+                            Testy kliniczne
+                        </h2>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </section>
+</header>
