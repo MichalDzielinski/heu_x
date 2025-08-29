@@ -2,9 +2,9 @@
 {% load static %}
 
 <header id="header" class="w-full fixed top-0 frame-gradient">
-    <section class="frame-sizing  header-inner">
+    <section class="frame-sizing relative  header-inner">
 <!-- HEADER TITLE GROUP -->
-    <div class="  title-group">
+    <div class="   title-group">
 <!-- LOGO & NAME -->
         <div class="p-5">
             <div class="title flex gap-2  justify-center sm:justify-start items-center">
@@ -22,7 +22,9 @@
                 <h3 class="text-gray-100  text-2xl font-primary">Pawła Szaleckiego</h3>
             </div>
         </div>
-    </div>    
+    </div> 
+    
+    {% include 'elements/languages.html' %}
         
     <div class="frame-h-divider "></div>
     

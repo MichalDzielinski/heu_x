@@ -27,9 +27,9 @@
         gsap.set('.logo', { scale: 0.68 });
         gsap.set('.sh1', { scale: 0.68 });
         gsap.set('.sh2', { scale: 0.68 });
-        gsap.set('.title1', { scale: 0.68, x: -30 });
+        gsap.set('.title1', { scale: 0.75, x: -44 });
         gsap.set('.nsd', { scale: 0.9 });
-        // gsap.set('.lang', { display: 'none' });
+        gsap.set('.lang', { y: '-125px' });
         // gsap.set(['.frm', '.ttp'], { y: -102 });
       }
     
@@ -44,7 +44,7 @@
         gsap.set('.title1', { scale: 1, x: 0 });
         gsap.set('.nsd', { scale: 1 });
         // gsap.set(['.frm', '.ttp'], { y: 0 });
-        // gsap.set('.lang', { display: 'flex' });
+        gsap.set('.lang', { y: 0 });
       }
     
       function animateToShrunk() {
@@ -58,7 +58,7 @@
         gsap.to('.title1', { scale: 0.75, x: -44, duration: 0.45 });
         // gsap.to('.nsd', { scale: 0.9, duration: 0.2 });
         gsap.to('.nsd', { scale: 1.05, duration: 0.2 });
-        // gsap.set('.lang', { display: 'none' });
+        gsap.set('.lang', { y: '-125px', duration: 0.5, ease: "power2.out", overwrite: "auto" });
         // gsap.to(['.frm', '.ttp'], { y: -102, duration: 0.5 });
       }
     
@@ -74,8 +74,9 @@
           .to('.sh2', { scale: 1, duration: 0.45 }, '<')
           .to('.title1', { scale: 1, x: 0, duration: 0.45 }, '<')
           .to('.nsd', { scale: 1, duration: 0.2 }, '<')
+          .to('.lang', { y: 0, duration:0.2, ease: "power2.out" }, '+=0.2')
         //   .to(['.frm', '.ttp'], { y: 0, duration: 0.7, delay: 0.3  }, '>')
-        //   .add(() => gsap.set('.lang', { display: 'flex' })); 
+        //  
           // Show AFTER frm animation
       }
     
