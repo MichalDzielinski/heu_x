@@ -75,7 +75,7 @@
           .to('.title1', { scale: 1, x: 0, duration: 0.45 }, '<')
           .to('.nsd', { scale: 1, duration: 0.2 }, '<')
           .to('.frm', { y: 0, duration: 0.7, delay: 0.3  }, '>')
-          .to('.lang', { y: 0, duration:0.2, ease: "power2.out" }, '+=0.2')
+          .to('.lang', { y: 0, duration:0.2, delay: 0.2,  ease: "power2.out" }, '>')
         //  
           // Show AFTER frm animation
       }

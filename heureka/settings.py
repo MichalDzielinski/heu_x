@@ -17,6 +17,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #endregion 
 
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -25,8 +26,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     #third party apps
+    "tinymce",
     "tailwind",
-    'theme',
+    "theme",
     
     #custom apps
     'clinic',
@@ -100,5 +102,38 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / 'theme/static']
 
 #endregion
+
+#region TINYMCE SETTINGS
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 360,
+    'width': 610,
+    'menubar': 'file edit view insert format tools table help',
+    'plugins': 'advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
+    'toolbar': 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+}
+
+#endregion
+
+#region JAZZMIN SETTINGS
+JAZZMIN_SETTINGS = {
+    "site_title": "Heureka Admin",
+    "site_header": "Heureka Admin",
+    "site_brand": "Heureka Admin",
+
+}
+
+#endregion
+
+
+
+
+
+
+
+
+
+
 
 
