@@ -17,6 +17,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #endregion 
 
 INSTALLED_APPS = [
+    "modeltranslation",
     "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -90,7 +91,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 #region LANGUAGES & TIME
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "pl"
+
+LANGUAGES = [
+    ('pl', 'Polski'),
+    ('en', 'English'),
+    ('uk', 'Ukrainian'),
+]
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'pl'
+
 TIME_ZONE = "Europe/Berlin"
 USE_I18N = True
 USE_TZ = True
