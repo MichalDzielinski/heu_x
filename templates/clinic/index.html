@@ -6,9 +6,165 @@
 
 {% block content %}
 
+<!-- <div class="w-full h-full bg-yellow-500 bg-opacity-100"> -->
 {% include 'elements/header.html' %}
 
-<section class="min-h-[145vh]"></section>
+<div class="w-full h-full bg-[#94A3B8]">
+
+<section class="frame-sizing ">
+
+
+    <section class="sticky-cards z-10">
+       <!-- CARD1 -->
+        <div class="card text-blue-950  " id="card-1">
+          <div class="card-inner pt-[16%] border-blue-950 border-2" >
+
+            <div class="flex flex-col h-full ">
+                
+                <div class=" h-5/6 flex">
+                    <div class="basis-1/2 flex items-center justify-center">
+                        <img src="{% static 'images/hero3.jpg' %}" alt="" class="max-w-full max-h-full object-cover border-2 border-blue-950 shadow-md shadow-blue-950 ml-5 ">
+                    </div>
+                    <div class="basis-1/2 flex items-center justify center">
+                        <p class="w-[85%] mx-auto text-2xl font-primary">
+
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque blanditiis doloribus eos dolorem necessitatibus sunt molestiae voluptatibus excepturi maxime ad, officiis natus fuga porro autem quibusdam est, nesciunt ullam nostrum quis voluptatum, consequatur amet iure! Eveniet cupiditate omnis explicabo laboriosam distinctio perferendis illum, saepe earum, debitis magnam placeat sit.
+
+                        </p>
+                    </div>
+
+                </div>
+                <div class=" h-1/6 flex items-center justify-center ">
+                    <p class="w-[45%] mx-auto">Lorem ipsum dolor sit incidunt, velit fugiat veritatis, rerum recusandae vel molestiae aliquid labore enim quo quaerat. Aliquid voluptatibus sit culpa </p>
+                </div>
+
+
+            </div>
+            
+          </div>
+        </div>
+       
+       <!-- CARD2 -->
+        <div class="card" id="card-2">
+          <div class="card-inner">
+            <div class="card-info">
+              <p>A retro-futurist scene where nostalgia meets glitch</p>
+            </div>
+            <div class="card-title">
+              <h1>Vaporwave</h1>
+            </div>
+            <div class="card-description">
+              <p>
+                An 80s-UI dreamscape: stacked windows, checkerboard floors, and a
+                sunset gradient. Built to feel like a loading screen to another
+                world—nostalgic, glossy, and a bit uncanny.
+              </p>
+            </div>
+            <div class="card-img">
+              <img src="./img/img2.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD3 -->
+        <div class="card" id="card-3">
+          <div class="card-inner">
+            <div class="card-info">
+              <p>A kaleidoscope of folk motifs reimagined in digital form</p>
+            </div>
+            <div class="card-title">
+              <h1>Kaleido</h1>
+            </div>
+            <div class="card-description">
+              <p>
+                Ornamental symmetry inspired by folk motifs and stained-glass
+                glow. Designed as a seamless, tileable pattern for textiles,
+                wallpapers, and rich UI backgrounds.
+              </p>
+            </div>
+            <div class="card-img">
+              <img src="./img/img3.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        
+        <!-- CARD4 -->
+        <div class="card" id="card-4">
+            <div class="card-inner">
+              <div class="card-info">
+                <p>A kaleidoscope of folk motifs reimagined in digital form</p>
+              </div>
+              <div class="card-title">
+                <h1>Kaleido</h1>
+              </div>
+              <div class="card-description">
+                <p>
+                  Ornamental symmetry inspired by folk motifs and stained-glass
+                  glow. Designed as a seamless, tileable pattern for textiles,
+                  wallpapers, and rich UI backgrounds.
+                </p>
+              </div>
+              <div class="card-img">
+                <img src="./img/img3.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD5 -->
+        <div class="card" id="card-5">
+            <div class="card-inner">
+              <div class="card-info">
+                <p>A kaleidoscope of folk motifs reimagined in digital form</p>
+              </div>
+              <div class="card-title">
+                <h1>Kaleido</h1>
+              </div>
+              <div class="card-description">
+                <p>
+                  Ornamental symmetry inspired by folk motifs and stained-glass
+                  glow. Designed as a seamless, tileable pattern for textiles,
+                  wallpapers, and rich UI backgrounds.
+                </p>
+              </div>
+              <div class="card-img">
+                <img src="./img/img3.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD6 -->
+        
+            <div class="card" id="card-6">
+                <div class="card-inner">
+                <div class="card-info">
+                    <p>A kaleidoscope of folk motifs reimagined in digital form</p>
+                </div>
+                <div class="card-title">
+                    <h1>Kaleido</h1>
+                </div>
+                <div class="card-description">
+                    <p>
+                    Ornamental symmetry inspired by folk motifs and stained-glass
+                    glow. Designed as a seamless, tileable pattern for textiles,
+                    wallpapers, and rich UI backgrounds.
+                    </p>
+                </div>
+                <div class="card-img">
+                    <img src="./img/img3.jpg" alt="" />
+                </div>
+                </div>
+            </div>
+        
+      </section>    
+</section>
+
+{% include 'elements/footer.html' %}   
+
+
+</div>
+
+
+
 
 
 
@@ -18,8 +174,14 @@
     
 
 
-{% include 'elements/footer.html' %}
+
 
 
 
 {% endblock content %} 
+
+{% block script %}
+
+<script src="{% static 'js/index_animation.js' %}"></script>
+
+{% endblock script %}

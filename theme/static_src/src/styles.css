@@ -61,7 +61,7 @@
 }
 
 .frame-h-divider{
-  @apply hidden sm:block border-b-1 border-red-100 mx-auto
+  @apply hidden sm:block border-b-1 w-full border-red-100 mx-auto
 }
 
 .footer-subtitle{
@@ -71,6 +71,144 @@
 .footer-subtitle-point{
   @apply font-secondary text-2xl py-1 
 }
+
+.bg-dynamic {
+  @apply bg-cover bg-center;
+  background-image: url("{% static 'images/paski.png' %}");
+}
+
+:root {
+  /* --accent-1: #b1c0ef; */
+  --accent-1: #F7F7F6;
+  --accent-2: #f2acac;
+  --accent-3: #fedd93;
+  --accent-4: #81b7bf;
+}
+
+
+
+
+
+
+  .sticky-cards {
+    position: relative;
+
+    width: 100%;
+    background-color: #94A3B8;
+    
+  }
+  
+  .card {
+    position: sticky;
+    width: 100%;
+    height: 100svh;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform-origin: 50% 100%;
+    will-change: transform;
+    text-align: center;
+  }
+  
+  #card-1 .card-inner {
+    background-color: var(--accent-1);
+  }
+  
+  #card-2 .card-inner {
+    background-color: var(--accent-2);
+  }
+  
+  #card-3 .card-inner {
+    background-color: var(--accent-3);
+  }
+  
+  #card-4 .card-inner {
+    background-color: var(--accent-4);
+  }
+
+  #card-5 .card-inner {
+    background-color: var(--accent-1);
+    
+  }
+
+  #card-6 .card-inner {
+    background-color: var(--accent-2);
+    
+  }
+  
+  .card-info {
+    width: 25%;
+    padding: 4em;
+    text-align: left;
+  }
+  
+  .card-info p {
+    font-size: 0.9rem;
+  }
+
+  .card-title h1 {
+    font-size: 10rem;
+    padding: 2rem 0;
+  }
+  
+  .card-description {
+    width: 60%;
+    margin: 0 auto 2em auto;
+  }
+  
+  .card-description p {
+    font-size: 1.5rem;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 100%;
+    margin-top: 4em;
+    overflow: hidden;
+  }
+
+  .card-inner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: var(--after-opacity, 0);
+    will-change: opacity;
+    pointer-events: none;
+    overflow: hidden;
+    /* z-index: 2; */
+  }
+  
+  @media (max-width: 1000px) {
+   
+    .card-info {
+      width: 75%;
+      margin: 0 auto;
+      padding: 4em 2em;
+      text-align: center;
+    }
+  
+    .card-title h1 {
+      font-size: 3rem;
+    }
+  
+    .card-description p {
+      font-size: 1.25rem;
+    }
+  }
+
+
+
 
 @plugin "daisyui";
 
