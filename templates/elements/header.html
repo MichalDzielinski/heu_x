@@ -33,7 +33,7 @@
         <ul class="hidden sm:flex sm:text-white justify-around font-semibold py-3 mx-auto transition-all ">
             <li class="mr-2">
                 <div class="sample-transition-1">
-                    <a href="#" class="flex group items-center">
+                    <a href="{% url 'badanie urodynamiczne' %}" class="flex group items-center">
                         <h2 class=" nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
                             Badanie urodynamiczne
@@ -43,20 +43,35 @@
             </li>
             <li class="mr-2 ">
                 <div class="sample-transition-1">
-                    <a href="#" class="flex group items-center">
+                    <a href="{% url 'procedury urologiczne' %}" class="flex group items-center">
                         <h2 class="nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            Badanie urologiczne
+                            Procedury urologiczne
                         </h2>
                     </a>
                 </div>
             </li>
             <li class="mr-2 hidden md:flex">
                 <div class="sample-transition-1">
-                    <a href="#" class="flex group items-center">
+                    <a href="{% url 'pozostałe procedury' %}" class="flex group items-center">
                         <h2 class="nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            Pozostałe badania
+                            <div class="relative inline-block text-left group">
+                                
+                                <a href="{% url 'pozostałe procedury' %}" class="hover:text-orange-200">Pozostałe procedury</a>
+                                
+                                
+                             
+                              <div 
+                                class="bg-green-700 z-50 rounded-r-md origin-top-left absolute -left-6  mt-5 delay-250 group-hover:delay-0 w-68   opacity-0 scale-95 transform transition-all duration-200 ease-out group-hover:opacity-100 group-hover:scale-100"
+                              >
+                                <div class=" flex flex-col pl-2   bg-linear-to-tr from-sky-900 to-slate-800 justify-start text-md uppercase ml-3 rounded-r-md ">
+                                  <a href="{% url 'procedury kardiologiczne' %}" class=" pt-3 py-1  hover:text-orange-200">Procedury kardiologiczne</a>
+                                  <a href="{% url 'procedury medyczne' %}" class="  py-1 hover:text-orange-200 ">Procedury medyczne</a>
+                                  <a href="{% url 'pakiety' %}" class="pb-3  py-1  hover:text-orange-200 ">Pakiety</a>
+                                </div>
+                              </div>
+                            </div>
                         </h2>
                     </a>
                 </div>
@@ -66,17 +81,33 @@
                     <a href="#" class="flex group items-center">
                         <h2 class="nsd uppercase text-md  flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            Strefa pacjenta
+                            <div class="relative inline-block text-left group">
+                                
+
+                                  Strefa pacjenta
+                                  
+                               
+                                <div 
+                                  class="bg-green-700 z-50 rounded-r-md origin-top-left absolute -left-2  mt-5 w-45 delay-250 group-hover:delay-0   opacity-0 scale-95 transform transition-all duration-200 ease-out group-hover:opacity-100 group-hover:scale-100"
+                                >
+                                  <div class=" flex flex-col pl-2   bg-linear-to-tr from-sky-900 to-slate-800 justify-start text-md uppercase ml-3 rounded-r-md ">
+                                    <a href="{% url 'do pobrania' %}" class=" pt-3 py-1  hover:text-orange-200">Do pobrania</a>
+                                    <a href="{% url 'profilaktyka' %}" class="  py-1 hover:text-orange-200 ">Profilaktyka</a>
+                                    <a href="{% url 'pakiety' %}" class="pb-3  py-1  hover:text-orange-200 ">Pakiety</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
                         </h2>
                     </a>
                 </div>
             </li>
             <li class="mr-2">
                 <div class="sample-transition-1">
-                    <a href="#" class="flex group items-center">
+                    <a href="{% url 'badania kliniczne' %}" class="flex group items-center">
                         <h2 class="nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            Testy kliniczne
+                            Badania kliniczne
                         </h2>
                     </a>
                 </div>

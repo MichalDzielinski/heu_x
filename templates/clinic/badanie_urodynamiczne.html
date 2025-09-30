@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% load static %}
+
+{% block title %}Badanie urodynamiczne{% endblock title %}
+
+{% block content %}
+
+
+{% include 'elements/header.html' %}
+
+
+
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 mt-[210px] md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
+    <div class="px-7 xl:px-12 py-[60px] mt-7 col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
+        <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Badanie urodynamiczne' %}</h2>
+        
+        <p class="text-md font-primary mb-5 w-[45%]  ">
+            
+            Urodynamika – unikalne badanie pozwalające w sposób dokładny i
+wiarygodny ocenić czynność dolnych dróg moczowych. Nie dające się
+zastąpić przez USG, tomografię komputerową czy rezonans magnetyczny.
+Pozwala na uzyskanie istotnych informacji o pracy pęcherza i cewki,
+stanowiąc klucz do trafnego rozpoznania i skutecznego leczenia zaburzeń
+mikcji. </p>
+
+    </div>
+    
+</section>
+
+<section class="grid grid-cols-1  gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
+
+    <!-- opis badania -->
+   
+    <div class="px-9 xl:px-12 py-[55px] my-5 order-2 md:order-1  font-primary text-lg text-justify    items-center   text-slate-800   rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
+    <!-- <div class="px-[22%] py-[55px] my-5 order-2 md:order-1  font-primary text-lg text-justify    items-center   text-slate-800   rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5"> -->
+    
+        <h2 class="font-primary flex  text-2xl font-semibold justify-start capitalize">{% translate 'O badaniu urodynamicznym' %}</h2>
+
+            <div class="border-b border-slate-400 my-9 w-[35%]    mx-auto"></div>
+
+            <div>
+
+            {{object.opis|safe}}
+
+            </div>
+
+            <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+            <h2 class="font-semibold text-xl py-3 mb-3">{% translate 'Na czym polega badanie urodynamiczne?'  %}</h2>
+
+            <div class="">
+{{object.polega|safe}}
+
+            </div>
+
+            <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+
+            <h2 class="font-semibold text-xl py-3 mb-3">{% translate 'Jak przebiega badanie urodynamiczne?' %}</h2>
+
+
+            <div class="">
+        {{object.przebieg|safe}}
+        
+                    </div>
+            <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+            {% if object.wskazania %}
+            <!-- <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div> -->
+            
+            <h2 class="font-semibold py-3 text-xl mb-3">Wskazania do badania urodynamicznego</h2>
+            
+            <div class="px-9">
+                <ul class="list-disc">
+                    {% for line in object.wskazania.splitlines %}
+                      <li class="my-1">{{ line|safe }}</li>
+                    {% endfor %}
+                </ul>
+                
+            </div>
+            
+            
+            {% endif %}
+
+            <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+
+
+
+    
+        
+        <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+    </div>
+    <!-- w HEURECE -->
+    <div class="px-7 py-[55px] my-5 order-1 md:order-2 font-primary text-lg text-justify    items-center   text-slate-800   rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
+            <h2 class="font-primary flex  text-xl justify-start capitalize">{% translate 'Badanie urodynamiczne' %}</h2>
+            <h2 class="font-primary flex  text-xl justify-start">{% translate 'w klinice' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'img/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span></h2>
+            
+            <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+            <section class="my-3 font-primary flex flex-col">
+
+                
+
+                <!-- termin -->
+                <div class="grid grid-cols-2">
+
+                    <div class="block w-[85%] md:text-sm xl:text-xl">
+                        <p>
+                            {% translate 'Czas oczekiwania na badanie' %}
+
+                        </p>
+                        <p>({% translate 'liczony od dnia zapisu' %})</p>
+
+                    </div>
+                    <div class="text-end font-semibold text-lg">{% translate 'ok.' %} {{object.czas_oczekiwania}} {% translate 'dni' %}</div>
+
+                </div>
+
+                <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+                <!-- czas badania -->
+                <div class="grid grid-cols-2">
+
+                    <div class="">
+                       {% translate 'Czas trwania badania' %}
+
+                    </div>
+                    <div class="text-end font-semibold text-lg">{% translate 'ok.' %} {{object.czas_badania}} {% translate 'minut' %}</div>
+
+                </div>
+
+                <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+<!-- Koszt -->
+                <div class="grid grid-cols-2">
+
+                    <div class="">
+                       {% translate 'Koszt'  %}
+
+                    </div>
+                    <div class="text-end font-semibold text-lg">{{ object.koszt }} zł</div>
+
+                </div>
+
+                <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+
+                <div class="grid grid-cols-2">
+
+                    <div class="">
+                       {% translate 'Badanie wykonuje' %} 
+
+                    </div>
+                    <div class="text-end font-semibold text-lg">{{object.lekarz}}</div>
+
+                </div>
+
+                
+                {% if object.dokumenty %}
+
+                        <!-- downloads -->
+
+                        <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+                
+
+
+                        <div class="grid grid-cols-2">
+        
+                            <div class="mb-5 justify-start w-[75%]">
+                               {% translate  'Instruktaż przygotowania do badania (plik PDF)' %}
+        
+                            </div>
+                            <div class="flex mb-3 justify-items-end justify-center items-center font-tertiary   font-semibold text-lg bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                                {% if LANGUAGE_CODE == "en" %}
+        
+                                <a href="{{object.pdf_en.url }}" target="_blank" class="">
+        
+                                
+                                
+                                {% elif LANGUAGE_CODE == "uk" %}
+                                
+        
+                                <a href="{{object.pdf_uk.url }}" target="_blank" class="">
+        
+        
+                                {% else  %}
+                                
+                                    <a href="{{object.pdf_pl.url }}" target="_blank" class="">
+                                {% endif %}
+                                    <i class="ri-file-pdf-2-line text-3xl mr-2"></i>
+        
+                            </a>
+                        </div>
+        
+                        </div>
+
+                        {% endif %}
+
+
+                
+                        {% if object.after %}
+                        <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+        
+        
+                        <h2 class="py-3  mb-3 sm:text-lg xl:text-xl ">{% translate 'Po badaniu pacjent otrzymuje:' %}</h2>
+        
+                    <div class="px-9">
+                        <ul class="list-disc">
+                            {% for line in object.after.splitlines %}
+                              <li class="my-1">{{ line|safe }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+        
+        
+                        {% endif %}
+
+
+                
+    </div>
+        
+</section>
+
+{% include 'elements/footer.html' %}
+
+{% endblock  %}

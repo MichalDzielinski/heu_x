@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}Procedury medyczne{% endblock title %}
+
+
+
+
+
+{% block content %}
+
+{% include 'elements/header.html' %}
+
+<div class="w-full h-full bg-[#94A3B8] ">
+
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[210px] h-[350px]  ">
+    <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
+        <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Procedury medyczne' %}</h2>
+        
+        <p class="text-lg font-primary   ">{% translate 'Procedury medyczne dostępne' %}</p>
+        <p class="text-lg font-primary flex  ">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'img/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span> </p>
+        <p class="text-sm font-primary  ">{% translate '(kliknij na nazwę badania, żeby poznać szczegóły)' %}</p>
+    </div>
+    
+</section>
+
+
+{% if object_list %}
+
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 py-5  w-[95%] xl:w-[80%] mx-auto">
+
+
+    
+
+    {% for i in object_list %}
+    
+    
+  
+    
+    <details id="bu_kons_1" class="px-7 xl:px-12 mb-1 py-[35px] transition  font-primary text-xl  text-justify    items-center   text-slate-800   rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
+        
+        <!-- tile header -->
+            <summary class="flex justify-between outline-none" >
+                <div class="flex">
+                    
+                    <i class="ri-stethoscope-line text-3xl mr-2"></i>
+                    <h2 class="text-2xl uppercase">{{i.nazwa}}</h2>
+                    
+                </div>
+                <i class="ri-arrow-down-s-line text-4xl  "></i>
+                
+                
+            </summary>
+
+        <!-- tile innards     -->
+            <div id="bu_kons_1_target" class=" grid grid-cols-1 xl:grid-cols-2">
+        
+        <!-- tile innards - left side -->
+        <div class="px-1 py-[55px] my-5 order-2 xl:order-1  md:block font-primary text-lg text-justify mr-7 pr-7 xl:border-r-2 xl:border-slate-200  items-center   text-slate-800   ">
+                    {% if i.opisy %}
+                    <!-- opis -->
+                    
+                    {% if i.opis %}
+                    
+                    <div class="border-b border-slate-400 my-9 w-[35%]    mx-auto"></div>
+                    
+                    <div>
+                        
+                        {{ i.opis|safe}}
+                        
+                        
+                    </div>
+
+                    {% endif %}
+
+                    {% if i.polega %}
+                    
+                    <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                    
+                    <h2 class="font-semibold text-xl py-3 mb-3">{% trans 'Na czym polega badanie' %}</h2>
+                    
+                    <div class="">
+                        {{i.polega|safe}}                        
+                        
+                    </div>
+                    {% endif %}
+
+                    {% if i.przebieg %}
+                    
+                    <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                    
+                    
+                    <h2 class="font-semibold text-xl py-3 mb-3">{% trans 'Jak przebiega badanie' %} </h2>
+                    
+                    
+                    <div class="">
+                        {{ i.przebieg|safe}}
+                        
+                        
+                    </div>
+
+                    {% endif %}
+
+                     {% if i.wskazania %}
+                    <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                    
+                    <h2 class="font-semibold py-3 text-xl mb-3">{% trans 'Wskazania do badania' %}</h2>
+                    
+                    <div class="px-9">
+                        <ul class="list-disc">
+                            {% for line in i.wskazania.splitlines %}
+                              <li class="my-1">{{ line }}</li>
+                            {% endfor %}
+                        </ul>
+                        
+                    </div>
+                    
+                    <div class="border-b border-slate-400 my-9 w-[35%]    mx-auto"></div>
+                    {% endif %} 
+                {% endif %}
+        </div>
+                
+        <!-- tile innards - rigth side -->
+        
+                <div class="px-1 py-[55px] my-5 order-1 xl:order-2  font-primary text-lg text-justify border-b-2 border-slate-200  md:border-none   items-center   text-slate-800   ">
+                    <h2 class="font-primary flex  text-xl justify-start">{{i.nazwa}}</h2>
+                    <h2 class="font-primary flex  text-xl justify-start">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'img/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span></h2>
+                    
+                    <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                    <section class="my-3 font-primary flex flex-col">
+                        
+                        
+                        
+                        <!-- czas oczekiwania -->
+                        <div class="grid grid-cols-2">
+                            
+                            <div class="block w-[85%]  sm:text-lg xl:text-xl">
+                                <p>
+                                    {% translate 'Czas oczekiwania na badanie' %} 
+                                    
+                                </p>
+                                <p class="text-sm">({% translate 'liczony od dnia zapisu' %})</p>
+                                
+                            </div>
+                            <div class="text-end  text-xl">{% translate 'ok.' %} {{i.czas_oczekiwania}} {% translate 'dni' %}</div>
+                            
+                        </div>
+                        
+                        <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                        
+                        <!-- czas badania -->
+                        <div class="grid grid-cols-2">
+                            
+                            <div class="sm:text-lg xl:text-xl ">
+                                {% translate 'Czas trwania badania' %}  
+                                
+                            </div>
+                            <div class="text-end  text-xl">{% translate 'ok.' %} {{i.czas_badania}} {% translate 'minut' %} </div>
+                            
+                        </div>
+                        
+                        <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                        <!-- Koszt -->
+                        <div class="grid grid-cols-2">
+                            
+                            <div class="sm:text-lg xl:text-xl ">
+                                {% translate 'Koszt' %}
+                                
+                            </div>
+                            <div class="text-end   text-xl">{{i.koszt}} zł</div>
+                            
+                        </div>
+                        
+                        {% if i.lekarz %}
+                        <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                        
+                        <div class="grid grid-cols-2">
+                            
+                            <div class="sm:text-lg xl:text-xl ">
+                                {% translate 'Badanie wykonuje' %} 
+                                
+                            </div>
+                            <div class="text-end  text-xl">{{i.lekarz}}</div>
+                            
+                        </div>
+
+                        {% endif %}
+
+                        {% if i.dokumenty %}
+
+                        <!-- downloads -->
+
+                        <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+                
+
+
+                        <div class="grid grid-cols-2">
+        
+                            <div class="mb-5 justify-start w-[75%] sm:text-lg xl:text-xl ">
+                               {% translate  'Instruktaż przygotowania do badania (plik PDF)' %}
+        
+                            </div>
+                            <div class="flex mb-3 justify-items-end justify-center items-center font-tertiary   font-semibold text-lg bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                                {% if LANGUAGE_CODE == "en" %}
+        
+                                <a href="{{i.pdf_en.url }}" target="_blank" class="">
+        
+                                
+                                
+                                {% elif LANGUAGE_CODE == "uk" %}
+                                
+        
+                                <a href="{{i.pdf_uk.url }}" target="_blank" class="">
+        
+        
+                                {% else  %}
+                                
+                                    <a href="{{i.pdf_pl.url }}" target="_blank" class="">
+                                {% endif %}
+                                    <i class="ri-file-pdf-2-line text-3xl mr-2"></i>
+        
+                            </a>
+                        </div>
+        
+                        </div>
+
+                        {% endif %}
+
+                        
+                {% if i.after %}
+                <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+
+                <h2 class="py-3  mb-3 sm:text-lg xl:text-xl ">{% translate 'Po badaniu pacjent otrzymuje:' %}</h2>
+
+            <div class="px-9">
+                <ul class="list-disc">
+                    {% for line in i.after.splitlines %}
+                      <li class="my-1">{{ line }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+                {% endif %}
+
+                <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                </div>
+            </div>
+            
+        </details>
+        
+        {% endfor %}  
+        
+</section>
+{% else %}
+ 
+<!-- WSZYSTKIE - BRAK WYNIKÓW -->
+
+<section class="grid grid-cols-1 pb-7   gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
+            <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
+                <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center text-center  ">{% trans 'Brak wyników'%}</h2>
+                
+            </div>
+            
+</section>
+
+{% endif %}
+</div>
+
+{% include 'elements/footer.html' %}
+    
+    
+    
+    {% block scripts %}
+    
+    <script>
+
+var bu = document.getElementById('bu_kons')
+var but = document.getElementById('bu_kons_target')
+
+var bu1 = document.getElementById('bu_kons_1')
+var but1 = document.getElementById('bu_kons_1_target')
+
+var bu2 = document.getElementById('bu_kons_2')
+var but2 = document.getElementById('bu_kons_2_target')
+
+var bu3 = document.getElementById('bu_kons_3')
+var but3 = document.getElementById('bu_kons_3_target')
+
+var bu4 = document.getElementById('bu_kons_4')
+var but4 = document.getElementById('bu_kons_4_target')
+
+var bu5 = document.getElementById('bu_kons_5')
+var but5 = document.getElementById('bu_kons_5_target')
+
+bu.addEventListener('click', (e) => {
+    but.classList.toggle('hidden')
+})
+
+bu1.addEventListener('click', (e) => {
+    but1.classList.toggle('hidden')
+})
+
+bu2.addEventListener('click', (e) => {
+    but2.classList.toggle('hidden')
+})
+
+bu3.addEventListener('click', (e) => {
+    but3.classList.toggle('hidden')
+})
+
+bu4.addEventListener('click', (e) => {
+    but4.classList.toggle('hidden')
+})
+
+bu5.addEventListener('click', (e) => {
+    but5.classList.toggle('hidden')
+})
+
+
+
+</script>
+			
+
+
+{% endblock scripts %}
+
+
+{% endblock  %}

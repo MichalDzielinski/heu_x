@@ -50,7 +50,7 @@ class ProceduraAdminForm(forms.ModelForm):
 
 @admin.register(Procedura)
 class ProceduraAdmin(admin.ModelAdmin):
-    list_display = ('nazwa', 'active', 'czas_oczekiwania', 'czas_badania_min', 'koszt', 'nazwa_summary', 'opisy_summary', 'instruktaż_summary')
+    list_display = ('nazwa', 'pk', 'active', 'czas_oczekiwania', 'czas_badania_min', 'koszt', 'nazwa_summary', 'opisy_summary', 'instruktaż_summary')
     list_editable = ('czas_oczekiwania','koszt','active',)
     list_filter = ['lekarz', 'specjalizacja']
     search_fields = ['opis', 'wskazania']

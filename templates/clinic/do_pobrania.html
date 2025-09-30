@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block title %}Do pobrania{% endblock title %}
+
+
+{% block content %}
+{% include 'elements/header.html' %}
+
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[210px]">
+    <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
+        <h2 class="uppercase pb-1 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Do pobrania' %}</h2>
+        
+        
+    </div>
+    
+</section>
+
+
+
+<section class="grid  cols-1 ">
+
+    <div class="px-7 py-5 my-5 xl:px-12  w-[95%] xl:w-[80%]  xl:py-[75px]  mx-auto text-slate-800 rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
+
+        
+        <div class="flex">
+            <i class="ri-download-2-line mr-2 text-2xl"></i>
+
+
+            <h2 class="text-2xl font-primary mb-5  ">{% translate 'Dziennik mikcji (plik PDF)' %}</h2>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-start items-start">
+
+            <a href="https://drive.google.com/file/d/1_VKCAv4oE06txJxet7DQ1CJOAO1OV5Kq/view?usp=sharing" target="_blank" class="">
+                <div class="flex mb-5 mr-2 justify-center items-center font-tertiary font-semibold text-lg bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                    <i class="ri-file-pdf-2-line text-3xl mr-2"></i>
+
+                    
+                    {% translate 'Formularz dziennika mikcji' %}
+                </div>
+            </a>
+            
+            <a href="https://drive.google.com/file/d/1FReqkVUmmlmjgF1Px-VibG9pWLOygmcG/view?usp=sharing" target="_blank" class="">
+            
+            <div class="flex mb-5  justify-center items-center font-tertiary font-semibold text-lg bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                                
+                                <i class="ri-file-pdf-2-line text-3xl mr-2"></i>
+
+
+
+
+                
+                {% translate 'Instrukcja dziennika mikcji' %}
+            </div>
+                </a>
+        </div>
+   
+
+        <div class="flex mt-9">
+
+            
+            
+            <i class="ri-download-2-line mr-2 text-2xl"></i>
+
+
+            <h2 class="text-2xl font-primary mb-5  ">{% translate 'Badanie urodynamiczne - instruktaż (plik PDF)' %}</h2>
+        </div>
+
+        
+
+            
+
+    
+        
+        <a href="https://drive.google.com/file/d/1fXg8paNlZ9HUgL3IECSEutT-QtbzDwRZ/view?usp=sharing" target="_blank" class="flex justify-start">
+            
+            <div class="flex justify-start">
+                <h2 class="flex mb-3 justify-center mx-auto items-center font-tertiary font-semibold text-lg bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                    <i class="ri-file-pdf-2-line text-3xl mr-2"></i>
+
+                    
+                    {% translate 'Przed badaniem' %}
+                </h2>
+                
+                
+            </div>
+            
+            
+        </a>
+        
+   
+
+
+      
+
+
+
+    </div>
+
+    
+    
+    
+</section>
+{% include 'elements/footer.html' %}
+
+{% endblock  %}
