@@ -1,0 +1,123 @@
+{% load static %}
+
+<!-- 1. GŁÓWNY KONTENER: flex-col, h-full (musi mieć zdefiniowaną wysokość) -->
+
+<div id="new-target" class="w-full h-full flex flex-col">
+<!-- NAGŁÓWEK (stała wysokość) -->
+<div class="bg-linear-to-tr from-sky-900 to-slate-800 flex items-center py-5 px-6">
+<img class="size-9" src="{% static 'icons/heureka_logo_3.png'%}" alt="">
+<h1 class="text-4xl uppercase text-gray-200 font-light">
+&nbsp;Napisz do nas
+</h1>
+</div>
+
+<!-- 2. GŁÓWNY KONTENER TREŚCI: flex-1 / flex-grow, aby zająć resztę wysokości -->
+
+<div id="cont" class="flex-1 overflow-auto">
+
+<!-- 3. FORMULARZ: flex-col i h-full, aby rozłożyć elementy pionowo -->
+
+<form
+id="contact-form"
+hx-post="{% url 'contact' %}"
+hx-trigger="submit"
+hx-swap="none"
+class="h-full flex flex-col py-3 px-6"
+>
+{% csrf_token %}
+
+<!-- 4. GŁÓWNY WRAPPER PÓL: zająć dostępną przestrzeń -->
+
+<div id="form-wrapper" class="grid grid-cols-10 flex-1">
+
+<!-- Lewa kolumna (Pola wejściowe) -->
+<!-- Używamy h-full i justify-between, aby rozłożyć elementy w pionie -->
+<div class="col-span-7 flex flex-col justify-between h-full pr-4">
+    
+    <!-- GÓRNA GRUPA PÓL (Temat, Treść, Email) -->
+    <!-- Ten div będzie wypełniał dostępną przestrzeń -->
+    <div>
+      <div>
+        <label for="{{ contact_form.temat.id_for_label }}" class="block text-2xl font-medium text-gray-700 py-2">
+          {{ contact_form.temat.label }}*
+        </label>
+        <!-- Renderowanie pola z założeniem, że klasy są w forms.py -->
+        {{ contact_form.temat }}
+        {% if contact_form.temat.errors %}
+          <p class="text-red-600 text-sm mt-1">{{ contact_form.temat.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <div>
+        <label for="{{ contact_form.message.id_for_label }}" class="block text-2xl  text-gray-700 py-2">
+            Treść wiadomości*
+        </label>
+        <!-- Renderowanie pola z założeniem, że klasy są w forms.py -->
+        {{ contact_form.message }}
+        {% if contact_form.message.errors %}
+          <p class="text-red-600 text-sm mt-1">{{ contact_form.message.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <div>
+        <label for="{{ contact_form.email.id_for_label }}" class="block text-2xl font-medium text-gray-700 py-2">
+          {{ contact_form.email.label }}*
+        </label>
+        <!-- Renderowanie pola z założeniem, że klasy są w forms.py -->
+        {{ contact_form.email }}
+        {% if contact_form.email.errors %}
+          <p class="text-red-600 text-xl mt-1">{{ contact_form.email.errors.0 }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- DÓLNA GRUPA PÓL (Wymagania) -->
+    <div class="mt-4">
+      <p class="text-xs text-gray-500 py-1">Pola oznaczone * są obowiązkowe.</p>
+      <p class="text-xs text-gray-500 py-1">Prosimy, nie podawać w formularzu szczegółowych danych medycznych ani informacji wrażliwych – służy on wyłącznie do kontaktu ogólnego, nie do ustalania diagnozy czy leczenia.</p>
+    </div>
+
+</div>
+
+<!-- Prawa kolumna (Radio Buttons + Przycisk) -->
+<!-- Używamy h-full i justify-between, aby rozłożyć elementy w pionie -->
+<div class="col-span-3 flex flex-col justify-between h-full pl-4">
+  
+    <fieldset class="ml-9">
+      <legend class="text-2xl font-medium text-gray-700 py-2">{{ contact_form.topic.label }}*</legend>
+      <div class="mt-2 space-y-2">
+        {% for radio in contact_form.topic %}
+          <label class="flex items-center">
+              <!-- Renderowanie tagu radiowego z założeniem, że klasy są w forms.py -->
+              {{ radio.tag }} 
+              <span class="ml-2 block text-2xl text-gray-700">{{ radio.choice_label }}</span>
+          </label>
+        {% endfor %}
+      </div>
+      {% if contact_form.topic.errors %}
+        <p class="text-red-600 text-sm mt-1">{{ contact_form.topic.errors.0 }}</p>
+      {% endif %}
+    </fieldset>
+  
+    <!-- PRZYCISK: Automatycznie umieszczony na dole dzięki Flexbox i justify-between -->
+    <div class="w-full mb-1">
+      <button type="submit"
+        class="w-[90%] mx-2 py-2 h-[68px] hover:text-orange-200 align-center uppercase items-center inline-flex justify-center rounded-xl border border-transparent bg-linear-to-tr from-sky-900 ml-5 to-slate-800 px-4 text-2xl font-secondary text-gray-300 shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        <i class="ri-mail-send-line"></i>&nbsp;
+        wyślij
+      </button>
+    </div>
+</div>
+
+</div>
+
+<!-- Komunikaty -->
+
+{% include 'elements/contact/contact-success.html' %}
+
+<div id="form-error" class="hidden text-red-600 text-center py-4 text-sm"></div>
+</form>
+
+</div>
+
+</div>

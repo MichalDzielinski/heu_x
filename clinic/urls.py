@@ -4,7 +4,6 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.IndexView.as_view()),
     path("procedury", views.ProceduryView.as_view(), name='procedury'),
     path("badanie-urodynamiczne", views.BadanieUrodynamiczneView.as_view(), name='badanie urodynamiczne'),
     path("procedury-urologiczne", views.ProceduryUrlogiczneView.as_view(), name='procedury urologiczne'),
@@ -23,6 +22,9 @@ urlpatterns = [
     
     path("zespół", views.ZespolView.as_view(), name='zespół'),
 
+    path("contact", views.ContactView.as_view(), name='contact'),
+
+    path("", views.IndexView.as_view(), name='index'),
 
 
 ]

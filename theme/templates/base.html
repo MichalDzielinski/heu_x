@@ -1,6 +1,12 @@
-{% load static tailwind_tags %}
+{% load static tailwind_tags  %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
+
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="pl" >
 <head>
     <title>Heureka | {% block title %}{% endblock title %}</title>
     <meta charset="UTF-8">
@@ -10,6 +16,149 @@
 </head>
 
 <body>
+
+    <style>
+        @keyframes fade-in {
+          from { opacity: 0; }
+        }
+    
+        @keyframes fade-in1 {
+          from { opacity: 0; }
+        }
+     
+        @keyframes fade-out {
+          to { opacity: 0; }
+        }
+    
+        @keyframes fade-out1 {
+          to { opacity: 0; }
+        }
+     
+        @keyframes slide-from-right {
+          from { transform: translateY(-20px); }
+        }
+    
+        @keyframes slide-from-right1 {
+          from { transform: translateY(-20px); }
+        }
+    
+        @keyframes slide-from-rightx {
+          from { transform: translateX(-190px); }
+        }
+    
+        @keyframes slide-to-leftx {
+          to { transform: translateX(0); }
+        }
+     
+        @keyframes slide-to-left {
+          to { transform: translateY(0); }
+        }
+    
+        @keyframes slide-to-left1 {
+          to { transform: translateY(0); }
+        }
+     
+        /* define animations for the old and new content */
+        ::view-transition-old(slide-it) {
+          animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-leftx;
+        }
+    
+        ::view-transition-old(slide-it1) {
+          animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+          600ms cubic-bezier(0.9, 1, 0.2, 1) both slide-to-left;
+        }
+    
+        ::view-transition-old(slide-it2) {
+          animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+        }
+    
+        ::view-transition-old(slide-it3) {
+          animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+        }
+    
+        ::view-transition-old(slide-it4) {
+          animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+        }
+    
+        ::view-transition-old(slide-it5) {
+          animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+        }
+    
+        ::view-transition-old(slide-it6) {
+          animation: 180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+        }
+    
+    
+    
+    
+        ::view-transition-new(slide-it) {
+          animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-rightx;
+        }
+    
+        ::view-transition-new(slide-it1) {
+          animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+        }
+    
+        ::view-transition-new(slide-it2) {
+          animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+        }
+    
+        ::view-transition-new(slide-it3) {
+          animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+        }
+    
+        ::view-transition-new(slide-it4) {
+          animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+        }
+    
+        ::view-transition-new(slide-it5) {
+          animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+        }
+    
+        ::view-transition-new(slide-it6) {
+          animation: 420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+          600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+        }
+     
+        /* tie the view transition to a given CSS class */
+        .sample-transition {
+            view-transition-name: slide-it;
+        }
+    
+        .sample-transition-1 {
+            view-transition-name: slide-it1;
+        }
+    
+        .sample-transition-2 {
+            view-transition-name: slide-it2;
+        }
+    
+        .sample-transition-3 {
+            view-transition-name: slide-it3;
+        }
+        .sample-transition-4 {
+            view-transition-name: slide-it4;
+        }
+        .sample-transition-5 {
+            view-transition-name: slide-it5;
+        }
+        .sample-transition-6 {
+            view-transition-name: slide-it6;
+        }
+         
+     </style>
         
 
             {% block content %}
@@ -17,15 +166,25 @@
             
         
 
+           
 
     <script src="{% static 'js/htmx.min.js' %}"></script>
+
+	  <script src="https://unpkg.com/htmx-morph/dist/htmx-morph.min.js"></script>
+    
     <script src="{% static 'js/lenis.min.js' %}"></script>
     <script src="{% static 'js/gsap.min.js' %}"></script>
     <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
 
     <!-- custom script -->
+    
     <script src="{% static 'js/header-hider.js' %}"></script>
     <script src="{% static 'js/header-shrink.js' %}"></script>
+     
+    <script src="{% static 'js/contact-modal-1.js' %}"></script>
+    <script src="{% static 'js/contact-modal-2.js' z%}"></script>
+    <script src="{% static 'js/contact-modal-3.js' %}"></script> 
+
 
     {% block script %}
     {% endblock script %}

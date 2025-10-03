@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     "tinymce",
     "tailwind",
     "theme",
+    "widget_tweaks",
+    'rosetta',
     
     #custom apps
     'clinic',
@@ -46,6 +48,8 @@ TAILWIND_APP_NAME = 'theme'
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    
+    'django.middleware.locale.LocaleMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -63,6 +67,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'clinic.context_processors.contact_form_context',
             ],
         },
     },
@@ -99,6 +104,10 @@ LANGUAGES = [
     ('uk', 'Ukrainian'),
 ]
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'pl'
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale'
+]
 
 TIME_ZONE = "Europe/Berlin"
 USE_I18N = True
@@ -137,7 +146,13 @@ JAZZMIN_SETTINGS = {
 
 
 
-
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'urologia.czynnosciowa@gmail.com'
+EMAIL_HOST_PASSWORD = 'rnxequdzzniabgfm'
+EMAIL_USE_TLS=True
+# DEFAULT_FROM_EMAIL = 'Contact form <urologia.czynnosciowa@gmail.com>'
 
 
 

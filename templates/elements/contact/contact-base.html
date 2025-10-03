@@ -1,0 +1,21 @@
+<!-- modal overlay -->
+<div id="contact-overlay" class="fixed inset-0 z-70 hidden  bg-[rgba(60, 60, 60, .8)] ">
+                  
+    <!-- modal -->
+    <div id="contact-modal" class="bg-white hidden overflow-auto  rounded-xl min-h-[95vh] max-h-[95vh] w-[45%] absolute  left-10 top-3   z-80 shadow-xl">    
+    <!-- modal close button                     -->
+            
+   
+
+    
+        <button id="modal-close" onclick="closeContact('#contact-modal')" class="absolute   -top-1  right-3 text-gray-400 hover:text-orange-200 text-7xl">&times;</button>
+    
+    <!-- modal content-->
+                        <div class=" text-justify   text-slate-800 font-primary text-lg w-full  h-[100%] " id="contact-modal-content">
+                            {% include 'elements/contact/contact-form.html' %}
+                        </div>
+    </div>
+</div>
+     
+
+

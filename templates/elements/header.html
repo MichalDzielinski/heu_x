@@ -1,5 +1,8 @@
 
-{% load static %}
+{% load static  %}
+{% load i18n %}
+
+
 
 <header id="header" class="w-full fixed top-0 frame-gradient z-20">
     <section class="frame-sizing relative  header-inner">
@@ -13,13 +16,16 @@
                     <h1 class="title1 font-heureka-2 text-6xl text-gray-50  text-shadow-2xs text-shadow-green-700 uppercase z-20">heureka</h1>
                     <!-- light blob -->
                     <div  class="sh1 rounded-full absolute -left-1  bg-pink-100 blur-xl z-1 hover:delay-150 transition duration-300 ease-in-out flex-none w-[55px] h-[55px]"></div>
-                    <div  class="sh2 rounded-full absolute -left-1  bg-sky-500 blur-xl z-1 hidden  group-hover:inline  flex-none w-[75px] h-[55px]"></div>
+                   <div  class="sh2 rounded-full absolute -left-1  bg-sky-500 blur-xl z-1 hidden  group-hover:inline  flex-none w-[75px] h-[55px]"></div>
                     </a>
             </div>
+
+           
+
         <!-- sub name -->
             <div class="subheader">
-                <h3 class="font-tertiary text-gray-200 pt-2 text-xl">Ośrodek urologii czynnościowej</h3>
-                <h3 class="text-gray-100  text-2xl font-primary">Pawła Szaleckiego</h3>
+                <h3 class="font-tertiary text-gray-200 pt-2 text-xl">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
+                <h3 class="text-gray-100  text-2xl font-primary">{% trans 'Pawła Szaleckiego' %}</h3>
             </div>
         </div>
     </div> 
@@ -36,7 +42,7 @@
                     <a href="{% url 'badanie urodynamiczne' %}" class="flex group items-center">
                         <h2 class=" nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            Badanie urodynamiczne
+                            {% trans 'Badanie urodynamiczne' %}
                         </h2>
                     </a>
                 </div>
@@ -46,7 +52,7 @@
                     <a href="{% url 'procedury urologiczne' %}" class="flex group items-center">
                         <h2 class="nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            Procedury urologiczne
+                            {% trans 'Procedury urologiczne' %}
                         </h2>
                     </a>
                 </div>
@@ -58,7 +64,7 @@
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
                             <div class="relative inline-block text-left group">
                                 
-                                <a href="{% url 'pozostałe procedury' %}" class="hover:text-orange-200">Pozostałe procedury</a>
+                                <a href="{% url 'pozostałe procedury' %}" class="hover:text-orange-200">{% trans 'Pozostałe procedury' %}</a>
                                 
                                 
                              
@@ -83,8 +89,8 @@
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
                             <div class="relative inline-block text-left group">
                                 
-
-                                  Strefa pacjenta
+                                {% trans 'strefa pacjenta' %}
+                                  
                                   
                                
                                 <div 
@@ -107,7 +113,7 @@
                     <a href="{% url 'badania kliniczne' %}" class="flex group items-center">
                         <h2 class="nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            Badania kliniczne
+                            {% trans 'Badania kliniczne' %}
                         </h2>
                     </a>
                 </div>

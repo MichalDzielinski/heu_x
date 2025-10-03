@@ -11,20 +11,12 @@ class ActiveManager(models.Manager):
 
 class Person(models.Model):
     name = models.CharField(max_length=75, verbose_name='Nazwisko')
-    # main_photo = models.ImageField(upload_to='photos/', default='img/blank-profile-picture.png', verbose_name='zdjęcie')
-    active = models.BooleanField(default=True, verbose_name='aktywny')
+    main_photo = models.ImageField(upload_to='photos/', blank=True, null=True, verbose_name='zdjęcie')
     order = models.PositiveIntegerField(verbose_name='kolejność')
-
-    # typ = models.CharField(max_length=75, null=True, blank=True)
-
-    # line_1 = models.CharField(max_length=256, verbose_name='Nagłówek (linia pierwsze)')
-    # line_2 = models.CharField(max_length=256, blank=True,null=True, verbose_name='Nagłówek (linia druga)')
-    # line_3 = models.CharField(max_length=256, blank=True,null=True, verbose_name='Nagłówek (linia trzecia)')
-    # line_4 = models.CharField(max_length=256, blank=True,null=True, verbose_name='Nagłówek (linia czwarta)') 
-    # line_5 = models.CharField(max_length=256, blank=True,null=True, verbose_name='Nagłówek (linia piąta)')
-
-    # desc_1 = HTMLField(blank=True, null=True,  verbose_name='Opis')
+    typ = models.CharField(max_length=75, null=True, blank=True)
+    description = HTMLField(blank=True, null=True,  verbose_name='Nagłówki pod nawziskiem (pole listy)')
    
+    active = models.BooleanField(default=True, verbose_name='aktywny')
 
     objects = models.Manager()
     activated = ActiveManager()

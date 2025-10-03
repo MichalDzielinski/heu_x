@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 
-{% load static %}
+{% load static i18n  %}
 
 {% block title %}Ośrodek urologii czynnościowej{% endblock title %}
 
 {% block content %}
 
 
+{% include 'elements/button/contact/contact-button.html' %}
+{% include 'elements/contact/contact-base.html' %}
 {% include 'elements/header.html' %}
+
 
 <div class="w-full h-full bg-[#94A3B8]">
 
@@ -18,28 +21,32 @@
        <!-- CARD1 -->
         <div class="card text-blue-950   " id="card-1">
           
+          {% trans "tekst powitalny" %}
 
-
-          <div class="card-inner pt-[300px]  border-blue-950 border-2 relative" >
+          <div class="card-inner pt-[222px]  border-blue-950 border-2 relative" >
             <img 
-    src="{% static 'images/hero3.jpg' %}" 
-    alt="Tło" 
-    class="absolute inset-0 w-full h-full object-cover blur-sm saturate-50 -z-20"
-  >
+              src="{% static 'images/hero3.jpg' %}" 
+              alt="Tło" 
+              class="absolute inset-0 w-full h-full object-center blur-sm saturate-50 -z-20"
+            >
 
             <div class=" flex flex-col h-full ">
                 
-                <div class=" flex  justify-end">
+
+              <div class="flex flex-col xl:flex-row  justify-end">
+                  <!-- left column -->
                     <div class="basis-1/2 flex items-center justify-center">
-                        <img src="{% static 'images/hero3.jpg' %}" alt="" class="max-w-full max-h-full object-cover border-2 border-blue-950 shadow-md shadow-blue-950 ml-5 ">
+                        <img src="{% static 'images/hero3.jpg' %}" alt="" class="w-full h-full object-cover border-2 border-blue-950 shadow-md shadow-blue-950 ml-5 ">
                     </div>
+                  <!-- right column -->
+                    
                     <div class="basis-1/2 flex flex-col items-center justify-center">
-                        <p class="w-[85%] mx-auto text-2xl font-primary bg-gray-400 rounded-md opacity-75 p-3 border-2 border-blue-500">
+                            <p class="w-[85%] mx-auto text-2xl font-primary bg-gray-400 rounded-md opacity-75 p-5 py-7 m-1 ">
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. At itaque blanditiis doloribus eos dolorem necessitatibus sunt molestiae voluptatibus excepturi maxime ad, officiis natus fuga porro autem quibusdam est, nesciunt ullam nostrum quis voluptatum, consequatur amet iure! Eveniet cupiditate omnis explicabo laboriosam distinctio perferendis illum, saepe earum, debitis magnam placeat sit.
-
-                        </p>
-                        <button class="frame-gradient shadow-lg shadow-blue-200 font-heureka-1 font-semibold text-xl opacity-100 text-white  hover:text-yellow-100 border-2 border-white hover:border-yellow-200 mt-10 cursor-pointer rounded-md  p-6 uppercase">Poznaj nasz zespół</button>
+                              {% translate 'tekst powitalny' %}
+                                
+                            </p>
+                            <button class="frame-gradient shadow-lg shadow-blue-200 font-heureka-1 font-semibold text-xl opacity-100 text-white  hover:text-yellow-100 border-2 border-white hover:border-yellow-200 mt-10 cursor-pointer rounded-md  p-6 uppercase">{% trans "poznaj nasz zespół" %}</button>
                     </div>
 
                 </div>
@@ -51,6 +58,10 @@
           </div>
         </div>
        
+
+
+
+
        <!-- CARD2 -->
         <div class="card" id="card-2">
           <div class="card-inner">
@@ -189,6 +200,7 @@
 
 {% block script %}
 
-<script src="{% static 'js/index_animation.js' %}"></script>
+<script src="{% static 'js/index_animation.js' z%}"></script>
+
 
 {% endblock script %}

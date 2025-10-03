@@ -1,9 +1,11 @@
-{% load static %}
+{% load static  %}
+{% load i18n  %}
 <div class="lang hidden px-5 sm:flex sm:absolute sm:top-8 sm:right-1 transition-all">
     
     <!-- LANGUAGE 1 -->
     <div id="lang1">
-        <form action="#">
+        <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
+            
             {% csrf_token %}
             <input type="hidden" name="language" value="pl">
             <button type="submit" style="background:none; border:none; cursor:pointer;">
@@ -14,7 +16,7 @@
 
     <!-- LANGUAGE 2 -->
     <div id="lang2">
-        <form action="#">
+        <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
             {% csrf_token %}
             <input type="hidden" name="language" value="en">
             <button type="submit" style="background:none; border:none; cursor:pointer;">
@@ -25,7 +27,7 @@
 
     <!-- LANGUAGE 3 -->
     <div id="lang3">
-        <form action="#">
+        <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
             {% csrf_token %}
             <input type="hidden" name="language" value="uk">
             <button type="submit" style="background:none; border:none; cursor:pointer;">
