@@ -17,7 +17,7 @@ urlpatterns = [
     path("badania-kliniczne", views.BadaniaKliniczneView.as_view(), name='badania kliniczne'),
 
     path("kontakt", views.KontaktView.as_view(), name='kontakt'),
-    path("jak-nas-znalezc", views.JakNasZnalezcView.as_view(), name='jak nas znaleźć'),
+    path("jak-nas-znalezc", views.JakNasZnalezcView.as_view(), name='jak nas znalezc'),
     path("wizyta", views.WizytaView.as_view(), name='wizyta'),
     
     path("zespół", views.ZespolView.as_view(), name='zespół'),

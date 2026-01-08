@@ -5,18 +5,22 @@
 {% block title %}Pozostałe procedury{% endblock %}
 
 
+
+
 {% block content %}
 
+{% include 'elements/button/contact/contact-button.html' %}
+{% include 'elements/contact/contact-base.html' %}
 {% include 'elements/header.html' %}
 
 
-<section class="grid grid-cols-1 gap-x-5 gap-y-1 mt-[210px] md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 mt-[200px] md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
     <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
         <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Pozostałe badania' %}</h2>
         
         <p class="text-md font-primary mb-5  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore tempore magnam veniam fuga itaque aspernatur vitae consequuntur, temporibus id quae perspiciatis odit distinctio, exercitationem nesciunt ipsam nemo, eius sit fugiat odio sapiente similique facilis. Necessitatibus at laudantium, expedita id fugiat ad iste architecto enim. </p>
         <p class="text-lg font-primary   ">{% translate 'Poniżej lista innych badań dostępnych' %}</p>
-        <p class="text-lg font-primary flex  ">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'img/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span> </p>
+        <p class="text-lg font-primary flex  ">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'icons/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span> </p>
         <p class="text-sm font-primary  ">{% translate '(kliknij na nazwę badania, żeby poznać szczegóły)' %}</p>
     </div>
     
@@ -122,7 +126,7 @@
         
                 <div class="px-1 py-[55px] my-5 order-1 xl:order-2  font-primary text-lg text-justify border-b-2 border-slate-200  md:border-none   items-center   text-slate-800   ">
                     <h2 class="font-primary flex  text-xl justify-start">{{i.nazwa}}</h2>
-                    <h2 class="font-primary flex  text-xl justify-start">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'img/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span></h2>
+                    <h2 class="font-primary flex  text-xl justify-start">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'icons/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span></h2>
                     
                     <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                     <section class="my-3 font-primary flex flex-col">

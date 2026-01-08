@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n  %}
 
 <!-- 1. GŁÓWNY KONTENER: flex-col, h-full (musi mieć zdefiniowaną wysokość) -->
 
@@ -7,7 +7,7 @@
 <div class="bg-linear-to-tr from-sky-900 to-slate-800 flex items-center py-5 px-6">
 <img class="size-9" src="{% static 'icons/heureka_logo_3.png'%}" alt="">
 <h1 class="text-4xl uppercase text-gray-200 font-light">
-&nbsp;Napisz do nas
+&nbsp;{% trans 'Napisz do nas' %}
 </h1>
 </div>
 
@@ -26,7 +26,7 @@ class="h-full flex flex-col py-3 px-6"
 >
 {% csrf_token %}
 
-<!-- 4. GŁÓWNY WRAPPER PÓL: zająć dostępną przestrzeń -->
+
 
 <div id="form-wrapper" class="grid grid-cols-10 flex-1">
 
@@ -39,7 +39,7 @@ class="h-full flex flex-col py-3 px-6"
     <div>
       <div>
         <label for="{{ contact_form.temat.id_for_label }}" class="block text-2xl font-medium text-gray-700 py-2">
-          {{ contact_form.temat.label }}*
+          {% trans 'Temat' %}*
         </label>
         <!-- Renderowanie pola z założeniem, że klasy są w forms.py -->
         {{ contact_form.temat }}
@@ -50,7 +50,7 @@ class="h-full flex flex-col py-3 px-6"
 
       <div>
         <label for="{{ contact_form.message.id_for_label }}" class="block text-2xl  text-gray-700 py-2">
-            Treść wiadomości*
+            {% trans 'Treść wiadomości' %}*
         </label>
         <!-- Renderowanie pola z założeniem, że klasy są w forms.py -->
         {{ contact_form.message }}
@@ -61,7 +61,7 @@ class="h-full flex flex-col py-3 px-6"
 
       <div>
         <label for="{{ contact_form.email.id_for_label }}" class="block text-2xl font-medium text-gray-700 py-2">
-          {{ contact_form.email.label }}*
+          {% trans 'Twój email' %}*
         </label>
         <!-- Renderowanie pola z założeniem, że klasy są w forms.py -->
         {{ contact_form.email }}
@@ -73,8 +73,8 @@ class="h-full flex flex-col py-3 px-6"
 
     <!-- DÓLNA GRUPA PÓL (Wymagania) -->
     <div class="mt-4">
-      <p class="text-xs text-gray-500 py-1">Pola oznaczone * są obowiązkowe.</p>
-      <p class="text-xs text-gray-500 py-1">Prosimy, nie podawać w formularzu szczegółowych danych medycznych ani informacji wrażliwych – służy on wyłącznie do kontaktu ogólnego, nie do ustalania diagnozy czy leczenia.</p>
+      <p class="text-xs text-gray-500 py-1">{% trans 'Pola oznaczone * są obowiązkowe.' %}</p>
+      <p class="text-xs text-gray-500 py-1">{% trans 'Prosimy, nie podawać w formularzu szczegółowych danych medycznych ani informacji wrażliwych – służy on wyłącznie do kontaktu ogólnego, nie do ustalania diagnozy czy leczenia.' %}</p>
     </div>
 
 </div>
@@ -84,7 +84,7 @@ class="h-full flex flex-col py-3 px-6"
 <div class="col-span-3 flex flex-col justify-between h-full pl-4">
   
     <fieldset class="ml-9">
-      <legend class="text-2xl font-medium text-gray-700 py-2">{{ contact_form.topic.label }}*</legend>
+      <legend class="text-2xl font-medium text-gray-700 py-2">{% trans 'Specjalizacja' %}*</legend>
       <div class="mt-2 space-y-2">
         {% for radio in contact_form.topic %}
           <label class="flex items-center">
@@ -99,12 +99,11 @@ class="h-full flex flex-col py-3 px-6"
       {% endif %}
     </fieldset>
   
-    <!-- PRZYCISK: Automatycznie umieszczony na dole dzięki Flexbox i justify-between -->
     <div class="w-full mb-1">
       <button type="submit"
         class="w-[90%] mx-2 py-2 h-[68px] hover:text-orange-200 align-center uppercase items-center inline-flex justify-center rounded-xl border border-transparent bg-linear-to-tr from-sky-900 ml-5 to-slate-800 px-4 text-2xl font-secondary text-gray-300 shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
         <i class="ri-mail-send-line"></i>&nbsp;
-        wyślij
+        {% trans 'wyślij' %}
       </button>
     </div>
 </div>

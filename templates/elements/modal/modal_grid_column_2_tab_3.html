@@ -1,0 +1,106 @@
+{% load static %}
+
+<div class="cnt hidden items-center px-[25px]" id="tab3-{{i.id}}">
+  <div class="h-[80px] text-xl mt-9 my-1">
+    {{ i.profile.rekomendacje_intro|safe }}
+  </div>  
+
+  <div class="carousel relative w-full overflow-hidden">
+    <!-- Track -->
+    <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+      {% for p in i.profile.rekomendacja.all %}
+        <div class="w-full flex-shrink-0 flex items-center justify-center h-[430px] bg-white text-gray-700">
+          <div class="flex flex-col mx-auto w-4/5 h-full">
+            <a href="{{p.link}}" target="_blank" class="flex mt-3 h-3/8">
+              
+
+                <div class="w-3/4 flex flex-col text-right justify-end pr-3">
+                  <h2 class="text-2xl">{{ p.name }}</h2>
+                  <h3 class="text-lg text-gray-700">{{ p.desc1 }}</h3>
+                  <h3 class="text-md text-gray-600">{{ p.desc2 }}</h3>
+                </div>
+                <div class="w-1/4 flex items-right align-center">
+                  <img src="{{ p.image.url }}" class="aspect-square justify-center rounded-md" alt="">
+                </div>
+              </a>
+            
+            <div class="relative m-1 mt-5 h-full overflow-wrap">
+              &nbsp;&nbsp;&nbsp;&nbsp;{{ p.rekomendacja|safe }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Strzałki -->
+    <button type="button" class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2 bg-white text-6xl ml-1 text-slate-300 hover:text-gray-600">
+      <i class="ri-arrow-left-circle-line"></i>
+    </button>
+    <button type="button" class="carousel-next absolute right-0 top-1/2 -translate-y-1/2 bg-white text-6xl mr-1 text-slate-300 hover:text-gray-600">
+      <i class="ri-arrow-right-circle-line"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = track.children;
+      const prevBtn = carousel.querySelector('.carousel-prev');
+      const nextBtn = carousel.querySelector('.carousel-next');
+      const totalSlides = slides.length;
+      let index = 0;
+      let autoPlayTimer;
+  
+      function updateSlidePosition() {
+        track.style.transition = 'transform 0.5s ease-in-out'; 
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+  
+      function nextSlide() {
+        index = (index + 1) % totalSlides;
+        updateSlidePosition();
+      }
+  
+      function prevSlide() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+      }
+  
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        restartAutoplay();
+      });
+  
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        restartAutoplay();
+      });
+  
+      function startAutoplay() {
+        // zmieniamy slajd dokładnie co 9000 ms
+        autoPlayTimer = setInterval(nextSlide, 9000);
+      }
+  
+      function stopAutoplay() {
+        clearInterval(autoPlayTimer);
+      }
+  
+      function restartAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+  
+      // zatrzymanie autoplay przy najechaniu kursorem
+      carousel.addEventListener('mouseenter', stopAutoplay);
+      carousel.addEventListener('mouseleave', startAutoplay);
+  
+      // ustaw pierwszy slajd natychmiast
+      index = 0;
+      updateSlidePosition();
+      startAutoplay();
+    });
+  });
+  </script>
+  

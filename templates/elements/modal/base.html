@@ -1,0 +1,18 @@
+<!-- modal overlay -->
+<div id="overlay_{{i.id}}" class="fixed inset-0 z-90 hidden  bg-[rgba(60, 60, 60, .8)] ">
+                  
+    <!-- modal -->
+            <div id="modal-{{i.id}}" class="bg-white hidden pr-[420px] rounded-xl h-[90%] w-[120%] absolute top-10 left-10  z-80 shadow-xl">    <!-- modal close               -->
+    <!-- modal close button                     -->
+                <button id="modal-close" onclick="closeModal('{{i.id}}')" class="absolute  top-1 pr-[355px]  right-0 text-gray-400 hover:text-red-500 text-8xl">&times;</button>
+    <!-- modal content-->
+                    <div class=" text-justify  text-slate-800 font-primary  text-lg h-full " id="modal-content">
+    <!-- modal grid -->
+                        <div class="grid grid-cols-[1fr_3fr_2fr] gap-2 h-[95%] m-5">
+                            {% include 'elements/modal/modal_grid_column_1.html' with i=i %}
+                            {% include 'elements/modal/modal_grid_column_2.html' with i=i %}
+                            {% include 'elements/modal/modal_grid_column_3.html' with i=i  %}
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -28,7 +28,8 @@
     <!-- LANGUAGE 3 -->
     <div id="lang3">
         <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
-            {% csrf_token %}
+
+        {% csrf_token %}
             <input type="hidden" name="language" value="uk">
             <button type="submit" style="background:none; border:none; cursor:pointer;">
                 <img  src="{% static 'icons/flag_round_uk.png' %}" alt="" class="mask-b-from-30% mask-radial-[50%_90%] mask-radial-from-80% hover:mask-none hover:transition-all">

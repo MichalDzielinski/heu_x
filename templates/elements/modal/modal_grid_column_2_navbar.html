@@ -1,0 +1,31 @@
+
+
+<div class="tab-container" >
+    <div class="flex border-b text-2xl border-gray-300 justify-between pt-2 mb-5 ">
+      <button class="tab-button px-4 py-2 text-gray-600 hover:text-slate-700 border-b-2 border-transparent hover:border-slate-700 focus:outline-none" data-tab="tab1-{{i.id}}">
+        O mnie
+      </button>
+      {% if i.profile.procedury %}
+      <button class="tab-button px-4 py-2 text-gray-600 hover:text-slate-700 border-b-2 border-transparent hover:border-slate-700 focus:outline-none" data-tab="tab2-{{i.id}}">
+        Badania
+      </button>
+      {% endif %}
+
+      {% if i.profile.rekomendacja.all|length > 0 %}         
+      <button class="tab-button px-4 py-2 text-gray-600 hover:text-slate-700 border-b-2 border-transparent hover:border-slate-700 focus:outline-none" data-tab="tab3-{{i.id}}">
+        Rekomendacje
+      </button>
+      {% endif %}
+
+
+      {% if i.profile.kalendarium.all|length > 0 %}
+      <button class="tab-button px-4 py-2 text-gray-600 hover:text-slate-700 border-b-2 border-transparent hover:border-slate-700 focus:outline-none" data-tab="tab4-{{i.id}}">
+        Kalendarium
+      </button>
+
+      {% endif %}
+    </div>
+  </div>
+
+
+  

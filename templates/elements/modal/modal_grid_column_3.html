@@ -1,0 +1,17 @@
+{% load static %}
+
+
+<div class="mt-15 hidden xl:block xl:w-[120%]">
+    <div class="grid gallery grid-cols-3 gap-2 w-full h-auto">
+        
+        <div class="gs_el main-img col-span-2 row-span-2 rounded-md aspect-square overflow-hidden">
+            <img src="{{ i.profile.gallery.first.image.url }}" class="object-cover w-full h-full" alt="">
+        </div>
+          
+        {% for image in i.profile.gallery.all|slice:"1:" %}
+        <div class="gs_el aspect-square overflow-hidden rounded-md">
+            <img src="{{ image.image.url }}" class="w-full h-full object-cover" alt="">
+        </div>
+        {% endfor %}
+    </div>
+  </div>

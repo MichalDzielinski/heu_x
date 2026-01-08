@@ -1,0 +1,54 @@
+  <!-- modal column 2 -->
+  <div class="flex flex-col ">
+  
+    {% include 'elements/modal/modal_grid_column_2_navbar.html' with i=i %}
+                                                              
+    <div class="w-full ">
+  
+      {% include 'elements/modal/modal_grid_column_2_tab_1.html' with i=i %}
+      {% include 'elements/modal/modal_grid_column_2_tab_2.html' with i=i  %}
+      {% include 'elements/modal/modal_grid_column_2_tab_3.html' with i=i  %}
+      {% include 'elements/modal/modal_grid_column_2_tab_4.html' with i=i  %}
+  
+    </div>
+  
+  </div>
+
+  <script>
+
+                                   
+  document.addEventListener("DOMContentLoaded", function () {
+  const allIds = [...new Set([...document.querySelectorAll(".tab-button")]
+  .map(btn => btn.getAttribute("data-tab").split("-")[1]))];
+                                
+  allIds.forEach(id => {
+    const tabButtons = document.querySelectorAll(`[data-tab$="-${id}"]`);
+    const tabContents = document.querySelectorAll(`#tab1-${id}, #tab2-${id}, #tab3-${id}, #tab4-${id}`);
+                                    
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+    const targetTab = button.getAttribute("data-tab");
+                                        
+  tabContents.forEach(content => content.classList.add("hidden"));
+  tabButtons.forEach(btn => btn.classList.remove("text-blue-600", "border-blue-400"));
+                                        
+  document.getElementById(targetTab).classList.remove("hidden");
+  button.classList.add("text-blue-600", "border-blue-400");
+                                      });
+                                    });
+                                    
+  if (tabButtons.length > 0) {
+  tabButtons[0].click();
+                                    }
+                                  });
+                                });
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                </script>
+
+

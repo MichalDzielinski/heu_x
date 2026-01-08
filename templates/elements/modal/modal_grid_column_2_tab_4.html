@@ -1,0 +1,38 @@
+<div class="cnt px-[25px] hidden" id="tab4-{{i.id}}">
+    <div class="text-gray-700 my-9 text-2xl">{{i.profile.kalendarium_intro|safe}}</div>
+    <div class="max-w-4xl h-[415px] overflow-y-auto pb-5 mt-[30px]  ">
+      
+      <div class="relative  ">
+          <!-- Vertical line in the center -->
+          <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-sky-900 transform -translate-x-1/2"></div>
+    
+          <!-- Timeline items -->
+          <div class="space-y-2 ">
+              <!-- Item 1 (Left) -->
+
+              {% for j in i.profile.kalendarium.all %}
+              <div class="relative flex {% if forloop.counter|divisibleby:2 %} items-start justify-start {% else %} items-start justify-end {% endif %}">
+                  <div class="w-1/2 {% if forloop.counter|divisibleby:2 %} pr-5 text-right {% else %} pl-5 text-left {% endif %}">
+                      <div class="bg-white px-3 py-2 rounded-lg shadow-md shadow-slate-800">
+                          <h3 class="text-lg font-semibold text-gray-800">{% if j.month %}{{j.get_month_display}}{% endif %}&nbsp;{{j.year}}</h3>
+                          <p class="text-gray-600">{{j.content|safe}}</p>
+                      </div>
+                  </div>
+                  <div class="absolute left-1/2 w-6 h-6 bg-slate-800 rounded-full mt-1 -translate-x-1/2"></div>
+              </div>
+              
+              {% endfor %}
+
+
+             
+              
+            
+           
+              
+             
+          </div>
+      </div>
+  </div>
+    
+   
+  </div>

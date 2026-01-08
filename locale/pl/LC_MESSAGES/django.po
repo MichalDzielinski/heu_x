@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-03 14:40+0200\n"
+"POT-Creation-Date: 2025-10-04 09:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,38 +29,38 @@ msgstr ""
 #: .\templates\clinic\jak_nas_znalezc.html:26
 #: .\templates\clinic\kontakt.html:26 .\templates\clinic\pakiety.html:26
 #: .\templates\clinic\procedury.html:26 .\templates\clinic\profilaktyka.html:26
-#: .\templates\clinic\wizyta.html:26 .\templates\clinic\zespol.html:26
+#: .\templates\clinic\wizyta.html:26
 msgid "Wkrótce..."
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:19
-#: .\templates\clinic\badanie_urodynamiczne.html:121
+#: .\templates\clinic\badanie_urodynamiczne.html:20
+#: .\templates\clinic\badanie_urodynamiczne.html:122
 #: .\templates\elements\header.html:45
 msgid "Badanie urodynamiczne"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:41
+#: .\templates\clinic\badanie_urodynamiczne.html:42
 msgid "O badaniu urodynamicznym"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:53
+#: .\templates\clinic\badanie_urodynamiczne.html:54
 msgid "Na czym polega badanie urodynamiczne?"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:63
+#: .\templates\clinic\badanie_urodynamiczne.html:64
 msgid "Jak przebiega badanie urodynamiczne?"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:122
+#: .\templates\clinic\badanie_urodynamiczne.html:123
 msgid "w klinice"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:134
+#: .\templates\clinic\badanie_urodynamiczne.html:135
 #: .\templates\clinic\procedury_medyczne.html:141
 msgid "Czas oczekiwania na badanie"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:137
+#: .\templates\clinic\badanie_urodynamiczne.html:138
 #: .\templates\clinic\pozostale_procedury.html:141
 #: .\templates\clinic\procedury_kardiologiczne.html:139
 #: .\templates\clinic\procedury_medyczne.html:144
@@ -68,8 +68,8 @@ msgstr ""
 msgid "liczony od dnia zapisu"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:140
-#: .\templates\clinic\badanie_urodynamiczne.html:153
+#: .\templates\clinic\badanie_urodynamiczne.html:141
+#: .\templates\clinic\badanie_urodynamiczne.html:154
 #: .\templates\clinic\pozostale_procedury.html:144
 #: .\templates\clinic\pozostale_procedury.html:157
 #: .\templates\clinic\procedury_kardiologiczne.html:142
@@ -81,7 +81,7 @@ msgstr ""
 msgid "ok."
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:140
+#: .\templates\clinic\badanie_urodynamiczne.html:141
 #: .\templates\clinic\pozostale_procedury.html:144
 #: .\templates\clinic\procedury_kardiologiczne.html:142
 #: .\templates\clinic\procedury_medyczne.html:147
@@ -89,12 +89,12 @@ msgstr ""
 msgid "dni"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:150
+#: .\templates\clinic\badanie_urodynamiczne.html:151
 #: .\templates\clinic\procedury_medyczne.html:157
 msgid "Czas trwania badania"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:153
+#: .\templates\clinic\badanie_urodynamiczne.html:154
 #: .\templates\clinic\pozostale_procedury.html:157
 #: .\templates\clinic\procedury_kardiologiczne.html:155
 #: .\templates\clinic\procedury_medyczne.html:160
@@ -102,7 +102,7 @@ msgstr ""
 msgid "minut"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:162
+#: .\templates\clinic\badanie_urodynamiczne.html:163
 #: .\templates\clinic\pozostale_procedury.html:166
 #: .\templates\clinic\procedury_kardiologiczne.html:164
 #: .\templates\clinic\procedury_medyczne.html:169
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Koszt"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:175
+#: .\templates\clinic\badanie_urodynamiczne.html:176
 #: .\templates\clinic\pozostale_procedury.html:179
 #: .\templates\clinic\procedury_kardiologiczne.html:177
 #: .\templates\clinic\procedury_medyczne.html:182
@@ -118,14 +118,14 @@ msgstr ""
 msgid "Badanie wykonuje"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:195
+#: .\templates\clinic\badanie_urodynamiczne.html:196
 #: .\templates\clinic\pozostale_procedury.html:200
 #: .\templates\clinic\procedury_kardiologiczne.html:198
 #: .\templates\clinic\procedury_medyczne.html:203
 msgid "Instruktaż przygotowania do badania (plik PDF)"
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:230
+#: .\templates\clinic\badanie_urodynamiczne.html:231
 #: .\templates\clinic\pozostale_procedury.html:234
 #: .\templates\clinic\procedury_kardiologiczne.html:232
 #: .\templates\clinic\procedury_medyczne.html:237
@@ -165,10 +165,11 @@ msgid "poznaj nasz zespół"
 msgstr ""
 
 #: .\templates\clinic\jak_nas_znalezc.html:14
+#: .\templates\elements\footer.html:25
 msgid "Jak nas znaleźć"
 msgstr ""
 
-#: .\templates\clinic\kontakt.html:14
+#: .\templates\clinic\kontakt.html:14 .\templates\elements\footer.html:30
 msgid "Kontakt"
 msgstr ""
 
@@ -263,16 +264,93 @@ msgstr ""
 msgid "Wizyta"
 msgstr ""
 
-#: .\templates\clinic\zespol.html:14
-msgid "Zespół"
+#: .\templates\clinic\zespol.html:27
+msgid "Nasi lekarze"
+msgstr ""
+
+#: .\templates\clinic\zespol.html:73 .\templates\clinic\zespol.html:138
+#: .\templates\clinic\zespol.html:203
+msgid "poznaj mnie lepiej"
+msgstr ""
+
+#: .\templates\clinic\zespol.html:92
+msgid "Nasi rehabilitanci"
+msgstr ""
+
+#: .\templates\clinic\zespol.html:157
+msgid "Zarząd Ośrodka"
 msgstr ""
 
 #: .\templates\elements\button\contact\contact-button.html:10
+#: .\templates\elements\contact\contact-form.html:10
 msgid "Napisz do nas"
 msgstr ""
 
-#: .\templates\elements\header.html:27
+#: .\templates\elements\contact\contact-form.html:42
+msgid "Temat"
+msgstr ""
+
+#: .\templates\elements\contact\contact-form.html:53
+msgid "Treść wiadomości"
+msgstr ""
+
+#: .\templates\elements\contact\contact-form.html:64
+msgid "Twój email"
+msgstr ""
+
+#: .\templates\elements\contact\contact-form.html:76
+msgid "Pola oznaczone * są obowiązkowe."
+msgstr ""
+
+#: .\templates\elements\contact\contact-form.html:77
+msgid ""
+"Prosimy, nie podawać w formularzu szczegółowych danych medycznych ani "
+"informacji wrażliwych – służy on wyłącznie do kontaktu ogólnego, nie do "
+"ustalania diagnozy czy leczenia."
+msgstr ""
+
+#: .\templates\elements\contact\contact-form.html:87
+msgid "Specjalizacja"
+msgstr ""
+
+#: .\templates\elements\contact\contact-form.html:106
+msgid "wyślij"
+msgstr ""
+
+#: .\templates\elements\footer.html:17 .\templates\elements\header.html:27
 msgid "Ośrodek urologii czynnościowej"
+msgstr ""
+
+#: .\templates\elements\footer.html:18
+msgid "ulica Ludowa 5"
+msgstr ""
+
+#: .\templates\elements\footer.html:19
+msgid "Piaseczno koło Warszawy"
+msgstr ""
+
+#: .\templates\elements\footer.html:44
+msgid "Ośrodek czynny"
+msgstr ""
+
+#: .\templates\elements\footer.html:45
+msgid "od poniedziałku do piątku"
+msgstr ""
+
+#: .\templates\elements\footer.html:46
+msgid "w godzinach"
+msgstr ""
+
+#: .\templates\elements\footer.html:47
+msgid "9:00 - 17:00"
+msgstr ""
+
+#: .\templates\elements\footer.html:56
+msgid "Zapisy"
+msgstr ""
+
+#: .\templates\elements\footer.html:58
+msgid "lub"
 msgstr ""
 
 #: .\templates\elements\header.html:28

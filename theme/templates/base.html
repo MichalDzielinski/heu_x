@@ -15,7 +15,7 @@
     {% tailwind_css %}
 </head>
 
-<body>
+<body class="bg-[#94A3B8]">
 
     <style>
         @keyframes fade-in {
@@ -159,22 +159,26 @@
         }
          
      </style>
-        
+        <div class="w-full h-full bg-[#94A3B8]">
 
             {% block content %}
             {% endblock content %}
-            
+        </div>
         
 
            
 
     <script src="{% static 'js/htmx.min.js' %}"></script>
+    <script src="https://unpkg.com/idiomorph/dist/idiomorph-ext.min.js"></script>
+	  <!-- <script src="https://unpkg.com/htmx-morph/dist/htmx-morph.min.js"></script> -->
 
-	  <script src="https://unpkg.com/htmx-morph/dist/htmx-morph.min.js"></script>
+
     
     <script src="{% static 'js/lenis.min.js' %}"></script>
     <script src="{% static 'js/gsap.min.js' %}"></script>
     <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/Flip.min.js' %}"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/multi-swap.js"></script>
 
     <!-- custom script -->
     
@@ -188,6 +192,9 @@
 
     {% block script %}
     {% endblock script %}
+
+    
+      
 
 
 </body>

@@ -86,6 +86,23 @@
 }
 
 
+.timeline-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.timeline-column {
+  flex: 1 1 100%;
+  max-height: 60vh; /* Adjusted for better space management */
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  .timeline-column {
+      flex: 1 1 calc(50% - 0.75rem);
+  }
+}
+
+
 
 
 
@@ -97,13 +114,26 @@
     background-color: #94A3B8;
     
   }
+
+ 
   
   .card {
     position: sticky;
     width: 100%;
-    height: 100svh;
     transform-style: preserve-3d;
     perspective: 1000px;
+  }
+
+  .cdf {
+    height: 100svh;
+  }
+
+  .cd {
+    height: 90svh;
+  }
+
+  .cd-end {
+    height: 49svh;
   }
 
   .card-inner {
@@ -117,31 +147,7 @@
     text-align: center;
   }
   
-  #card-1 .card-inner {
-    background-color: var(--accent-1);
-  }
   
-  #card-2 .card-inner {
-    background-color: var(--accent-2);
-  }
-  
-  #card-3 .card-inner {
-    background-color: var(--accent-3);
-  }
-  
-  #card-4 .card-inner {
-    background-color: var(--accent-4);
-  }
-
-  #card-5 .card-inner {
-    background-color: var(--accent-1);
-    
-  }
-
-  #card-6 .card-inner {
-    background-color: var(--accent-2);
-    
-  }
   
   .card-info {
     width: 25%;

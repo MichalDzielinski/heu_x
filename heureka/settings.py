@@ -1,10 +1,17 @@
 from pathlib import Path
+import dj_database_url
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
 
 #region DEPLOYMENT SETTINGS
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = "django-insecure-32xta0ci*g*3w#x87@cr(2uzy^)1e4ef0t-=6^_e25@7_a=b$o"
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG')
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = []
 WSGI_APPLICATION = "heureka.wsgi.application"
 #endregion
 
@@ -27,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     #third party apps
+    'storages',
     "tinymce",
     "tailwind",
     "theme",
@@ -74,10 +82,12 @@ TEMPLATES = [
 ]
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
+
+    'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -118,6 +128,19 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / 'theme/static']
+# STATIC_URL = "https://4-doctor-ps.s3.eu-north-1.amazonaws.com/static/"
+# STATICFILES_STORAGE = "heureka.storage_backends.StaticStorage"
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_ROOT = BASE_DIR / 'gallery'
+MEDIA_URL = '/gallery/'
+# DEFAULT_FILE_STORAGE = "heureka.storage_backends.MediaStorage"
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 #endregion
 
@@ -149,12 +172,31 @@ JAZZMIN_SETTINGS = {
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'urologia.czynnosciowa@gmail.com'
-EMAIL_HOST_PASSWORD = 'rnxequdzzniabgfm'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS=True
 # DEFAULT_FROM_EMAIL = 'Contact form <urologia.czynnosciowa@gmail.com>'
 
 
+
+#region AWS S3 settings
+
+STORAGES = {
+    "default": {
+        "BACKEND": "heureka.storage_backends.MediaStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "heureka.storage_backends.StaticStorage",
+    },
+}
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.environ.get(('AWS_S3_REGION_NAME'))
+
+AWS_QUERYSTRING_AUTH = False
 
 
 

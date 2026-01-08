@@ -1,7 +1,7 @@
-{% load static %}
-<footer id="footer" class="footer w-full frame-gradient z-20">
+{% load static i18n %}
+<footer id="footer" class="footer w-full frame-gradient ">
 
-    <section class="frame-sizing z-20 ">
+    <section class="frame-sizing ">
         <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 py-7   w-full  ">
 
 <!-- first column -->
@@ -14,20 +14,20 @@
                 </div>
             
                 <div class="z-30">
-                    <h3 class="font-tertiary text-gray-200 -mt-3  text-lg ">Ośrodek urologii czynnościowej</h3>
-                    <h3 class="font-tertiary text-gray-200 my-1 mt-2  text-xl ">ulica Ludowa 5</h3>
-                    <h3 class="font-tertiary text-gray-200 my-1  text-xl ">Piaseczno koło Warszawy</h3>
+                    <h3 class="font-tertiary text-gray-200 -mt-3  text-lg ">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
+                    <h3 class="font-tertiary text-gray-200 my-1 mt-2  text-xl ">{% trans 'ulica Ludowa 5' %}</h3>
+                    <h3 class="font-tertiary text-gray-200 my-1  text-xl ">{% trans 'Piaseczno koło Warszawy' %}</h3>
                 
                 </div>
 
                 <div class=" flex flex-col h-[132px] justify-end ">
-                    <a href="{% url 'jak nas znaleźć' %}">
-                        <button class="w-[55%] font-secondary font-bold cursor-pointer border-1 border-slate-700 shadow-sm shadow-slate-300 bg-slate-400 text-lg text-gray-700 rounded-md uppercase  p-3 py-1 my-2">Jak nas znaleźć</button>
+                    <a href="{% url 'jak nas znalezc' %}">
+                        <button class="w-[55%] font-tertiary font-semibold cursor-pointer border-1 border-slate-700 shadow-sm shadow-slate-300 bg-gray-300 text-lg text-slate-700 rounded-md uppercase  p-3 py-1 my-2">{% trans 'Jak nas znaleźć' %}</button>
                     </a>
                     
                     
                     <a href="{% url 'kontakt' %}">
-                        <button class="w-[55%] font-secondary font-bold cursor-pointer border-1 border-slate-700 shadow-sm shadow-slate-300 bg-slate-400 text-lg text-gray-700 rounded-md uppercase  p-3 py-1 my-2">Kontakt</button>
+                        <button class="w-[55%] font-tertiary font-bold cursor-pointer border-1 border-slate-700 shadow-sm shadow-slate-300 bg-gray-300 text-lg text-slate-700 rounded-md uppercase  p-3 py-1 my-2">{% trans 'Kontakt' %}</button>
                     </a>
                     
                 </div>
@@ -41,10 +41,10 @@
                 <div class="">
                     <div class="  text-right flex flex-col items-center">
                         
-                        <p class="text-4xl font-heureka-2 mt-5 py-1  ">Ośrodek czynny</p>
-                        <p class="text-3xl font-heureka-2 mt-1 py-1 ">od poniedziałku do piątku</p>
-                        <p class="text-3xl font-heureka-2 py-1  ">w godzinach</p>
-                        <h1 class="text-5xl font-heureka-2 mt-1 ">9:00 - 17:00</h1>
+                        <p class="text-4xl font-heureka-2 mt-5 py-1  ">{% trans 'Ośrodek czynny' %}</p>
+                        <p class="text-3xl font-heureka-2 mt-1 py-1 ">{% trans 'od poniedziałku do piątku' %}</p>
+                        <p class="text-3xl font-heureka-2 py-1  ">{% trans 'w godzinach' %}</p>
+                        <h1 class="text-5xl font-heureka-2 mt-1 ">{% trans '9:00 - 17:00' %}</h1>
                      </div>
                     </div>
 
@@ -53,9 +53,9 @@
             <div class="col-span-4 w-full mt-5    ">
                 <div class="">
                     <div class=" flex flex-col  justify-center items-center ">
-                        <h1 class="font-heureka-2 text-5xl py-5 uppercase ">Zapisy</h1>
+                        <h1 class="font-heureka-2 text-5xl py-5 uppercase ">{% trans 'Zapisy' %}</h1>
                         <p class="text-5xl font-heureka-2  text-orange-200 hover:text-gray-200">+48 22 750 61 10</p>
-                        <p class="font-heureka-2 text-5xl py-5 uppercase">lub</p>
+                        <p class="font-heureka-2 text-5xl py-5 uppercase">{% trans 'lub' %}</p>
                         <p class="text-5xl font-heureka-2   text-orange-200 hover:text-gray-200">+48 600 401 106</p>
                      </div>
                     </div>

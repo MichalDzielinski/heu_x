@@ -23,9 +23,9 @@
            
 
         <!-- sub name -->
-            <div class="subheader">
-                <h3 class="font-tertiary text-gray-200 pt-2 text-xl">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
-                <h3 class="text-gray-100  text-2xl font-primary">{% trans 'Pawła Szaleckiego' %}</h3>
+            <div class="subheader sample-transition">
+                <h3 id="roo" class=" font-tertiary text-gray-200 pt-2 text-xl">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
+                <h3 id="roo" class="text-gray-100  text-2xl font-primary">{% trans 'Pawła Szaleckiego' %}</h3>
             </div>
         </div>
     </div> 
@@ -38,7 +38,7 @@
 <!-- #navbar links -->
         <ul class="hidden sm:flex sm:text-white justify-around font-semibold py-3 mx-auto transition-all ">
             <li class="mr-2">
-                <div class="sample-transition-1">
+                <div class="sample-transition-2">
                     <a href="{% url 'badanie urodynamiczne' %}" class="flex group items-center">
                         <h2 class=" nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
@@ -58,7 +58,7 @@
                 </div>
             </li>
             <li class="mr-2 hidden md:flex">
-                <div class="sample-transition-1">
+                <div class="sample-transition-3">
                     <a href="{% url 'pozostałe procedury' %}" class="flex group items-center">
                         <h2 class="nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
@@ -69,7 +69,7 @@
                                 
                              
                               <div 
-                                class="bg-green-700 z-50 rounded-r-md origin-top-left absolute -left-6  mt-5 delay-250 group-hover:delay-0 w-68   opacity-0 scale-95 transform transition-all duration-200 ease-out group-hover:opacity-100 group-hover:scale-100"
+                                class="bg-green-700 z-50 rounded-r-md origin-top-left absolute -left-6  mt-5 delay-250 group-hover:delay-0 group-hover:z-10 w-68   opacity-0 scale-95 transform transition-all duration-200 ease-out group-hover:opacity-100 group-hover:scale-100"
                               >
                                 <div class=" flex flex-col pl-2   bg-linear-to-tr from-sky-900 to-slate-800 justify-start text-md uppercase ml-3 rounded-r-md ">
                                   <a href="{% url 'procedury kardiologiczne' %}" class=" pt-3 py-1  hover:text-orange-200">Procedury kardiologiczne</a>
@@ -83,9 +83,9 @@
                 </div>
             </li>
             <li class="mr-2 hidden md:flex">
-                <div class="sample-transition-1">
+                <div class="sample-transition-4">
                     <a href="#" class="flex group items-center">
-                        <h2 class="nsd uppercase text-md  flex group-hover:text-orange-300">
+                        <h2 id='troo' class="nsd uppercase text-md  flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
                             <div class="relative inline-block text-left group">
                                 
@@ -109,9 +109,9 @@
                 </div>
             </li>
             <li class="mr-2">
-                <div class="sample-transition-1">
+                <div class="sample-transition-5" id="foo">
                     <a href="{% url 'badania kliniczne' %}" class="flex group items-center">
-                        <h2 class="nsd uppercase text-md flex group-hover:text-orange-300">
+                        <h2  class="nsd uppercase text-md flex group-hover:text-orange-300">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
                             {% trans 'Badania kliniczne' %}
                         </h2>
@@ -121,3 +121,16 @@
         </ul>
     </section>
 </header>
+
+<script>
+    document.addEventListener('htmx:beforeSwap', (e) => {
+      const el = document.getElementById('roo');
+      el.classList.add('fade-out');
+    });
+    
+    document.addEventListener('htmx:afterSwap', (e)=> {
+        const el = document.getElementById('roo');
+      el.classList.remove('fade-out');
+      el.classList.add('fade-in');
+    });
+    </script>

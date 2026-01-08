@@ -13,6 +13,8 @@ from django.utils.translation import activate, get_language
 from django.urls import resolve, reverse
 from django.http import HttpResponse
 
+from staff.models import Person
+
 
 class IndexView(TemplateView):
     template_name='clinic/index.html'
@@ -27,7 +29,7 @@ class BadanieUrodynamiczneView(DetailView):
     model = Procedura
 
     def get_object(self):
-        return get_object_or_404(Procedura, pk=30)
+        return get_object_or_404(Procedura, pk=1)
 
 class ProceduryUrlogiczneView(ListView):
     template_name='clinic/procedury_urologiczne.html'
@@ -73,16 +75,31 @@ class KontaktView(TemplateView):
     template_name = 'clinic/kontakt.html'
 
 class JakNasZnalezcView(TemplateView):
-    template_name = 'clinic/jak_nas_znaleźć.html'
+    template_name = 'clinic/jak_nas_znalezc.html'
 
 class WizytaView(TemplateView):
     template_name = 'clinic/wizyta.html'
 
 
-class ZespolView(TemplateView):
+class ZespolView(ListView):
     template_name = 'clinic/zespol.html'
 
-    pass
+    context_object_name = 'query'  # optional: defaults to 'object_list'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['doktor'] = Person.activated.filter(typ='lekarz')
+        context['rehabilitant'] = Person.activated.filter(typ='rehabilitant')
+        context['manager'] = Person.activated.filter(typ='manager')
+        
+        return context
+
+
+
+
+    def get_queryset(self):
+        # Only return available productsj
+        return Person.activated.all()
 
 
 

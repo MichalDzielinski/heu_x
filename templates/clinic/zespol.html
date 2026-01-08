@@ -1,37 +1,234 @@
 {% extends 'base.html' %}
 
-{% load i18n %}
+{% load static  i18n %}
 
 {% block title %}Zespół{% endblock title %}
 
 
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 
 {% block content %}
+
+
+
+
+{% include 'elements/button/contact/contact-button.html' %}
+{% include 'elements/contact/contact-base.html' %}
 {% include 'elements/header.html' %}
 
-<section class="grid grid-cols-1 gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[210px]">
-    <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
-        <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Zespół' %}</h2>
+
+
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 py-5 mt-[210px]  w-[95%] xl:w-[80%] mx-auto">
+
+    <div  class="px-7 xl:px-12 my-1 py-[35px] transition    font-primary text-lg  text-justify    items-center   text-slate-800   rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
+
         
-        <div class="text-md font-primary mb-5  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore tempore magnam veniam fuga itaque aspernatur vitae consequuntur, temporibus id quae perspiciatis odit distinctio, exercitationem nesciunt ipsam nemo, eius sit fugiat odio sapiente similique facilis. Necessitatibus at laudantium, expedita id fugiat ad iste architecto enim. </div>
+        <h2 class="text-3xl xl:text-4xl text-center   font-primary  uppercase">{% translate 'Nasi lekarze' %}</h1>
+
+            <div class="border-b border-slate-400 mt-12 mb-2 w-[35%]   mx-auto"></div>
+        {% for i in doktor %}
+        <div class="w-full relative flex items-center align-middle gap-5">
+            
+            <div class=" w-[25%] h-100 ">
+                <div id="flip-card-{{i.id}}"
+                        class=" transition-transform "
+                        style="transform-style: preserve-3d;">
+
+                    <img src="{{i.main_photo.url}}"
+                            class="absolute   top-10  rounded-full"
+                            style="backface-visibility: hidden;"
+                            alt="Front">
+
+    <!-- Back Side -->
+                    <img src="{% static 'images/heu_bg.png' %}"
+                        class="absolute top-10    rounded-full"
+                        style="backface-visibility: hidden; transform: rotateY(180deg);"
+                        alt="Back">
+
+                </div>
+                
+                
+                
+            </div>
+             
+            <div class="xl:pl-[85px] font-primary py-5 text-lg flex flex-col w-[80%] align-middle  text-justify  ">
+                <div class=" text-3xl  ">{{i.name}}</div>
+                
+                <div class=" text-xl font-semibold py-1 pt-2 ">{{i.subheader}}</div>
+                
+                {% if i.description %}
+                <div class="">
+                    <ul class="py-2">
+                        {% for line in i.description.splitlines %}
+                          <li class="text-xl py-1">{{ line|safe }}</li>
+                        {% endfor %}
+                    </ul>
+                    
+                </div>
+
+                {% endif %}
+
+               {% if i.profile  %}
+                <button onclick="openModal('{{i.id}}')" class="btn mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">{% translate 'poznaj mnie lepiej' %}</button>
+
+<!-- MODAL -->
+                
+                    {% include 'elements/modal/base.html' %}
+
+               
+
+                {% endif %}
+            
+            </div>
+        </div>
+        {% if not forloop.last %} 
+        <div class="border-b border-slate-400 my-5 w-[35%]   mx-auto"></div>   
+        {% endif %}
+        {% endfor %}
+
+        <div class="border-b border-slate-400 w-full mb-15 mx-auto"></div>
+
+        <h2 class="text-3xl xl:text-4xl text-center   font-primary  uppercase">{% translate 'Nasi rehabilitanci' %}</h1>
+
+          <div class="border-b border-slate-400 mt-12 mb-2 w-[35%]   mx-auto"></div>
+      {% for i in rehabilitant %}
+      <div class="w-full relative flex items-center align-middle gap-5">
+            
+        <div class=" w-[25%] h-100 ">
+            <div id="flip-card-{{i.id}}"
+                    class=" transition-transform "
+                    style="transform-style: preserve-3d;">
+
+                <img src="{{i.main_photo.url}}"
+                        class="absolute   top-10  rounded-full"
+                        style="backface-visibility: hidden;"
+                        alt="Front">
+
+<!-- Back Side -->
+                <img src="{% static 'images/heu_bg.png' %}"
+                    class="absolute top-10    rounded-full"
+                    style="backface-visibility: hidden; transform: rotateY(180deg);"
+                    alt="Back">
+
+            </div>
+            
+            
+            
+        </div>
+         
+        <div class="xl:pl-[85px] font-primary py-5 text-lg flex flex-col w-[80%] align-middle  text-justify  ">
+            <div class=" text-3xl  ">{{i.name}}</div>
+            
+            <div class=" text-xl font-semibold py-1 pt-2 ">{{i.subheader}}</div>
+            
+            {% if i.description %}
+            <div class="">
+                <ul class="py-2">
+                    {% for line in i.description.splitlines %}
+                      <li class="text-xl py-1">{{ line|safe }}</li>
+                    {% endfor %}
+                </ul>
+                
+            </div>
+
+            {% endif %}
+
+           {% if i.profile  %}
+            <button onclick="openModal('{{i.id}}')" class="btn mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">{% translate 'poznaj mnie lepiej' %}</button>
+
+<!-- MODAL -->
+            
+                {% include 'elements/modal/base.html' %}
+
+           
+
+            {% endif %}
+        
+        </div>
+    </div>
+    {% if not forloop.last %} 
+    <div class="border-b border-slate-400 my-5 w-[35%]   mx-auto"></div>   
+    {% endif %}
+      {% endfor %}
+
+      <div class="border-b border-slate-400 w-full mb-15 mx-auto"></div>
+
+      <h2 class="text-3xl xl:text-4xl text-center   font-primary  uppercase">{% translate 'Zarząd Ośrodka' %}</h1>
+
+        <div class="border-b border-slate-400 mt-12 mb-2 w-[35%]   mx-auto"></div>
+    {% for i in manager %}
+    <div class="w-full relative flex items-center align-middle gap-5">
+            
+        <div class=" w-[25%] h-100 ">
+            <div id="flip-card-{{i.id}}"
+                    class=" transition-transform "
+                    style="transform-style: preserve-3d;">
+
+                <img src="{{i.main_photo.url}}"
+                        class="absolute   top-10  rounded-full"
+                        style="backface-visibility: hidden;"
+                        alt="Front">
+
+<!-- Back Side -->
+                <img src="{% static 'images/heu_bg.png' %}"
+                    class="absolute top-10    rounded-full"
+                    style="backface-visibility: hidden; transform: rotateY(180deg);"
+                    alt="Back">
+
+            </div>
+            
+            
+            
+        </div>
+         
+        <div class="xl:pl-[85px] font-primary py-5 text-lg flex flex-col w-[80%] align-middle  text-justify  ">
+            <div class=" text-3xl  ">{{i.name}}</div>
+            
+            <div class=" text-xl font-semibold py-1 pt-2 ">{{i.subheader}}</div>
+            
+            {% if i.description %}
+            <div class="">
+                <ul class="py-2">
+                    {% for line in i.description.splitlines %}
+                      <li class="text-xl py-1">{{ line|safe }}</li>
+                    {% endfor %}
+                </ul>
+                
+            </div>
+
+            {% endif %}
+
+           {% if i.profile  %}
+            <button onclick="openModal('{{i.id}}')" class="btn mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">{% translate 'poznaj mnie lepiej' %}</button>
+
+<!-- MODAL -->
+            
+                {% include 'elements/modal/base.html' %}
+
+           
+
+            {% endif %}
+        
+        </div>
+    </div>
+    {% if not forloop.last %} 
+    <div class="border-b border-slate-400 my-5 w-[35%]   mx-auto"></div>   
+    {% endif %}
+    {% endfor %}
+
         
     </div>
-    
-  </section>
-
-<section class="grid grid cols-1">
-
-    <div class="p-3 my-5 py-auto w-[95%] xl:w-[80%] mx-auto flex justify-center items-center isolate rounded-xl h-[540px] bg-white/90 shadow-lg ring-1 ring-black/5">
-
-        <h1 class="text-6xl font-primary text-center text-gray-600 items-center align-middle">{% translate 'Wkrótce...' %}</h1>
-
-    </div>
-
-    
-    
-    
 </section>
 
 {% include 'elements/footer.html' %}
 
-{% endblock %}
+  
+{% endblock  %}
+
+  {% block script %}
+  <script src="{% static 'js/modal_tabs.js' %}"></script>
+  <script src="{% static 'js/modal_close.js' z%}"></script>
+  <script src="{% static 'js/modal_gallery.js' %}"></script>
+  
+  {% endblock  %}
