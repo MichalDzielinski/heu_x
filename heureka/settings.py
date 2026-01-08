@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = []
-WSGI_APPLICATION = "heureka.wsgi.application"
+# WSGI_APPLICATION = "heureka.wsgi.application"
 #endregion
 
 #region BASE SETTINGS
