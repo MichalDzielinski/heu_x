@@ -46,3 +46,4 @@ types-python-dateutil==2.9.0.20250822
 tzdata==2025.2
 urllib3==2.5.0
 uvicorn==0.40.0
+whitenoise==6.11.0
