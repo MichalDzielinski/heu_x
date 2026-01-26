@@ -1,0 +1,412 @@
+{% extends 'base.html' %}
+
+{% load static i18n  %}
+
+{% block title %}Ośrodek urologii czynnościowej{% endblock title %}
+
+{% block content %}
+
+
+{% include 'elements/button/contact/contact-button.html' %}
+{% include 'elements/contact/contact-base.html' %}
+{% include 'elements/header.html' %}
+
+
+
+
+<section class="frame-sizing ">
+
+
+    <section class="sticky-cards z-10">
+       <!--TILE 1 main hero aka TEAM -->
+       <div class="card cdf text-blue-950    " id="card-3">
+        <div class="card-inner mt-[148px] md:mt-[198px]    border-blue-950 border-2 relative" >
+          <div class=" flex flex-col h-full ">
+            <div class="flex flex-col   md:flex-row h-full  justify-end">
+                <!-- left column -->
+                  <div class="basis-4/10 xl:basis-1/2 min-h-[180px] h-full  flex flex-col items-center justify-center relative ">
+                    <img src="{% static 'images/main_hero_2.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-center -z-20">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="absolute bottom-2 md:bottom-6 left-2 md:left-6 size-[70px] md:size-[115px]">   
+                  </div>
+                <!-- right column -->
+                  <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full flex flex-col items-center  text-white justify-center  relative">
+                    <img src="{% static 'images/main_hero_2.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-cover blur-md rotate-y-180 -z-20"> 
+                    <div class="w-full h-full  bg-slate-800 opacity-75 ">
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold text-gray-150 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis quaerat recusandae voluptas voluptatibus labore quasi facilis. Et, veritatis dignissimos beatae cumque temporibus nulla.</p>
+                      <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
+                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "poznaj nasz zespół" %}</button>
+                      </a>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+<!-- TILE 2 -->
+       <div class="card cd text-blue-950 " id="card-3">
+        <div class="card-inner  opacity-100 bg-gray-100    border-blue-950 border-2 relative" >
+          <div class=" flex flex-col h-full ">
+            <div class="flex flex-col   md:flex-row-reverse h-full  justify-end">
+                <!-- left column -->
+                  <div class="basis-4/10 xl:basis-1/2 min-h-[180px] h-full  flex flex-col items-center justify-center relative -z-30 ">
+                    <img src="{% static 'images/ps_spec_hero_a.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-center -z-20">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="absolute bottom-2 md:bottom-6 right-2 md:right-6 size-[70px] md:size-[115px]">   
+                  </div>
+                <!-- right column -->
+                  <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full   flex-col items-center opacity-100 justify-center  relative">
+                   
+                    <img src="{% static 'images/ps_spec_hero_b.jpg' %}" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-cover blur-sm  -z-20"> 
+                    <div class="w-full h-full   pb-10 relative text-slate-800 ">
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] ">Diagnostyka urologiczna</h1>
+                      
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis </p>
+                      <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
+                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "procedury urologiczne" %}</button>
+                      </a>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- TILE 3 -->
+
+      <div class="card cd text-blue-950    " id="card-3">
+        <div class="card-inner     border-blue-950 border-2 relative" >
+          <div class=" flex flex-col h-full ">
+            <div class="flex flex-col   md:flex-row h-full  justify-end">
+                <!-- left column -->
+                  <div class="basis-4/10 xl:basis-1/2 min-h-[180px] h-full  flex flex-col items-center justify-center relative ">
+                    <img src="{% static 'images/ps_ag.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-center -z-20">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="absolute bottom-2 md:bottom-6 left-2 md:left-6 size-[70px] md:size-[115px]">   
+                  </div>
+                <!-- right column -->
+                  <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full flex flex-col items-center  text-white justify-center  relative">
+                    <img src="{% static 'images/ps_ag.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-cover blur-md rotate-y-180 -z-20"> 
+                    <div class="w-full h-full  bg-slate-800 opacity-75 ">
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-150 ">Rehabilitacja urologiczna</h1>
+                      
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold text-gray-150 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis quaerat recusandae voluptas voluptatibus labore quasi facilis. Et, veritatis dignissimos beatae cumque temporibus nulla.</p>
+                      <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
+                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "poznaj nasz zespół" %}</button>
+                      </a>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- TILE 4 -->
+
+      <div class="card cdf text-blue-950 " id="card-3">
+        <div class="card-inner  opacity-100 bg-gray-100    border-blue-950 border-2 relative" >
+          <div class=" flex flex-col h-full ">
+            <div class="flex flex-col   md:flex-row-reverse h-full  justify-end">
+                <!-- left column -->
+                  <div class="basis-4/10 xl:basis-1/2 min-h-[180px] h-full  flex flex-col items-center justify-center relative -z-30 ">
+                    <img src="{% static 'images/ps_hs_base_reversed.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-center -z-20">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="absolute bottom-2 md:bottom-6 right-2 md:right-6 size-[70px] md:size-[115px]">   
+                  </div>
+                <!-- right column -->
+                  <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full   flex-col items-center opacity-100 justify-center  relative">
+                   
+                    <img src="{% static 'images/ps_hs_base_reversed.jpg' %}" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-cover blur-lg rotate-y-180  -z-20"> 
+                    <div class="w-full h-full   pb-10 relative text-slate-800 ">
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] ">Urologia dla kobiet</h1>
+                      
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis </p>
+                      <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
+                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "procedury urologiczne" %}</button>
+                      </a>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TILE 5 -->
+
+      <div class="card cd text-blue-950    " id="card-3">
+        <div class="card-inner no    border-blue-950 border-2 relative" >
+          <div class=" flex flex-col h-full ">
+            <div class="flex flex-col   md:flex-row h-full  justify-end">
+                <!-- left column -->
+                  <div class="basis-4/10 xl:basis-1/2 min-h-[180px] h-full  flex flex-col items-center justify-center relative ">
+                    <img src="{% static 'images/ag_hero_a.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-center -z-20">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="absolute bottom-2 md:bottom-6 left-2 md:left-6 size-[70px] md:size-[115px]">   
+                  </div>
+                <!-- right column -->
+                  <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full flex flex-col items-center  text-white justify-center  relative">
+                    <img src="{% static 'images/ag_hero_a.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-cover blur-md rotate-y-180 -z-20"> 
+                    <div class="w-full h-full  bg-slate-800 opacity-75 ">
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100">Profilaktyka <br>okolic miednicy</h1>
+                      
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold text-gray-150 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis quaerat recusandae voluptas voluptatibus </p>
+                      <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
+                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "poznaj nasz zespół" %}</button>
+                      </a>
+                  </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- TILE 6 -->
+
+      <div class="card cd text-blue-950    " id="card-3">
+        <div class="card-inner border-blue-950 border-2 relative" >
+          <div class=" flex flex-col h-full ">
+            <div class="flex flex-col-reverse   md:flex-row h-full  justify-end">
+                <!-- right column -->
+                 <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full flex flex-col items-center  text-white justify-center  relative">
+                    <img src="{% static 'images/bf_hero_main.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-cover blur-md  -z-20"> 
+                    <div class="w-full h-full  bg-slate-800 opacity-75 ">
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100">Inne badania </h1>
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold text-gray-150 pb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis quaerat recusandae voluptas voluptatibus labore quasi facilis. Et, veritatis dignissimos beatae cumque temporibus nulla.</p>
+                      <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
+                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "poznaj nasz zespół" %}</button>
+                      </a>
+                  </div>
+                  </div>
+                 
+                <!-- left column -->
+                  
+
+                   <div class="basis-4/10 xl:basis-1/2 min-h-[180px] h-full  flex flex-col items-center justify-center relative ">
+                    <img src="{% static 'images/bf_hero_main.jpg' %}" alt="Tło" class="absolute inset-0 w-full h-full object-center rotate-y-180 -z-20">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="absolute bottom-2 md:bottom-6 right-2 md:right-6 size-[70px] md:size-[115px]">   
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+       
+       
+
+       
+
+       
+
+    
+
+
+
+
+
+      </section>    
+</section>
+
+{% include 'elements/footer.html' %}   
+
+
+
+
+
+
+
+
+
+
+    
+  
+    
+
+
+
+
+
+
+{% endblock content %} 
+
+{% block script %}
+
+<script>
+  (function () {
+    // ---------- zachowaj swoje fade handlers ----------
+    document.addEventListener('htmx:beforeSwap', (e) => {
+      const el = document.getElementById('roo');
+      if (el) el.classList.add('fade-out');
+    });
+  
+    document.addEventListener('htmx:afterSwap', (e) => {
+      const el = document.getElementById('foo');
+      if (el) {
+        el.classList.remove('fade-out');
+        el.classList.add('fade-in');
+  
+        // usuń klasę fade-in po zakończeniu transition/animation (czystość)
+        const cleanup = (ev) => {
+          if (ev.target === el) {
+            el.removeEventListener('transitionend', cleanup);
+            el.removeEventListener('animationend', cleanup);
+            window.requestAnimationFrame(() => el.classList.remove('fade-in'));
+          }
+        };
+        el.addEventListener('transitionend', cleanup);
+        el.addEventListener('animationend', cleanup);
+      }
+  
+      // Po swapie - uruchom inicjalizację, ale poczekaj na transition/anim/images
+      // requestAnimationFrame zapewnia, że DOM został już zamieniony
+      requestAnimationFrame(() => {
+        const root = document.getElementById('roo') || document.body;
+        waitForTransitionOrAnimation(root, () => waitForImages(root, initScrollAnimations));
+      });
+    });
+  
+    // dodatkowy fallback (htmx:afterSettle) — uruchomi, jeśli coś innego tę pętlę przegapi
+    document.body.addEventListener('htmx:afterSettle', () => {
+      if (document.querySelector('.card')) requestAnimationFrame(initScrollAnimations);
+    });
+  
+    // ---------- manager trzymający persistent state między swapami ----------
+    const M = window._scrollAnimManager = window._scrollAnimManager || {
+      lenis: null,
+      rafAdded: false
+    };
+  
+    // czekaj na wszystkie obrazki wewnątrz root
+    function waitForImages(root, cb) {
+      root = root || document;
+      const imgs = Array.from(root.querySelectorAll('img'));
+      if (!imgs.length) return cb();
+      let done = 0;
+      const mark = () => { done++; if (done === imgs.length) cb(); };
+      imgs.forEach(img => {
+        if (img.complete) mark();
+        else {
+          img.addEventListener('load', mark, { once: true });
+          img.addEventListener('error', mark, { once: true });
+        }
+      });
+    }
+  
+    // poczekaj na transition/animation kończący się na elemencie, lub fallback do next frames
+    function waitForTransitionOrAnimation(el, cb) {
+      if (!el) return cb();
+      const st = getComputedStyle(el);
+      const tDur = parseFloat(st.transitionDuration) || 0;
+      const aDur = parseFloat(st.animationDuration) || 0;
+  
+      if (tDur > 0) {
+        let called = false;
+        const onEnd = (ev) => { if (ev.target === el && !called) { called = true; el.removeEventListener('transitionend', onEnd); cb(); } };
+        el.addEventListener('transitionend', onEnd);
+        // safety timeout
+        setTimeout(() => { if (!called) { called = true; el.removeEventListener('transitionend', onEnd); cb(); } }, (tDur * 1000) + 150);
+      } else if (aDur > 0) {
+        let called = false;
+        const onEnd = (ev) => { if (ev.target === el && !called) { called = true; el.removeEventListener('animationend', onEnd); cb(); } };
+        el.addEventListener('animationend', onEnd);
+        setTimeout(() => { if (!called) { called = true; el.removeEventListener('animationend', onEnd); cb(); } }, (aDur * 1000) + 150);
+      } else {
+        // brak transition/animation -> next frame
+        requestAnimationFrame(() => requestAnimationFrame(cb));
+      }
+    }
+  
+    // ---------- Twoja animacja (opakowana tak, by można było wywołać wielokrotnie) ----------
+    function initScrollAnimations() {
+      // safety: upewnij się, że biblioteki są załadowane
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || typeof Lenis === 'undefined') {
+        // console.warn('gsap / ScrollTrigger / Lenis nie są dostępne jeszcze');
+        return;
+      }
+  
+      // (re)register plugin (safe)
+      try { gsap.registerPlugin(ScrollTrigger); } catch (err) {}
+  
+      // oczyść stare triggery przed re-initem
+      if (ScrollTrigger && ScrollTrigger.getAll) {
+        ScrollTrigger.getAll().forEach(tr => tr.kill());
+      }
+      // zabij stare tweens targetujące .card-inner (bezpieczne)
+      try { gsap.killTweensOf('.card-inner'); } catch (e) {}
+  
+      // Lenis: utwórz raz i ponownie używaj (unikaj duplikatów)
+      if (!M.lenis) {
+        M.lenis = new Lenis();
+      }
+      // podłącz raf tylko raz
+      if (!M.rafAdded) {
+        gsap.ticker.add((time) => {
+          try { M.lenis.raf(time * 1000); } catch(e) {}
+        });
+        M.rafAdded = true;
+      }
+      // upewnij się, że ScrollTrigger.update jest wywoływane przy scrollu lenis
+      try { M.lenis.on('scroll', ScrollTrigger.update); } catch(e) {}
+  
+      gsap.ticker.lagSmoothing(0);
+  
+      // ---- TU WCHODZI TWÓJ ORYGINALNY KOD ANIMACJI ----
+      const cards = gsap.utils.toArray(".card");
+  
+      cards.forEach((card, index) => {
+        if (index < cards.length - 1) {
+          const cardInner = card.querySelector(".card-inner");
+  
+          gsap.fromTo(
+            cardInner,
+            {
+              y: "0%",
+              z: 0,
+              rotationX: 0,
+            },
+            {
+              y: "-50%",
+              z: -250,
+              rotationX: 45,
+              scrollTrigger: {
+                trigger: cards[index + 1],
+                start: "top 95%",
+                end: "bottom 75%",
+                scrub: true,
+                pin: card,
+                pinSpacing: false,
+              },
+            }
+          );
+  
+          gsap.to(cardInner, {
+            "--after-opacity": 1,
+            scrollTrigger: {
+              trigger: cards[index + 1],
+              start: "top 75%",
+              end: "top -25%",
+              scrub: true,
+            },
+          });
+        }
+      });
+  
+      // odśwież ScrollTrigger (ważne po zmianach layoutu / obrazkach)
+      try { ScrollTrigger.refresh(); } catch(e) {}
+    }
+  
+    // inicjalizacja przy pierwszym załadowaniu (jeśli są .card)
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.querySelector('.card')) {
+        // mały timeout aby upewnić się, że wszystko jest wyrenderowane
+        requestAnimationFrame(() => requestAnimationFrame(initScrollAnimations));
+      }
+    });
+  
+    // OPTIONAL: expose function for manual debug
+    window.initScrollAnimations = initScrollAnimations;
+  
+  })();
+  </script>
+
+
+
+
+{% endblock script %}

@@ -64,6 +64,10 @@
   @apply hidden sm:block border-b-1 w-full border-red-100 mx-auto
 }
 
+.frame-h-divider-small{
+  @apply block xl:hidden border-b-1 w-full border-red-100 mx-auto
+}
+
 .footer-subtitle{
   @apply font-primary text-3xl  pb-2 mb-3 text-gray-300  lowercase
 }
@@ -83,7 +87,9 @@
   --accent-2: #f2acac;
   --accent-3: #fedd93;
   --accent-4: #81b7bf;
+  --header-h: 0px;
 }
+ 
 
 
 .timeline-container {
@@ -109,27 +115,30 @@
 
   .sticky-cards {
     position: relative;
-
     width: 100%;
     background-color: #94A3B8;
     
   }
 
  
+
+ 
   
   .card {
     position: sticky;
     width: 100%;
+    height: 100%;
     transform-style: preserve-3d;
     perspective: 1000px;
+   
   }
 
   .cdf {
-    height: 100svh;
+    height: 100vh;
   }
 
   .cd {
-    height: 90svh;
+    height: 100svh;
   }
 
   .cd-end {
@@ -139,12 +148,11 @@
   .card-inner {
     position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: 100%; 
     transform-origin: 50% 100%;
     will-change: transform;
     text-align: center;
+    
   }
   
   

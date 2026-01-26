@@ -1,6 +1,13 @@
 {% load static i18n %}
-<div class="  flex flex-col items-center ">
-    <img src="{{i.main_photo.url}}" alt="" class=" aspect-square rounded-full ring-10 hover:ring-10 shadow-lg ring-slate-600 hover:ring-green-900  border-green-500 mt-[135px]  w-[95%]  top:3 xl:top ">
-    <p class="mt-7 text-3xl font-bold text-center">{{i.name}}</p>
-    <p class="mt-2 text-2xl text-center ">{{i.subheader}}</p>
+<div class=" flex flex-col items-right xl:top-3  ">
+    <div class=>
+        <img src="{{i.main_photo.url}}" alt="" class="  aspect-square   rounded-full ring-5 hover:ring-7 shadow-lg ring-slate-600 hover:ring-green-900  border-green-500 mt-[65px] xl:mt-[135px]   ">
+
+    </div>
+    <div class=" border-1">
+
+
+        <p class="mt-7 text-3xl font-bold ">{{i.name}}</p>
+        <p class="mt-2 text-2xl  ">{{i.subheader}}</p>
+    </div>
 </div>

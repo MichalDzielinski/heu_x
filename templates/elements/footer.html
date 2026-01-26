@@ -5,39 +5,53 @@
         <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 py-7   w-full  ">
 
 <!-- first column -->
-            <div class=' z-20 col-span-4  '>
-                <div class="flex gap-2 ">
-                    <a href="/" class="flex gap-2 relative group justify-center md:justify-start items-center">
+            <div class=' z-20 col-span-4 xl:mt-12  '>
+                <div class="flex gap-2 justify-center sm:justify-start xl:items-center  ">
+                    <a href="/" class="flex gap-2 relative group justify-center md:justify-left items-center lg:items-start ">
                         <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="logo z-20 size-16 mb-2 -ml-2 justify-center drop-shadow-orange-500 shadow-2xl">
-                        <h1 class=" font-heureka-2 text-5xl uppercase z-20 -ml-2">heureka</h1>
+                        <h1 class=" font-heureka-2 mt-0 md:mt-2  text-5xl uppercase z-20 -ml-2">heureka</h1>
                     </a>
                 </div>
+
+                <!-- <div class="title flex gap-2  justify-center sm:justify-start items-center">
+                <a href="" class="flex gap-2 relative group justify-center md:justify-start items-center">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="logo z-20 size-14 mb-2 justify-center drop-shadow-orange-500 shadow-2xl">
+                    <h1 class="title1 font-heureka-2 text-6xl text-gray-50  text-shadow-2xs text-shadow-green-700 uppercase z-20">heureka</h1>
+                    <!-- light blob -->
+                    <!-- <div  class="sh1 rounded-full absolute -left-1  bg-pink-100 blur-xl z-1 hover:delay-150 transition duration-300 ease-in-out flex-none w-[55px] h-[55px]"></div>
+                   <div  class="sh2 rounded-full absolute -left-1  bg-sky-500 blur-xl z-1 hidden  group-hover:inline  flex-none w-[75px] h-[55px]"></div>
+                    </a>
+            </div> --> 
             
-                <div class="z-30">
-                    <h3 class="font-tertiary text-gray-200 -mt-3  text-lg ">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
+                <div class="z-30 flex flex-col text-center xl:text-start">
+                    <h3 class="font-tertiary  text-gray-200 -mt-3  text-lg ">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
                     <h3 class="font-tertiary text-gray-200 my-1 mt-2  text-xl ">{% trans 'ulica Ludowa 5' %}</h3>
                     <h3 class="font-tertiary text-gray-200 my-1  text-xl ">{% trans 'Piaseczno koło Warszawy' %}</h3>
                 
                 </div>
 
-                <div class=" flex flex-col h-[132px] justify-end ">
-                    <a href="{% url 'jak nas znalezc' %}">
-                        <button class="w-[55%] font-tertiary font-semibold cursor-pointer border-1 border-slate-700 shadow-sm shadow-slate-300 bg-gray-300 text-lg text-slate-700 rounded-md uppercase  p-3 py-1 my-2">{% trans 'Jak nas znaleźć' %}</button>
-                    </a>
-                    
-                    
-                    <a href="{% url 'kontakt' %}">
-                        <button class="w-[55%] font-tertiary font-bold cursor-pointer border-1 border-slate-700 shadow-sm shadow-slate-300 bg-gray-300 text-lg text-slate-700 rounded-md uppercase  p-3 py-1 my-2">{% trans 'Kontakt' %}</button>
-                    </a>
-                    
-                </div>
+               <div class="flex flex-col items-center xl:items-start min-h-[132px] mt-5">
+    <a href="{% url 'jak nas znalezc' %}">
+        <button class="w-[260px] font-tertiary my-2 font-semibold cursor-pointer border border-slate-700 shadow-sm shadow-slate-300 bg-gray-300 text-lg text-slate-700 rounded-md uppercase py-1 mt-5">
+            {% trans 'Jak nas znaleźć' %}
+        </button>
+    </a>
+
+    <a href="{% url 'kontakt' %}">
+        <button class="w-[260px] font-tertiary font-bold cursor-pointer border border-slate-700 shadow-sm shadow-slate-300 bg-gray-300 text-lg text-slate-700 rounded-md uppercase py-1 md:my-2">
+            {% trans 'Kontakt' %}
+        </button>
+    </a>
+</div>
 
                
             </div>
 
 <!-- second column -->
 
-            <div class="col-span-4 mt-12 mr-11 -ml-12 border-r-2 border-l-2 border-red-100">
+
+<div class="col-span-4 xl:mt-12 xl:mr-11 xl:-ml-12 xl:border-r-2 xl:border-l-2 xl:border-red-100">
+                <div class="frame-h-divider-small mb-5"></div>
                 <div class="">
                     <div class="  text-right flex flex-col items-center">
                         
@@ -47,8 +61,13 @@
                         <h1 class="text-5xl font-heureka-2 mt-1 ">{% trans '9:00 - 17:00' %}</h1>
                      </div>
                     </div>
+                <div class="frame-h-divider-small mt-7"></div>
+
 
             </div>
+
+        
+            
 
             <div class="col-span-4 w-full mt-5    ">
                 <div class="">
@@ -59,26 +78,12 @@
                         <p class="text-5xl font-heureka-2   text-orange-200 hover:text-gray-200">+48 600 401 106</p>
                      </div>
                     </div>
-
             </div>
-
-
-            
-
-
-                     
-
-                 
-
-                     
-
-              
-
-
         </div>
        
 
         <div class="frame-h-divider"></div>
+        <div class="frame-h-divider-small"></div>
 
         <!-- footer's info grid -->
         

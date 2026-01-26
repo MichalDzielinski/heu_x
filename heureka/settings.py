@@ -15,6 +15,11 @@ CSRF_TRUSTED_ORIGINS = []
 # WSGI_APPLICATION = "heureka.wsgi.application"
 #endregion
 
+# if DEBUG:
+#     STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+# else:
+#     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
 #region BASE SETTINGS
 
 ROOT_URLCONF = "heureka.urls"
