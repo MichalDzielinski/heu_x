@@ -90,6 +90,9 @@
   --header-h: 0px;
 }
  
+.card-inner, .card-inner::after {
+  backface-visibility: hidden;
+}
 
 
 .timeline-container {
