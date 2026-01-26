@@ -57,12 +57,12 @@
                   <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full   flex-col items-center opacity-100 justify-center  relative">
                    
                     <img src="{% static 'images/ps_spec_hero_a_rev.jpg' %}" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-cover   -z-20"> 
-                    <div class="w-full h-full   pb-10 relative text-slate-800 ">
-                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] ">Diagnostyka urologiczna</h1>
+                   <div class="w-full h-full  bg-slate-900 opacity-75 ">
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100 ">Diagnostyka urologiczna</h1>
                       
-                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis </p>
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-gray-100 text-md md:text-xl font-semibold  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis </p>
                       <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
-                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "procedury urologiczne" %}</button>
+                        <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600 text-gray-100  font-heureka-1 font-semibold text-lg md:text-xl   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "procedury urologiczne" %}</button>
                       </a>
                   </div>
                   </div>
@@ -114,12 +114,12 @@
                   </div>
                 <!-- right column -->
                   <div class="basis-6/10 xl:basis-1/2 min-h-[180px] h-full   flex-col items-center opacity-100 justify-center  relative">
-                   
+                    
                     <img src="{% static 'images/ps_hs_base_reversed_rev.jpg' %}" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-cover   -z-20"> 
-                    <div class="w-full h-full   pb-10 relative text-slate-800 ">
-                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] ">Urologia dla kobiet</h1>
+                    <div class="w-full h-full  bg-slate-800 opacity-75 ">
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100 ">Urologia dla kobiet</h1>
                       
-                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis </p>
+                      <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-md md:text-xl font-semibold text-gray-100  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis </p>
                       <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
                         <button class="frame-gradient z-20  shadow-md hover:shadow-md shadow-orange-200 hover:shadow-green-600  font-heureka-1 font-semibold text-lg md:text-xl  text-white   border-2 border-white  mt-2 cursor-pointer rounded-md  py-2 px-5 xl:p-6 uppercase">{% trans "procedury urologiczne" %}</button>
                       </a>
@@ -334,6 +334,23 @@
       // Lenis: utwórz raz i ponownie używaj (unikaj duplikatów)
       if (!M.lenis) {
         M.lenis = new Lenis();
+
+        // w initScrollAnimations(), zaraz po M.lenis = new Lenis();
+
+ScrollTrigger.scrollerProxy(document.body, {   // lub document.documentElement / #smooth-wrapper jeśli masz wrapper
+  scrollTop(value) {
+    return arguments.length
+      ? M.lenis.scrollTo(value, { immediate: true, force: true })
+      : M.lenis.scroll;
+  },
+  getBoundingClientRect() {
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+  },
+  pinType: "transform"   // bardzo ważne przy Lenis
+});
+
+// po każdej zmianie treści / swapie htmx → wywołaj:
+ScrollTrigger.refresh(true);
       }
       // podłącz raf tylko raz
       if (!M.rafAdded) {
