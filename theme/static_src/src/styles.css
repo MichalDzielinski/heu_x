@@ -89,6 +89,21 @@
   --accent-4: #81b7bf;
   --header-h: 0px;
 }
+
+.card {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.card-inner {
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
  
 .card-inner, .card-inner::after {
   backface-visibility: hidden;
