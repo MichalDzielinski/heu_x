@@ -17,7 +17,7 @@ from staff.models import Person
 
 
 class IndexView(TemplateView):
-    template_name='clinic/indxxx2.html'
+    template_name='clinic/indxxx3.html'
 
 class ProceduryView(TemplateView):
     template_name='clinic/procedury.html'
