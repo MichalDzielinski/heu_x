@@ -56,7 +56,7 @@
                    
                     <img src="{% static 'images/ps_spec_hero_a_rev.jpg' %}" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-cover   -z-20"> 
                    <div class="w-full h-full  bg-slate-900 opacity-75 ">
-                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100 ">Diagnostyka urologiczna</h1>
+                      <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100 ">Diagnostyka urologiczna TEST</h1>
                       
                       <p class="my-9 mt-[30px] md:mt-[120px] px-5 xl:px-15 text-justify text-gray-100 text-md md:text-xl font-semibold  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aliquid sapiente est. Itaque beatae aspernatur maiores assumenda explicabo hic voluptas repellendus maxime, tempora eius consectetur ad atque odio esse ut tenetur dolorum? Quasi voluptas dolorem minima optio quae natus assumenda vitae, voluptates molestias ipsa pariatur non ea deleniti voluptatibus praesentium nesciunt dolor. Fugit ratione perferendis </p>
                       <a href="{% url 'zespół' %}" class="absolute md:static bottom-7 right-5">
@@ -224,188 +224,133 @@
 
 <script>
   (function () {
-    // ---------- zachowaj swoje fade handlers ----------
-    document.addEventListener('htmx:beforeSwap', (e) => {
-      const el = document.getElementById('roo');
-      if (el) el.classList.add('fade-out');
-    });
-  
-    document.addEventListener('htmx:afterSwap', (e) => {
-      const el = document.getElementById('foo');
-      if (el) {
-        el.classList.remove('fade-out');
-        el.classList.add('fade-in');
-  
-        // usuń klasę fade-in po zakończeniu transition/animation (czystość)
-        const cleanup = (ev) => {
-          if (ev.target === el) {
-            el.removeEventListener('transitionend', cleanup);
-            el.removeEventListener('animationend', cleanup);
-            window.requestAnimationFrame(() => el.classList.remove('fade-in'));
-          }
-        };
-        el.addEventListener('transitionend', cleanup);
-        el.addEventListener('animationend', cleanup);
-      }
-  
-      // Po swapie - uruchom inicjalizację, ale poczekaj na transition/anim/images
-      // requestAnimationFrame zapewnia, że DOM został już zamieniony
-      requestAnimationFrame(() => {
-        const root = document.getElementById('roo') || document.body;
-        waitForTransitionOrAnimation(root, () => waitForImages(root, initScrollAnimations));
+
+  const M = window._scrollAnimManager = window._scrollAnimManager || {
+    lenis: null,
+    rafAdded: false,
+    ctx: null
+  };
+
+  // -------------------------------------------------
+  // SAFE INIT
+  // -------------------------------------------------
+  function safeInit() {
+    if (!document.querySelector('.card')) return;
+
+    requestAnimationFrame(() =>
+      requestAnimationFrame(initScrollAnimations)
+    );
+  }
+
+  // -------------------------------------------------
+  // HTMX
+  // -------------------------------------------------
+  document.addEventListener('htmx:afterSwap', safeInit);
+  document.body.addEventListener('htmx:afterSettle', safeInit);
+  document.addEventListener('DOMContentLoaded', safeInit);
+
+  // -------------------------------------------------
+  // MAIN
+  // -------------------------------------------------
+  function initScrollAnimations() {
+    if (!window.gsap || !window.ScrollTrigger || !window.Lenis) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ---------- LENIS ----------
+    if (!M.lenis) {
+      M.lenis = new Lenis({
+        infinite: true,
+        lerp: 0.08,
+        smoothWheel: true
       });
-    });
-  
-    // dodatkowy fallback (htmx:afterSettle) — uruchomi, jeśli coś innego tę pętlę przegapi
-    document.body.addEventListener('htmx:afterSettle', () => {
-      if (document.querySelector('.card')) requestAnimationFrame(initScrollAnimations);
-    });
-  
-    // ---------- manager trzymający persistent state między swapami ----------
-    const M = window._scrollAnimManager = window._scrollAnimManager || {
-      lenis: null,
-      rafAdded: false
-    };
-  
-    // czekaj na wszystkie obrazki wewnątrz root
-    function waitForImages(root, cb) {
-      root = root || document;
-      const imgs = Array.from(root.querySelectorAll('img'));
-      if (!imgs.length) return cb();
-      let done = 0;
-      const mark = () => { done++; if (done === imgs.length) cb(); };
-      imgs.forEach(img => {
-        if (img.complete) mark();
-        else {
-          img.addEventListener('load', mark, { once: true });
-          img.addEventListener('error', mark, { once: true });
-        }
+
+      // 🔥 SCROLLER PROXY — KLUCZ
+      ScrollTrigger.scrollerProxy(document.documentElement, {
+        scrollTop(value) {
+          return arguments.length
+            ? M.lenis.scrollTo(value, { immediate: true })
+            : M.lenis.scroll;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
+          };
+        },
+        pinType: document.documentElement.style.transform ? "transform" : "fixed"
       });
+
+      M.lenis.on('scroll', ScrollTrigger.update);
     }
-  
-    // poczekaj na transition/animation kończący się na elemencie, lub fallback do next frames
-    function waitForTransitionOrAnimation(el, cb) {
-      if (!el) return cb();
-      const st = getComputedStyle(el);
-      const tDur = parseFloat(st.transitionDuration) || 0;
-      const aDur = parseFloat(st.animationDuration) || 0;
-  
-      if (tDur > 0) {
-        let called = false;
-        const onEnd = (ev) => { if (ev.target === el && !called) { called = true; el.removeEventListener('transitionend', onEnd); cb(); } };
-        el.addEventListener('transitionend', onEnd);
-        // safety timeout
-        setTimeout(() => { if (!called) { called = true; el.removeEventListener('transitionend', onEnd); cb(); } }, (tDur * 1000) + 150);
-      } else if (aDur > 0) {
-        let called = false;
-        const onEnd = (ev) => { if (ev.target === el && !called) { called = true; el.removeEventListener('animationend', onEnd); cb(); } };
-        el.addEventListener('animationend', onEnd);
-        setTimeout(() => { if (!called) { called = true; el.removeEventListener('animationend', onEnd); cb(); } }, (aDur * 1000) + 150);
-      } else {
-        // brak transition/animation -> next frame
-        requestAnimationFrame(() => requestAnimationFrame(cb));
-      }
-    }
-  
-    // ---------- Twoja animacja (opakowana tak, by można było wywołać wielokrotnie) ----------
-    function initScrollAnimations() {
-      // safety: upewnij się, że biblioteki są załadowane
-      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || typeof Lenis === 'undefined') {
-        // console.warn('gsap / ScrollTrigger / Lenis nie są dostępne jeszcze');
-        return;
-      }
-  
-      // (re)register plugin (safe)
-      try { gsap.registerPlugin(ScrollTrigger); } catch (err) {}
-  
-      // oczyść stare triggery przed re-initem
-      if (ScrollTrigger && ScrollTrigger.getAll) {
-        ScrollTrigger.getAll().forEach(tr => tr.kill());
-      }
-      // zabij stare tweens targetujące .card-inner (bezpieczne)
-      try { gsap.killTweensOf('.card-inner'); } catch (e) {}
-  
-      // Lenis: utwórz raz i ponownie używaj (unikaj duplikatów)
-      if (!M.lenis) {
-        M.lenis = new Lenis();
 
-        // w initScrollAnimations(), zaraz po M.lenis = new Lenis();
-
-
-// po każdej zmianie treści / swapie htmx → wywołaj:
-ScrollTrigger.refresh(true);
-      }
-      // podłącz raf tylko raz
-      if (!M.rafAdded) {
-        gsap.ticker.add((time) => {
-          try { M.lenis.raf(time * 1000); } catch(e) {}
-        });
-        M.rafAdded = true;
-      }
-      // upewnij się, że ScrollTrigger.update jest wywoływane przy scrollu lenis
-      try { M.lenis.on('scroll', ScrollTrigger.update); } catch(e) {}
-  
+    // ---------- RAF ----------
+    if (!M.rafAdded) {
+      gsap.ticker.add((time) => {
+        M.lenis.raf(time * 1000);
+      });
       gsap.ticker.lagSmoothing(0);
-  
-      // ---- TU WCHODZI TWÓJ ORYGINALNY KOD ANIMACJI ----
-      const cards = gsap.utils.toArray(".card");
-  
-      cards.forEach((card, index) => {
-        if (index < cards.length - 1) {
-          const cardInner = card.querySelector(".card-inner");
-  
-          gsap.fromTo(
-            cardInner,
-            {
-              y: "0%",
-              z: 0,
-              rotationX: 0,
-              force3D: true
-            },
-            {
-              y: "-50%",
-              z: -250,
-              rotationX: 45,
-              scrollTrigger: {
-                trigger: cards[index + 1],
-                start: "top 95%",
-                end: "bottom 75%",
-                scrub: 0.2,
-                pin: card,
-                pinSpacing: false,
-              },
-            }
-          );
-  
-          gsap.to(cardInner, {
-            "--after-opacity": 1,
-            scrollTrigger: {
-              trigger: cards[index + 1],
-              start: "top 75%",
-              end: "top -25%",
-              scrub: true,
-            },
-          });
-        }
-      });
-  
-      // odśwież ScrollTrigger (ważne po zmianach layoutu / obrazkach)
-      try { ScrollTrigger.refresh(); } catch(e) {}
+      M.rafAdded = true;
     }
-  
-    // inicjalizacja przy pierwszym załadowaniu (jeśli są .card)
-    document.addEventListener('DOMContentLoaded', () => {
-      if (document.querySelector('.card')) {
-        // mały timeout aby upewnić się, że wszystko jest wyrenderowane
-        requestAnimationFrame(() => requestAnimationFrame(initScrollAnimations));
-      }
+
+    // ---------- CLEAN ----------
+    if (M.ctx) M.ctx.revert();
+
+    // ---------- ANIMATIONS ----------
+    M.ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray('.card');
+
+      cards.forEach((card, i) => {
+        if (i === cards.length - 1) return;
+
+        const inner = card.querySelector('.card-inner');
+        if (!inner) return;
+
+        gsap.fromTo(inner,
+          { y: '0%', rotationX: 0, z: 0 },
+          {
+            y: '-50%',
+            rotationX: 45,
+            z: -250,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: cards[i + 1],
+              start: 'top 90%',
+              end: 'bottom 70%',
+              scrub: 0.4,
+              pin: card,
+              pinSpacing: false,
+              anticipatePin: 1
+            }
+          }
+        );
+
+        gsap.to(inner, {
+          '--after-opacity': 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: cards[i + 1],
+            start: 'top 70%',
+            end: 'top -20%',
+            scrub: 0.5
+          }
+        });
+      });
     });
-  
-    // OPTIONAL: expose function for manual debug
-    window.initScrollAnimations = initScrollAnimations;
-  
-  })();
-  </script>
+
+    // 🔥 BEZ TEGO NIC NIE RUSZY
+    ScrollTrigger.refresh(true);
+  }
+
+  window.initScrollAnimations = initScrollAnimations;
+
+})();
+
+
+
+</script>
 
 
 
