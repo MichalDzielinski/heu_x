@@ -1,0 +1,104 @@
+{% load static  %}
+{% load i18n  %}
+
+<div
+  id="small_nav"
+  class="sm:hidden frame-gradient fixed top-1/2 left-1/2
+         -translate-x-1/2 -translate-y-1/2 z-50
+         border-2 border-gray-100 rounded-b-lg
+         h-[75%] w-[99%] p-4 pointer-events-none text-center pr-7"
+  style="opacity:0; visibility:hidden;"
+>
+  <p class="text-gray-100 text-2xl   font-primary py-5">Badanie urodynamiczne</p>
+        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+  <p class="text-gray-100 text-2xl   font-primary py-5">Procedury urologiczne</p>
+        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+  <p class="text-gray-100 text-2xl   font-primary py-5">Inne procedury</p>
+        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+  <p class="text-gray-100 text-2xl   font-primary py-5">Strefa pacjenta</p>
+        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  
+  <p class="text-gray-100 text-2xl   font-primary py-5">Badania kliniczne</p>
+        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+  <p class="text-gray-100 text-2xl   font-primary py-5">Kontakt</p>
+        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+  <div class="mx-auto w-[75%] flex py-5 ">
+    <!-- LANGUAGES -->
+    
+    <div class="w-1/2 font-primary "">
+      <div class="flex">
+    
+    <!-- LANGUAGE 1 -->
+    <div id="lang1">
+        <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
+            
+            {% csrf_token %}
+            <input type="hidden" name="language" value="pl">
+            <button type="submit" style="background:none; border:none; cursor:pointer;">
+                <img  src="{% static 'icons/flag_round_pl.png' %}" alt="" class="mask-b-from-30% mask-radial-[50%_90%] mask-radial-from-80% hover:mask-none hover:transition-all">
+            </button>
+        </form>
+    </div>
+
+    <!-- LANGUAGE 2 -->
+    <div id="lang2">
+        <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="language" value="en">
+            <button type="submit" style="background:none; border:none; cursor:pointer;">
+                <img  src="{% static 'icons/flag_round_gb.png' %}" alt="" class="mask-b-from-30% mask-radial-[50%_90%] mask-radial-from-80% hover:mask-none hover:transition-all">
+            </button>
+        </form>
+    </div>
+
+    <!-- LANGUAGE 3 -->
+    <div id="lang3">
+        <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
+
+        {% csrf_token %}
+            <input type="hidden" name="language" value="uk">
+            <button type="submit" style="background:none; border:none; cursor:pointer;">
+                <img  src="{% static 'icons/flag_round_uk.png' %}" alt="" class="mask-b-from-30% mask-radial-[50%_90%] mask-radial-from-80% hover:mask-none hover:transition-all">
+            </button>
+        </form>
+    </div>
+    </div>
+    
+  
+  
+    </div>
+
+    <!-- SEARCHBAR -->
+
+     <div class="w-1/2 font-primary "">
+    
+      <div class=" group absolute ">
+        
+        <form method="get" action="#" class=" max-w-md mx-auto">
+          <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+          <div class="relative">
+            
+            <input type="search" name="query" value="" id="default-search" class="block w-full p-4  text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            <button type="submit"
+            class="text-white absolute end-2.5 bottom-2.5 bg-green-800 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-700 dark:hover:bg-green-800 dark:focus:ring-white">
+            <i class="ri-search-line"></i>
+          </button>
+        </div>
+      </form>
+      
+    </div>
+
+    </div>
+ </div>
+
+
+</div>
+
+
+
+

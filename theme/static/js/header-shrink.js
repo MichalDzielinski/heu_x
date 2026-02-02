@@ -4,14 +4,14 @@
 
   // --- Immediate helpers ---
   function applyShrunkImmediate() {
-    gsap.set('.header-inner', { marginTop: '-5px', height: '100%' });
-    gsap.set('.title-group', { paddingTop: 0, paddingBottom: -6 });
+    // gsap.set('.header-inner', { marginTop: '25px',  marginBottom: '25px', height: '100%' });
+    // gsap.set('.title-group', { paddingTop: 0, paddingBottom: -6 });
     gsap.set('.subheader', { opacity: 0, height: 0, overflow: 'hidden' });
-    gsap.set('.title', { marginTop: -13, marginBottom: -25 });
-    gsap.set('.logo', { scale: 0.68 });
+    // gsap.set('.title', { marginTop: -13, marginBottom: -25 });
+    // gsap.set('.logo', { scale: 0.68 });
     gsap.set('.sh1', { scale: 0.68 });
     gsap.set('.sh2', { scale: 0.68 });
-    gsap.set('.title1', { scale: 0.75, x: -44 });
+    // gsap.set('.title1', { scale: 0.75, x: -44 });
 
     // 🔹 NIE skalujemy elementu #nsd
     gsap.set('.nsd', { scale: 1 });
@@ -41,14 +41,14 @@
   function animateToShrunk() {
     if (!isExpanded) return;
     const tl = gsap.timeline();
-    tl.to('.header-inner', { marginTop: '-5px', height: '100%', duration: 0.2, ease: 'power2.out' })
-      .to('.title-group', { paddingTop: -12, paddingBottom: -12, duration: 0.3 }, '<')
-      .to('.subheader', { opacity: 0, height: 0, duration: 0.3, ease: 'power1.out' }, '<')
-      .to('.title', { marginTop: -13, marginBottom: -25, duration: 0.5 }, '<')
-      .to('.logo', { scale: 0.68, duration: 0.45 }, '<')
+    // tl.to('.header-inner', { marginTop: '25px', marginBottom: '25px', height: '100%', duration: 0.2, ease: 'power2.out' })
+      // .to('.title-group', { paddingTop: -12, paddingBottom: -12, duration: 0.3 }, '<')
+      tl.to('.subheader', { opacity: 0, height: 0, duration: 0.3, ease: 'power1.out' }, '<')
+      // .to('.title', { marginTop: -13, marginBottom: -25, duration: 0.5 }, '<')
+      // .to('.logo', { scale: 0.68, duration: 0.45 }, '<')
       .to('.sh1', { scale: 0.68, duration: 0.45 }, '<')
       .to('.sh2', { scale: 0.68, duration: 0.45 }, '<')
-      .to('.title1', { scale: 0.75, x: -44, duration: 0.45 }, '<')
+      // .to('.title1', { scale: 0.75, x: -44, duration: 0.45 }, '<')
       .to(['.frm', '.ttp'], { y: -102, duration: 0.5 }, '<')
       // 🔹 Pomijamy animację skali dla #nsd
       // .to('#nsd', { scale: 1.05, duration: 0.2 }, '<')

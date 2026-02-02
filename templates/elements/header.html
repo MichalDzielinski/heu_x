@@ -3,12 +3,14 @@
 {% load i18n %}
 
 
+{% include 'elements/modal/small_nav.html' %}
 
-<header id="header" class=" w-full fixed top-0 frame-gradient z-20">
+<header id="header"  class=" w-full fixed top-0 frame-gradient z-70">
     <!-- HAMBURGER -->
-    <div id="hamburger" class=" sm:hidden h-10 w-10 border-gray-150 border-2 flex items-center text-center justify-center rounded-md fixed top-5 right-3 "><i class="ri-menu-line text-center text-gray-150 text-2xl p-3 "></i></div>
+    <div id="navBtn" onclick="navToggle()" class="sm:hidden z-50 cursor-pointer h-10 w-10 border-gray-150 border-2 flex items-center text-center justify-center rounded-md fixed top-5 right-3 ">
+        <i class="ri-menu-line cursor-pointer text-center text-gray-150 text-2xl p-3 "></i></div>
     
-    <section class="frame-sizing relative  header-inner">
+    <section class="frame-sizing relative  header-inner ">
         
         
 <!-- HEADER TITLE GROUP -->
@@ -143,3 +145,5 @@
       el.classList.add('fade-in');
     });
     </script>
+
+    <script src="{% static 'js/nav_open.js' %}"></script> 
