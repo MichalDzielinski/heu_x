@@ -1,4 +1,4 @@
-{% load static  %}
+aa{% load static  %}
 {% load i18n  %}
 
 <div
@@ -9,24 +9,50 @@
          h-[75%] w-[99%] p-4 pointer-events-none text-center pr-7"
   style="opacity:0; visibility:hidden;"
 >
-  <p class="text-gray-100 text-2xl   font-primary py-5">Badanie urodynamiczne</p>
-        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <p class="text-gray-100 text-2xl   font-primary py-5">Procedury urologiczne</p>
-        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <p class="text-gray-100 text-2xl   font-primary py-5">Inne procedury</p>
-        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+<div class="text-gray-100 text-2xl font-primary py-5 group">
+  <a href="{% url 'badanie urodynamiczne' %}" class="group-hover:text-orange-300">
+    Badanie urodynamiczne
+  </a>
+</div>
+<p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <p class="text-gray-100 text-2xl   font-primary py-5">Strefa pacjenta</p>
-        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+<div class="text-gray-100 text-2xl font-primary py-5 group">
+  <a href="{% url 'procedury urologiczne' %}" class="group-hover:text-orange-300"">
+    Procedury urologiczne
+  </a>
+</div>
+<p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+<div class="text-gray-100 text-2xl font-primary py-5 group">
+  <a href="{% url 'pozostałe procedury' %}" class="group-hover:text-orange-300">
+    Pozostałe procedury
+  </a>
+</div>
+<p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+<div class="text-gray-100 text-2xl font-primary py-5 group">
+  <a href="{% url 'strefa' %}" class="group-hover:text-orange-300"">
+    Strefa pacjenta
+  </a>
+</div>
+<p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+<div class="text-gray-100 text-2xl font-primary py-5 group">
+  <a href="{% url 'badania kliniczne' %}" class="group-hover:text-orange-300"">
+    Badania kliniczne
+  </a>
+</div>
+<p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+ 
+<div class="text-gray-100 text-2xl font-primary py-5 group">
+  <a href="{% url 'kontakt' %}" class="group-hover:text-orange-300"">
+    Kontakt
+  </a>
+</div>
+<p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
   
-  <p class="text-gray-100 text-2xl   font-primary py-5">Badania kliniczne</p>
-        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
-
-  <p class="text-gray-100 text-2xl   font-primary py-5">Kontakt</p>
-        <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
-
   <div class="mx-auto w-[75%] flex py-5 ">
     <!-- LANGUAGES -->
     

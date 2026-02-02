@@ -102,7 +102,8 @@ class ZespolView(ListView):
         return Person.activated.all()
 
 
-
+class StrefaView(TemplateView):
+    template_name = 'clinic/strefa.html'
 
 
 
