@@ -82,22 +82,18 @@
     </div>
        
 <!-- TILE 3 -->
-    <div class="card cd text-blue-950 " id="card-3">
+     <div class="card cd text-blue-950 " id="card-3">
         <div class="card-inner  opacity-100 bg-gray-100    border-blue-950 border-2 relative" >
           <div class=" flex flex-col h-full ">
             <div class="flex flex-col md:flex-row h-full  justify-end">
                 <!-- left column -->
                   <div class="basis-4/10 xl:basis-1/2 min-h-[180px] h-full  flex flex-col items-center justify-center relative -z-30 ">
-                    <img  src="{% static 'images/ps_ag.webp' %}"   loading="lazy"
-  decoding="async"
-  fetchpriority="low" alt="Tło" class=" w-full h-full object-center -z-20">
+                    <img rel="preload" as="image" src="{% static 'images/ps_ag.webp' %}" alt="Tło" class=" w-full h-full object-center -z-20">
                   </div>
                 <!-- right column -->
                   <div class="basis-6/10 xl:basis-1/2  h-full   flex-col items-center opacity-100 justify-center  relative">
                    
-                    <img  src="{% static 'images/ps_ag_rev.webp' %}"   loading="lazy"
-  decoding="async"
-  fetchpriority="low" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-center   -z-20"> 
+                    <img rel="preload" as="image" src="{% static 'images/ps_ag_rev.webp' %}" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-center   -z-20"> 
                    <div class="w-full h-full  bg-slate-900 opacity-75 absolute inset-0  ">
                       <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100 ">Diagnostyka urologiczna XXX</h1>
                       
@@ -188,9 +184,7 @@
                 <!-- right column -->
                   <div class="basis-6/10 xl:basis-1/2  h-full   flex-col items-center opacity-100 justify-center  relative">
                    
-                    <img  src="{% static 'images/bf_hero_main_ev.webp' %}"   loading="lazy"
-  decoding="async"
-  fetchpriority="low" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-center   -z-20"> 
+                    <img  src="{% static 'images/bf_hero_main_ev.webp' %}" alt="Tło" class="absolute  bg-gray-100 inset-0 w-full h-full object-center   -z-20"> 
                    <div class="w-full h-full  bg-slate-900 opacity-75 absolute inset-0  ">
                       <h1 class="text-3xl md:text-5xl font-heureka-2 uppercase my-5 text-center px-5 pt-2 md:pt-[20px] text-gray-100 ">Diagnostyka urologiczna XXX</h1>
                       
