@@ -18,7 +18,7 @@
 <!-- LOGO & NAME -->
         <div class="p-5 mr-8 md:mr-0">
             <div class="title flex gap-2  justify-center sm:justify-start items-center">
-                <a href="" class="flex gap-2 relative group justify-center md:justify-start items-center">
+                <a href="{% url 'index' %}" class="flex gap-2 relative group justify-center md:justify-start items-center">
                     <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="logo z-20 size-10 xl:size-14 mb-2 justify-center drop-shadow-orange-500 shadow-2xl">
                     <h1 class="  title1 font-heureka-2 text-5xl xl:text-6xl text-gray-50  text-shadow-2xs text-shadow-green-700 uppercase z-20">heureka</h1>
                     
@@ -36,7 +36,7 @@
         <!-- sub name -->
             <div class="subheader sample-transition">
                 <h3 id="roo" class=" font-tertiary text-gray-200 pt-2 text-xl text-center md:text-left">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
-                <h3 id="roo" class="text-gray-100  text-2xl font-primary text-center md:text-left">{% trans 'Pawła Szaleckiego' %}</h3>
+                <h3 id="roo" class="text-gray-100 font-primary  text-2xl  text-center md:text-left">{% trans 'Pawła Szaleckiego' %}</h3>
             </div>
         </div>
     </div> 

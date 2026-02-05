@@ -13,16 +13,13 @@ from django.utils.translation import activate, get_language
 from django.urls import resolve, reverse
 from django.http import HttpResponse
 
-from staff.models import Person
+from django.contrib.postgres.search import SearchVector
+from django.utils import translation
 
+from staff.models import Person
 
 class IndexView(TemplateView):
     template_name='clinic/indxxx4.html'
-
-class ProceduryView(TemplateView):
-    template_name='clinic/procedury.html'
-
-    pass
    
 class BadanieUrodynamiczneView(DetailView):
     template_name='clinic/badanie_urodynamiczne.html'
@@ -59,6 +56,32 @@ class ProceduryMedyczneView(ListView):
     def get_queryset(self):
         return Procedura.activated.exclude(Q(specjalizacja='kardiologia')|Q(specjalizacja='urologia'))
 
+class WyszukajView( ListView):
+    model = Procedura
+    
+    template_name = 'clinic/wyszukaj.html'
+
+    def get_queryset(self):
+        current_language = translation.get_language()
+        search_field_1 =f'nazwa_{current_language}'
+        search_field_2 =f'opis_{current_language}'
+        search_field_3 =f'wskazania_{current_language}'
+
+
+        queryset = super().get_queryset()
+        query = self.request.GET.get('query')
+        if query:
+            queryset = queryset.annotate(search=SearchVector(search_field_1, search_field_2, search_field_3, 'lekarz')).filter(active=True).filter(search=query)
+        else:
+            queryset = Procedura.activated.all()
+        return queryset
+       
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('query', '')  # Pass query back to template for form value
+        return context
+
 class DoPobraniaView(TemplateView):
     template_name = 'clinic/do_pobrania.html'
 
@@ -80,7 +103,6 @@ class JakNasZnalezcView(TemplateView):
 class WizytaView(TemplateView):
     template_name = 'clinic/wizyta.html'
 
-
 class ZespolView(ListView):
     template_name = 'clinic/zespol.html'
 
@@ -101,11 +123,8 @@ class ZespolView(ListView):
         # Only return available productsj
         return Person.activated.all()
 
-
 class StrefaView(TemplateView):
     template_name = 'clinic/strefa.html'
-
-
 
 class ContactView(FormView):
     form_class = ContactForm
@@ -144,11 +163,3 @@ class ContactView(FormView):
 
     def form_invalid(self, form):
         return JsonResponse({"ok": False, "errors": form.errors}, status=400)
-
-
-
-
-
-
-
-
