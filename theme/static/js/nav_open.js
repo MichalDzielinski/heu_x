@@ -26,3 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
     navTimeline.reversed() ? navTimeline.play() : navTimeline.reverse();
   });
 });
+

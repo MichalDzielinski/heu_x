@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-04 09:12+0200\n"
-"PO-Revision-Date: 2025-10-04 09:13+0200\n"
+"POT-Creation-Date: 2026-02-06 14:03+0100\n"
+"PO-Revision-Date: 2026-02-06 14:07+0100\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,117 +19,160 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Translated-Using: django-rosetta 0.10.2\n"
 
-#: .\templates\clinic\badania_kliniczne.html:13
-#: .\templates\elements\header.html:116
+#: .\templates\clinic\badania_kliniczne.html:18
+#: .\templates\elements\header.html:129
+#: .\templates\elements\modal\small_nav.html:44
 msgid "Badania kliniczne"
 msgstr "Клінічні дослідження"
 
-#: .\templates\clinic\badania_kliniczne.html:25
+#: .\templates\clinic\badania_kliniczne.html:30
 #: .\templates\clinic\jak_nas_znalezc.html:26
 #: .\templates\clinic\kontakt.html:26 .\templates\clinic\pakiety.html:26
 #: .\templates\clinic\procedury.html:26
-#: .\templates\clinic\profilaktyka.html:26 .\templates\clinic\wizyta.html:26
+#: .\templates\clinic\profilaktyka.html:26 .\templates\clinic\strefa.html:30
+#: .\templates\clinic\wizyta.html:26
 msgid "Wkrótce..."
 msgstr ""
 
-#: .\templates\clinic\badanie_urodynamiczne.html:20
+#: .\templates\clinic\badanie_urodynamiczne.html:24
 #: .\templates\clinic\badanie_urodynamiczne.html:122
-#: .\templates\elements\header.html:45
+#: .\templates\elements\header.html:58
+#: .\templates\elements\modal\small_nav.html:16
 msgid "Badanie urodynamiczne"
 msgstr "Уродинамічне дослідження"
 
+#: .\templates\clinic\badanie_urodynamiczne.html:27
+msgid ""
+"Urodynamika – unikalne badanie pozwalające w sposób dokładny i wiarygodny "
+"ocenić czynność dolnych dróg moczowych. Nie dające się zastąpić przez USG, "
+"tomografię komputerową czy rezonans magnetyczny. Pozwala na uzyskanie "
+"istotnych informacji o pracy pęcherza i cewki, stanowiąc klucz do trafnego "
+"rozpoznania i skutecznego leczenia zaburzeń mikcji."
+msgstr ""
+"Уродинаміка – унікальне обстеження, яке дозволяє точно та надійно оцінити "
+"функцію нижніх сечових шляхів. Воно не може бути замінене ультразвуковим "
+"дослідженням, комп’ютерною томографією чи магнітно-резонансною томографією. "
+"Дозволяє отримати важливу інформацію про роботу сечового міхура та "
+"сечівника, що є ключем до правильного діагнозу та ефективного лікування "
+"порушень сечовипускання."
+
 #: .\templates\clinic\badanie_urodynamiczne.html:42
 msgid "O badaniu urodynamicznym"
-msgstr ""
+msgstr "Про уродинамічне обстеження"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:54
 msgid "Na czym polega badanie urodynamiczne?"
-msgstr ""
+msgstr "У чому полягає уродинамічне обстеження?"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:64
 msgid "Jak przebiega badanie urodynamiczne?"
-msgstr ""
+msgstr "Як проходить уродинамічне обстеження?"
+
+#: .\templates\clinic\badanie_urodynamiczne.html:76
+#| msgid "Jak przebiega badanie urodynamiczne?"
+msgid "Wskazania do badania urodynamicznego"
+msgstr "Показання до уродинамічного обстеження"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:123
-msgid "w klinice"
-msgstr ""
+#: .\templates\clinic\pozostale_procedury.html:23
+#: .\templates\clinic\pozostale_procedury.html:132
+#: .\templates\clinic\procedury_kardiologiczne.html:17
+#: .\templates\clinic\procedury_kardiologiczne.html:123
+#: .\templates\clinic\procedury_medyczne.html:23
+#: .\templates\clinic\procedury_medyczne.html:129
+#: .\templates\clinic\procedury_urologiczne.html:23
+#: .\templates\clinic\procedury_urologiczne.html:143
+#: .\templates\clinic\wyszukaj.html:137 .\templates\clinic\wyszukaj.html:335
+msgid "w ośrodku"
+msgstr "У медичному центрі"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:135
 #: .\templates\clinic\procedury_medyczne.html:141
+#: .\templates\clinic\wyszukaj.html:452
 msgid "Czas oczekiwania na badanie"
-msgstr ""
+msgstr "Час очікування на обстеження"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:138
-#: .\templates\clinic\pozostale_procedury.html:141
+#: .\templates\clinic\pozostale_procedury.html:148
 #: .\templates\clinic\procedury_kardiologiczne.html:139
 #: .\templates\clinic\procedury_medyczne.html:144
-#: .\templates\clinic\procedury_urologiczne.html:153
+#: .\templates\clinic\procedury_urologiczne.html:159
+#: .\templates\clinic\wyszukaj.html:153 .\templates\clinic\wyszukaj.html:455
 msgid "liczony od dnia zapisu"
-msgstr ""
+msgstr "рахується від дня запису"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:141
 #: .\templates\clinic\badanie_urodynamiczne.html:154
-#: .\templates\clinic\pozostale_procedury.html:144
-#: .\templates\clinic\pozostale_procedury.html:157
+#: .\templates\clinic\pozostale_procedury.html:151
+#: .\templates\clinic\pozostale_procedury.html:164
 #: .\templates\clinic\procedury_kardiologiczne.html:142
 #: .\templates\clinic\procedury_kardiologiczne.html:155
 #: .\templates\clinic\procedury_medyczne.html:147
 #: .\templates\clinic\procedury_medyczne.html:160
-#: .\templates\clinic\procedury_urologiczne.html:156
-#: .\templates\clinic\procedury_urologiczne.html:172
+#: .\templates\clinic\procedury_urologiczne.html:162
+#: .\templates\clinic\procedury_urologiczne.html:178
+#: .\templates\clinic\wyszukaj.html:156 .\templates\clinic\wyszukaj.html:172
+#: .\templates\clinic\wyszukaj.html:458 .\templates\clinic\wyszukaj.html:471
 msgid "ok."
-msgstr ""
+msgstr "прибл."
 
 #: .\templates\clinic\badanie_urodynamiczne.html:141
-#: .\templates\clinic\pozostale_procedury.html:144
+#: .\templates\clinic\pozostale_procedury.html:151
 #: .\templates\clinic\procedury_kardiologiczne.html:142
 #: .\templates\clinic\procedury_medyczne.html:147
-#: .\templates\clinic\procedury_urologiczne.html:156
+#: .\templates\clinic\procedury_urologiczne.html:162
+#: .\templates\clinic\wyszukaj.html:156 .\templates\clinic\wyszukaj.html:458
 msgid "dni"
-msgstr ""
+msgstr "днів"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:151
 #: .\templates\clinic\procedury_medyczne.html:157
+#: .\templates\clinic\wyszukaj.html:468
 msgid "Czas trwania badania"
-msgstr ""
+msgstr "Тривалість обстеження"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:154
-#: .\templates\clinic\pozostale_procedury.html:157
+#: .\templates\clinic\pozostale_procedury.html:164
 #: .\templates\clinic\procedury_kardiologiczne.html:155
 #: .\templates\clinic\procedury_medyczne.html:160
-#: .\templates\clinic\procedury_urologiczne.html:172
+#: .\templates\clinic\procedury_urologiczne.html:178
+#: .\templates\clinic\wyszukaj.html:172 .\templates\clinic\wyszukaj.html:471
 msgid "minut"
-msgstr ""
+msgstr "хвилин"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:163
-#: .\templates\clinic\pozostale_procedury.html:166
+#: .\templates\clinic\pozostale_procedury.html:173
 #: .\templates\clinic\procedury_kardiologiczne.html:164
 #: .\templates\clinic\procedury_medyczne.html:169
-#: .\templates\clinic\procedury_urologiczne.html:183
+#: .\templates\clinic\procedury_urologiczne.html:189
+#: .\templates\clinic\wyszukaj.html:183 .\templates\clinic\wyszukaj.html:480
 msgid "Koszt"
-msgstr ""
+msgstr "Вартість"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:176
-#: .\templates\clinic\pozostale_procedury.html:179
+#: .\templates\clinic\pozostale_procedury.html:186
 #: .\templates\clinic\procedury_kardiologiczne.html:177
 #: .\templates\clinic\procedury_medyczne.html:182
-#: .\templates\clinic\procedury_urologiczne.html:196
+#: .\templates\clinic\procedury_urologiczne.html:202
+#: .\templates\clinic\wyszukaj.html:196 .\templates\clinic\wyszukaj.html:493
 msgid "Badanie wykonuje"
-msgstr ""
+msgstr "дослідження виконується"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:196
-#: .\templates\clinic\pozostale_procedury.html:200
+#: .\templates\clinic\pozostale_procedury.html:207
 #: .\templates\clinic\procedury_kardiologiczne.html:198
 #: .\templates\clinic\procedury_medyczne.html:203
+#: .\templates\clinic\wyszukaj.html:512
 msgid "Instruktaż przygotowania do badania (plik PDF)"
-msgstr ""
+msgstr "Інструкція з підготовки до обстеження (файл PDF)"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:231
-#: .\templates\clinic\pozostale_procedury.html:234
+#: .\templates\clinic\pozostale_procedury.html:241
 #: .\templates\clinic\procedury_kardiologiczne.html:232
 #: .\templates\clinic\procedury_medyczne.html:237
+#: .\templates\clinic\wyszukaj.html:546
 msgid "Po badaniu pacjent otrzymuje:"
-msgstr ""
+msgstr "Після обстеження пацієнт отримує:"
 
 #: .\templates\clinic\do_pobrania.html:13
 msgid "Do pobrania"
@@ -155,20 +198,50 @@ msgstr ""
 msgid "Przed badaniem"
 msgstr ""
 
-#: .\templates\clinic\index.html:24 .\templates\clinic\index.html:46
-msgid "tekst powitalny"
-msgstr "текст привітання"
-
-#: .\templates\clinic\index.html:49
+#: .\templates\clinic\index.html:37 .\templates\clinic\indexxx.html:37
+#: .\templates\clinic\indexxx.html:94 .\templates\clinic\indexxx.html:152
+#: .\templates\clinic\indexxx.html:175 .\templates\clinic\indxxx.html:37
+#: .\templates\clinic\indxxx.html:94 .\templates\clinic\indxxx.html:152
+#: .\templates\clinic\indxxx.html:175 .\templates\clinic\indxxx2.html:36
+#: .\templates\clinic\indxxx2.html:91 .\templates\clinic\indxxx2.html:147
+#: .\templates\clinic\indxxx2.html:170
 msgid "poznaj nasz zespół"
 msgstr "Познайомся з нашою командою"
 
+#: .\templates\clinic\index.html:57 .\templates\clinic\index.html:108
+#: .\templates\clinic\indexxx.html:65 .\templates\clinic\indexxx.html:124
+#: .\templates\clinic\indxxx.html:65 .\templates\clinic\indxxx.html:124
+#: .\templates\clinic\indxxx2.html:63 .\templates\clinic\indxxx2.html:120
+#: .\templates\clinic\indxxx3.html:40 .\templates\clinic\indxxx3.html:67
+#: .\templates\clinic\indxxx3.html:95 .\templates\clinic\indxxx3.html:123
+#: .\templates\clinic\indxxx3.html:151 .\templates\clinic\indxxx3.html:179
+#: .\templates\clinic\indxxx4.html:44 .\templates\clinic\indxxx4.html:75
+#: .\templates\clinic\indxxx4.html:102 .\templates\clinic\indxxx4.html:133
+#: .\templates\clinic\indxxx4.html:164 .\templates\clinic\indxxx4.html:193
+#, fuzzy
+#| msgid "Procedury urologiczne"
+msgid "procedury urologiczne"
+msgstr "Урологічні процедури"
+
+#: .\templates\clinic\index.html:89
+msgid "rehabilitacja urologiczna"
+msgstr ""
+
+#: .\templates\clinic\index.html:139 .\templates\clinic\profilaktyka.html:14
+msgid "Profilaktyka"
+msgstr ""
+
+#: .\templates\clinic\index.html:163
+msgid "sprawdż listę pozostalych badań"
+msgstr ""
+
 #: .\templates\clinic\jak_nas_znalezc.html:14
-#: .\templates\elements\footer.html:25
+#: .\templates\elements\footer.html:36
 msgid "Jak nas znaleźć"
 msgstr "як нас знайти"
 
-#: .\templates\clinic\kontakt.html:14 .\templates\elements\footer.html:30
+#: .\templates\clinic\kontakt.html:14 .\templates\elements\footer.html:42
+#: .\templates\elements\modal\small_nav.html:51
 msgid "Kontakt"
 msgstr "контакт"
 
@@ -176,54 +249,48 @@ msgstr "контакт"
 msgid "Pakiety"
 msgstr ""
 
-#: .\templates\clinic\pozostale_procedury.html:15
+#: .\templates\clinic\pozostale_procedury.html:19
 msgid "Pozostałe badania"
 msgstr ""
 
-#: .\templates\clinic\pozostale_procedury.html:18
+#: .\templates\clinic\pozostale_procedury.html:22
 msgid "Poniżej lista innych badań dostępnych"
 msgstr ""
 
-#: .\templates\clinic\pozostale_procedury.html:19
-#: .\templates\clinic\pozostale_procedury.html:125
-#: .\templates\clinic\procedury_kardiologiczne.html:17
-#: .\templates\clinic\procedury_kardiologiczne.html:123
-#: .\templates\clinic\procedury_medyczne.html:23
-#: .\templates\clinic\procedury_medyczne.html:129
-#: .\templates\clinic\procedury_urologiczne.html:18
-#: .\templates\clinic\procedury_urologiczne.html:137
-msgid "w ośrodku"
-msgstr ""
-
-#: .\templates\clinic\pozostale_procedury.html:20
+#: .\templates\clinic\pozostale_procedury.html:25
 #: .\templates\clinic\procedury_kardiologiczne.html:18
 #: .\templates\clinic\procedury_medyczne.html:24
-#: .\templates\clinic\procedury_urologiczne.html:19
+#: .\templates\clinic\procedury_urologiczne.html:24
+#: .\templates\clinic\wyszukaj.html:336
 msgid "(kliknij na nazwę badania, żeby poznać szczegóły)"
 msgstr ""
 
-#: .\templates\clinic\pozostale_procedury.html:78
+#: .\templates\clinic\pozostale_procedury.html:85
 #: .\templates\clinic\procedury_kardiologiczne.html:76
 #: .\templates\clinic\procedury_medyczne.html:82
+#: .\templates\clinic\wyszukaj.html:393
 msgid "Na czym polega badanie"
 msgstr ""
 
-#: .\templates\clinic\pozostale_procedury.html:91
+#: .\templates\clinic\pozostale_procedury.html:98
 #: .\templates\clinic\procedury_kardiologiczne.html:89
 #: .\templates\clinic\procedury_medyczne.html:95
+#: .\templates\clinic\wyszukaj.html:406
 msgid "Jak przebiega badanie"
 msgstr ""
 
-#: .\templates\clinic\pozostale_procedury.html:105
+#: .\templates\clinic\pozostale_procedury.html:112
 #: .\templates\clinic\procedury_kardiologiczne.html:103
 #: .\templates\clinic\procedury_medyczne.html:109
+#: .\templates\clinic\wyszukaj.html:420
 msgid "Wskazania do badania"
 msgstr ""
 
-#: .\templates\clinic\pozostale_procedury.html:277
+#: .\templates\clinic\pozostale_procedury.html:284
 #: .\templates\clinic\procedury_kardiologiczne.html:275
 #: .\templates\clinic\procedury_medyczne.html:280
-#: .\templates\clinic\procedury_urologiczne.html:299
+#: .\templates\clinic\procedury_urologiczne.html:305
+#: .\templates\clinic\wyszukaj.html:319 .\templates\clinic\wyszukaj.html:589
 msgid "Brak wyników"
 msgstr ""
 
@@ -247,20 +314,45 @@ msgstr ""
 msgid "Procedury medyczne dostępne"
 msgstr ""
 
-#: .\templates\clinic\procedury_urologiczne.html:14
+#: .\templates\clinic\procedury_urologiczne.html:18
 msgid "Badania urologiczne"
 msgstr ""
 
-#: .\templates\clinic\procedury_urologiczne.html:17
+#: .\templates\clinic\procedury_urologiczne.html:22
 msgid "Poniżej lista badań urologicznych dostępnych"
 msgstr ""
 
-#: .\templates\clinic\profilaktyka.html:14
-msgid "Profilaktyka"
-msgstr ""
+#: .\templates\clinic\strefa.html:18
+#, fuzzy
+#| msgid "strefa pacjenta"
+msgid "Strefa pacjenta"
+msgstr "Зона для пацієнтів"
 
 #: .\templates\clinic\wizyta.html:14
 msgid "Wizyta"
+msgstr ""
+
+#: .\templates\clinic\wyszukaj.html:21 .\templates\clinic\wyszukaj.html:332
+msgid "Wszystkie badania"
+msgstr ""
+
+#: .\templates\clinic\wyszukaj.html:23
+msgid "Poniżej lista wyników dla zapytania "
+msgstr ""
+
+#: .\templates\clinic\wyszukaj.html:24
+msgid ""
+"Należy pamiętać, że nasza wyszukiwarka znajduje wyniki, zarówno dla nazwy "
+"badania, objawów choroby, przebiegu badania jak i nazwiska lekrza, dlatego "
+"wszystkie poniższe wyniki mogą być dla Państwa istotne."
+msgstr ""
+
+#: .\templates\clinic\wyszukaj.html:334
+msgid "Poniżej lista wszystkich badań dostępnych"
+msgstr ""
+
+#: .\templates\clinic\wyszukaj.html:440
+msgid "w klinice"
 msgstr ""
 
 #: .\templates\clinic\zespol.html:27
@@ -319,55 +411,58 @@ msgstr "Спеціалізація"
 msgid "wyślij"
 msgstr "Відпр"
 
-#: .\templates\elements\footer.html:17 .\templates\elements\header.html:27
+#: .\templates\elements\footer.html:27 .\templates\elements\header.html:40
 msgid "Ośrodek urologii czynnościowej"
 msgstr "Центр функціональної урології"
 
-#: .\templates\elements\footer.html:18
+#: .\templates\elements\footer.html:28
 msgid "ulica Ludowa 5"
 msgstr "вул. Людова 5"
 
-#: .\templates\elements\footer.html:19
+#: .\templates\elements\footer.html:29
 msgid "Piaseczno koło Warszawy"
 msgstr "Пясечно біля Варшави"
 
-#: .\templates\elements\footer.html:44
+#: .\templates\elements\footer.html:58
 msgid "Ośrodek czynny"
 msgstr "Центр відчинений"
 
-#: .\templates\elements\footer.html:45
+#: .\templates\elements\footer.html:59
 msgid "od poniedziałku do piątku"
 msgstr "з понеділка по п’ятницю"
 
-#: .\templates\elements\footer.html:46
+#: .\templates\elements\footer.html:60
 msgid "w godzinach"
 msgstr "у годинах"
 
-#: .\templates\elements\footer.html:47
+#: .\templates\elements\footer.html:61
 msgid "9:00 - 17:00"
 msgstr ""
 
-#: .\templates\elements\footer.html:56
+#: .\templates\elements\footer.html:75
 msgid "Zapisy"
 msgstr "Запис"
 
-#: .\templates\elements\footer.html:58
+#: .\templates\elements\footer.html:77
 msgid "lub"
 msgstr "або"
 
-#: .\templates\elements\header.html:28
+#: .\templates\elements\header.html:41
 msgid "Pawła Szaleckiego"
 msgstr ""
 
-#: .\templates\elements\header.html:55
+#: .\templates\elements\header.html:68
+#: .\templates\elements\modal\small_nav.html:23
 msgid "Procedury urologiczne"
 msgstr "Урологічні процедури"
 
-#: .\templates\elements\header.html:67
+#: .\templates\elements\header.html:80
+#: .\templates\elements\modal\small_nav.html:30
 msgid "Pozostałe procedury"
 msgstr "Інші процедури"
 
-#: .\templates\elements\header.html:92
+#: .\templates\elements\header.html:105
+#: .\templates\elements\modal\small_nav.html:37
 msgid "strefa pacjenta"
 msgstr "Зона для пацієнтів"
 
@@ -1888,3 +1983,6 @@ msgstr ""
 #: .\venv\Lib\site-packages\modeltranslation\widgets.py:32
 msgid "None"
 msgstr ""
+
+#~ msgid "tekst powitalny"
+#~ msgstr "текст привітання"
