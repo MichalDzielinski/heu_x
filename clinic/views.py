@@ -123,6 +123,13 @@ class ZespolView(ListView):
         # Only return available productsj
         return Person.activated.all()
 
+class PersonView(DetailView):
+    model = Person
+    template_name = 'clinic/person.html'
+    slug_field = 'id'      # pole w modelu
+    slug_url_kwarg = 'id'  # parametr z URL
+
+
 class StrefaView(TemplateView):
     template_name = 'clinic/strefa.html'
 

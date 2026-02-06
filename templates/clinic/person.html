@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Profilaktyka{% endblock title %}
+{% block title %}{% endblock title %}
 
 
 {% load i18n %}
@@ -9,17 +9,28 @@
 {% block content %}
 {% include 'elements/header.html' %}
 
-<section class="grid grid-cols-1 gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[210px]">
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 py-5 mt-[120px] md:mt-[180px]  w-[95%] xl:w-[80%] mx-auto">
     <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
-        <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Profilaktyka' %}</h2>
+        <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{{ object.name }}</h2>
         
-        <div class="text-md font-primary mb-5  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore tempore magnam veniam fuga itaque aspernatur vitae consequuntur, temporibus id quae perspiciatis odit distinctio, exercitationem nesciunt ipsam nemo, eius sit fugiat odio sapiente similique facilis. Necessitatibus at laudantium, expedita id fugiat ad iste architecto enim. </div>
+        <div class="text-md font-primary mb-5  ">
+
+            {{ object.name }}
+            {{ object.name }}
+
+            {{ object.name }}
+            {{ object.name }}
+            {{ object.name }}
+            {{ object.name }}
+            
+
+        </div>
         
     </div>
     
   </section>
 
-<section class="grid  cols-1">
+<section class="grid grid cols-1">
 
     <div class="p-3 my-5 py-auto w-[95%] xl:w-[80%] mx-auto flex justify-center items-center isolate rounded-xl h-[540px] bg-white/90 shadow-lg ring-1 ring-black/5">
 

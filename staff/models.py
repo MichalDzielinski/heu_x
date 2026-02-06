@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser
 from tinymce.models import HTMLField
 from django.core.validators import MinValueValidator, MaxValueValidator
 import datetime
+from django.utils.text import slugify
+
 
 class CustomUser(AbstractUser):
     pass
@@ -23,6 +25,8 @@ class Person(models.Model):
 
     objects = models.Manager()
     activated = ActiveManager()
+
+    
 
     def gallery_main_image(self):
         main = self.gallery.filter(is_main=True).first()

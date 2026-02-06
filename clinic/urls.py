@@ -25,6 +25,8 @@ urlpatterns = [
     path("contact", views.ContactView.as_view(), name='contact'),
     path("wyszukaj", views.WyszukajView.as_view(), name='wyszukaj'),
 
+    path('person/<slug:id>/', views.PersonView.as_view(), name='person'),
+
     path("", views.IndexView.as_view(), name='index'),
 
 

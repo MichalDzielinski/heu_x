@@ -19,7 +19,7 @@
 
 
 
-<section class="grid grid-cols-1 gap-x-5 gap-y-1 py-5 mt-[210px]  w-[95%] xl:w-[80%] mx-auto">
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 py-5 mt-[120px] md:mt-[180px]  w-[95%] xl:w-[80%] mx-auto">
 
     <div  class="px-7 xl:px-12 my-1 py-[35px] transition    font-primary text-lg  text-justify    items-center   text-slate-800   rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
 
@@ -70,7 +70,12 @@
                 {% endif %}
 
                {% if i.profile  %}
-                <button onclick="openModal('{{i.id}}')" class="btn mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">{% translate 'poznaj mnie lepiej' %}</button>
+                <button onclick="openModal('{{i.id}}')" class="btn hidden sm:block mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-red-800 text-gray-200 self-start">{% translate 'poznaj mnie lepiej' %}</button>
+                
+                <button  class="btn sm:hidden mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">
+                    <a href="{% url 'person' i.id %}">{% translate 'poznaj mnie lepiej' %}</a>
+                    
+                    </button>
 
 <!-- MODAL -->
                 
@@ -135,8 +140,12 @@
             {% endif %}
 
            {% if i.profile  %}
-            <button onclick="openModal('{{i.id}}')" class="btn mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">{% translate 'poznaj mnie lepiej' %}</button>
+            <button onclick="openModal('{{i.id}}')" class="btn hidden sm:block mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">{% translate 'poznaj mnie lepiej' %}</button>
 
+            <button  class="btn sm:hidden mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-slate-800 text-gray-200 self-start">
+                    <a href="{% url 'person' i.id %}">{% translate 'poznaj mnie lepiej' %}</a>
+                    
+                    </button>
 <!-- MODAL -->
             
                 {% include 'elements/modal/base.html' %}
