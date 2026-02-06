@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-06 14:03+0100\n"
-"PO-Revision-Date: 2026-02-06 14:11+0100\n"
+"PO-Revision-Date: 2026-02-06 14:44+0100\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -114,7 +114,7 @@ msgstr "calculated from the date of registration"
 #: .\templates\clinic\wyszukaj.html:156 .\templates\clinic\wyszukaj.html:172
 #: .\templates\clinic\wyszukaj.html:458 .\templates\clinic\wyszukaj.html:471
 msgid "ok."
-msgstr ""
+msgstr "appx."
 
 #: .\templates\clinic\badanie_urodynamiczne.html:141
 #: .\templates\clinic\pozostale_procedury.html:151
@@ -156,7 +156,7 @@ msgstr "Price"
 #: .\templates\clinic\procedury_urologiczne.html:202
 #: .\templates\clinic\wyszukaj.html:196 .\templates\clinic\wyszukaj.html:493
 msgid "Badanie wykonuje"
-msgstr "performed by"
+msgstr "Performed by"
 
 #: .\templates\clinic\badanie_urodynamiczne.html:196
 #: .\templates\clinic\pozostale_procedury.html:207
