@@ -3,7 +3,7 @@
 {% block title %}{% endblock title %}
 
 
-{% load i18n %}
+{% load static i18n %}
 
 
 {% block content %}
@@ -11,37 +11,147 @@
 
 <section class="grid grid-cols-1 gap-x-5 gap-y-1 py-5 mt-[120px] md:mt-[180px]  w-[95%] xl:w-[80%] mx-auto">
     <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
-        <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{{ object.name }}</h2>
         
-        <div class="text-md font-primary mb-5  ">
+       
 
-            {{ object.name }}
-            {{ object.name }}
-
-            {{ object.name }}
-            {{ object.name }}
-            {{ object.name }}
-            {{ object.name }}
-            
-
+    <div class='flex'>
+        <div class="w-1/2">
+            <img src="{{object.main_photo.url}}" alt="" class="  aspect-square   rounded-full ring-5 hover:ring-7 shadow-lg ring-slate-600 hover:ring-green-900  border-green-500     ">
         </div>
+        <div class="w-1/2 items-center align-middle text-center justify-middle">
+            <p class="mt-7 text-3xl text-center mx-auto font-bold w-[90%] ">{{object.name}}</p>
+            <p class="mt-2 text-2xl text-center w-[80%] mx-auto ">{{object.subheader}}</p>
+        </div>
+    </div>
+   
+
+
+
         
     </div>
     
   </section>
 
-<section class="grid grid cols-1">
+  <section class="">
 
-    <div class="p-3 my-5 py-auto w-[95%] xl:w-[80%] mx-auto flex justify-center items-center isolate rounded-xl h-[540px] bg-white/90 shadow-lg ring-1 ring-black/5">
+    <div class="p-3 my-5 py-auto w-[95%] xl:w-[80%] mx-auto  flex flex-col min-h-[1450px] text-slate-800  rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
 
-        <h1 class="text-6xl font-primary text-center text-gray-600 items-center align-middle">{% translate 'Wkrótce...' %}</h1>
+<!-- O mnie -->
+        <div class="text-xl text-slate-800">
+            <h1 class="font-primary text-3xl mx-5 my-5">O mnie</h1>
+
+           
+            <div class="text-gray-700 mx-5 ">
+            {{object.profile.o_mnie|safe}}
+            </div>
+        </div>
+<div class="border-b border-slate-400 w-full my-5 mx-auto"></div>
+<!-- PROCEDURY -->
+        <div class="text-xl text-slate-800">
+            <h1 class="font-primary text-3xl mx-5 my-5">Procedury</h1>
+
+           
+            <div class="text-gray-700 mx-5    ">
+            {{object.profile.procedury_intro|safe}}
+            {{object.profile.procedury|safe}}
+            </div>
+        </div>
+<div class="border-b border-slate-400 w-full my-5 mx-auto"></div>
+<!-- Kalendarium -->
+ {% if object.profile.kalendarium  %}
+        <div class="text-xl text-slate-800">
+            <h1 class="font-primary text-3xl mx-5 my-5">Kalendarium</h1>
+
+           
+            <div class="space-y-2 mx-5 ">
+              <!-- Item 1 (Left) -->
+
+              {% for j in object.profile.kalendarium.all %}
+              <div class="relative flex {% if forloop.counter|divisibleby:2 %} items-start justify-start {% else %} items-start justify-end {% endif %}">
+                  <div class="w-1/2 {% if forloop.counter|divisibleby:2 %} pr-5 text-right {% else %} pl-5 text-left {% endif %}">
+                      <div class="bg-white px-3 py-2 rounded-lg shadow-md shadow-slate-800">
+                          <h3 class="text-lg font-semibold text-gray-800">{% if j.month %}{{j.get_month_display}}{% endif %}&nbsp;{{j.year}}</h3>
+                          <p class="text-gray-600">{{j.content|safe}}</p>
+                      </div>
+                  </div>
+                  <div class="absolute left-1/2 w-6 h-6 bg-slate-800 rounded-full mt-1 -translate-x-1/2"></div>
+              </div>
+              
+              {% endfor %}
+
+
+             
+              
+            
+           
+              
+             
+          </div>
+        </div>
+{% else %}
+<div class=""></div>
+
+ {% endif  %}
+
+
 
     </div>
+        
+
+
+
+    </div>
+
+
+    {% if object.profile.kalendarium %}
+    <div class="cnt px-[25px]  ">
+    <div class="text-gray-700 my-9 text-2xl">{{object.profile.kalendarium_intro|safe}}</div>
+    <div class="max-w-4xl h-[415px] overflow-y-auto pb-5 mt-[30px]  ">
+      
+      <div class="relative  ">
+          <!-- Vertical line in the center -->
+          <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-sky-900 transform -translate-x-1/2"></div>
+    
+          <!-- Timeline items -->
+          <div class="space-y-2 ">
+              <!-- Item 1 (Left) -->
+
+              {% for j in objec.profile.kalendarium.all %}
+              <div class="relative flex {% if forloop.counter|divisibleby:2 %} items-start justify-start {% else %} items-start justify-end {% endif %}">
+                  <div class="w-1/2 {% if forloop.counter|divisibleby:2 %} pr-5 text-right {% else %} pl-5 text-left {% endif %}">
+                      <div class="bg-white px-3 py-2 rounded-lg shadow-md shadow-slate-800">
+                          <h3 class="text-lg font-semibold text-gray-800">{% if j.month %}{{j.get_month_display}}{% endif %}&nbsp;{{j.year}}</h3>
+                          <p class="text-gray-600">{{j.content|safe}}</p>
+                      </div>
+                  </div>
+                  <div class="absolute left-1/2 w-6 h-6 bg-slate-800 rounded-full mt-1 -translate-x-1/2"></div>
+              </div>
+              
+              {% endfor %}
+
+
+             
+              
+            
+           
+              
+             
+          </div>
+      </div>
+  </div>
+    
+   
+  </div>
+
+
+    {% endif %}
 
     
     
     
 </section>
+
+
 {% include 'elements/footer.html' %}
 
 {% endblock  %}
