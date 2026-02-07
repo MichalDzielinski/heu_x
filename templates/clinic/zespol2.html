@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% load static  i18n %}
+
+{% block title %}Zespół{% endblock title %}
+
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
+{% block content %}
+
+
+
+
+{% include 'elements/button/contact/contact-button.html' %}
+{% include 'elements/contact/contact-base.html' %}
+{% include 'elements/header.html' %}
+
+
+
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 py-5 mt-[120px] md:mt-[180px]  w-[95%] xl:w-[80%] mx-auto">
+
+    <div  class="px-7 xl:px-12 my-1 py-[35px] transition    font-primary text-lg  text-justify    items-center   text-slate-800   rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
+
+        <!-- NASI LEKARZE -->
+
+        <h2 class=" text-4xl text-center font-primary  uppercase">{% translate 'Nasi lekarze' %}</h1>
+
+            <div class="border-b border-slate-400 mt-4 sm:mt-12 mb-0 sm:mb-2 w-[35%]   mx-auto"></div>
+        {% for i in doktor %}
+        <div class="w-full relative flex flex-col sm:flex-row items-center align-middle gap-5">
+            
+            <!-- ZDJĘCIE -->
+
+            <div class=" h-[72%] w-[72%] sm:w-[25%] sm:h-100 mt-5 sm:mt-0 ">
+                <div id="flip-card-{{i.id}}"
+                        class=" transition-transform "
+                        style="transform-style: preserve-3d;">
+
+                    <img src="{{i.main_photo.url}}"
+                            class="sm:absolute   sm:top-10  rounded-full"
+                            style="backface-visibility: hidden;"
+                            alt="Front">
+
+    <!-- Back Side -->
+                    <img src="{% static 'images/heu_bg.png' %}"
+                        class="absolute top-10    rounded-full"
+                        style="backface-visibility: hidden; transform: rotateY(180deg);"
+                        alt="Back">
+
+                </div>
+                
+                
+                
+            </div>
+
+
+            <!-- OPIS -->
+             
+            <div class="xl:pl-[85px] font-primary py-5 text-lg flex flex-col border-1 sm:border-none border-slate-400 w-full rounded-md sm:w-[80%] align-middle text-justify  ">
+                <div class="text-4xl sm:text-3xl text-center sm:text-left  ">{{i.name}}</div>
+                
+                <div class="text-2xl sm:text-xl font-semibold py-1 pt-2 text-center sm:text-left ">{{i.subheader}}</div>
+                
+                {% if i.description %}
+                <div class="">
+                    <ul class="py-2">
+                        {% for line in i.description.splitlines %}
+                          <li class="text-xl text-center sm:text-left py-1">{{ line|safe }}</li>
+                        {% endfor %}
+                    </ul>
+                    
+                </div>
+
+                {% endif %}
+
+               {% if i.profile  %}
+                <button onclick="openModal('{{i.id}}')" class="btn hidden sm:block mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-red-800 text-gray-200 mx-auto sm:self-start">{% translate 'poznaj mnie lepiej' %}</button>
+                
+                <button  class="btn sm:hidden mt-3 sm:mt-7 py-10  uppercase text-xl  hover:text-orange-100 hover:border-orange-100 hover:border-2 bg-slate-800 text-gray-200 mx-auto">
+                    <a href="{% url 'person' i.id %}" >{% translate 'poznaj mnie lepiej' %}</a>
+                    
+                    </button>
+
+<!-- MODAL -->
+                
+                    {% include 'elements/modal/base.html' %}
+
+               
+
+                {% endif %}
+            
+            </div>
+        </div>
+        {% if not forloop.last %} 
+        <div class="border-b border-slate-400 my-5 w-[35%]   mx-auto"></div>   
+        {% endif %}
+        {% endfor %}
+
+        <div class="border-b border-slate-400 w-full mb-15 mx-auto"></div>
+
+        <h2 class="text-4xl text-center   font-primary  uppercase">{% translate 'Nasi rehabilitanci' %}</h1>
+
+          <div class="border-b border-slate-400 mt-4 sm:mt-12 mb-0 sm:mb-2 w-[35%]   mx-auto"></div>
+      {% for i in rehabilitant %}
+        <div class="w-full relative flex flex-col sm:flex-row items-center align-middle gap-5">
+            
+            <!-- ZDJĘCIE -->
+
+            <div class=" h-[72%] w-[72%] sm:w-[25%] sm:h-100 mt-5 sm:mt-0 ">
+                <div id="flip-card-{{i.id}}"
+                        class=" transition-transform "
+                        style="transform-style: preserve-3d;">
+
+                    <img src="{{i.main_photo.url}}"
+                            class="sm:absolute   sm:top-10  rounded-full"
+                            style="backface-visibility: hidden;"
+                            alt="Front">
+
+    <!-- Back Side -->
+                    <img src="{% static 'images/heu_bg.png' %}"
+                        class="absolute top-10    rounded-full"
+                        style="backface-visibility: hidden; transform: rotateY(180deg);"
+                        alt="Back">
+
+                </div>
+                
+                
+                
+            </div>
+
+
+            <!-- OPIS -->
+             
+            <div class="xl:pl-[85px] font-primary py-5 text-lg flex flex-col border-1 sm:border-none border-slate-400 w-full rounded-md sm:w-[80%] align-middle text-justify  ">
+                <div class="text-4xl sm:text-3xl text-center sm:text-left  ">{{i.name}}</div>
+                
+                <div class="text-2xl sm:text-xl font-semibold py-1 pt-2 text-center sm:text-left ">{{i.subheader}}</div>
+                
+                {% if i.description %}
+                <div class="">
+                    <ul class="py-2">
+                        {% for line in i.description.splitlines %}
+                          <li class="text-xl text-center sm:text-left py-1">{{ line|safe }}</li>
+                        {% endfor %}
+                    </ul>
+                    
+                </div>
+
+                {% endif %}
+
+               {% if i.profile  %}
+                <button onclick="openModal('{{i.id}}')" class="btn hidden sm:block mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-red-800 text-gray-200 mx-auto sm:self-start">{% translate 'poznaj mnie lepiej' %}</button>
+                
+                <button  class="btn sm:hidden mt-3 sm:mt-7 py-10  uppercase text-xl  hover:text-orange-100 hover:border-orange-100 hover:border-2 bg-slate-800 text-gray-200 mx-auto">
+                    <a href="{% url 'person' i.id %}" >{% translate 'poznaj mnie lepiej' %}</a>
+                    
+                    </button>
+
+<!-- MODAL -->
+                
+                    {% include 'elements/modal/base.html' %}
+
+               
+
+                {% endif %}
+            
+            </div>
+        </div>
+        {% if not forloop.last %} 
+        <div class="border-b border-slate-400 my-5 w-[35%]   mx-auto"></div>   
+        {% endif %}
+        {% endfor %}
+
+      <div class="border-b border-slate-400 w-full mb-15 mx-auto"></div>
+
+      <h2 class="text-4xl text-center   font-primary  uppercase">{% translate 'Zarząd Ośrodka' %}</h1>
+
+        <div class="border-b border-slate-400 mt-4 sm:mt-12 mb-0 sm:mb-2 w-[35%]   mx-auto"></div>
+{% for i in manager %}
+        <div class="w-full relative flex flex-col sm:flex-row items-center align-middle gap-5">
+            
+            <!-- ZDJĘCIE -->
+
+            <div class=" h-[72%] w-[72%] sm:w-[25%] sm:h-100 mt-5 sm:mt-0 ">
+                <div id="flip-card-{{i.id}}"
+                        class=" transition-transform "
+                        style="transform-style: preserve-3d;">
+
+                    <img src="{{i.main_photo.url}}"
+                            class="sm:absolute   sm:top-10  rounded-full"
+                            style="backface-visibility: hidden;"
+                            alt="Front">
+
+    <!-- Back Side -->
+                    <img src="{% static 'images/heu_bg.png' %}"
+                        class="absolute top-10    rounded-full"
+                        style="backface-visibility: hidden; transform: rotateY(180deg);"
+                        alt="Back">
+
+                </div>
+                
+                
+                
+            </div>
+
+
+            <!-- OPIS -->
+             
+            <div class="xl:pl-[85px] font-primary py-5 text-lg flex flex-col border-1 sm:border-none border-slate-400 w-full rounded-md sm:w-[80%] align-middle text-justify  ">
+                <div class="text-4xl sm:text-3xl text-center sm:text-left  ">{{i.name}}</div>
+                
+                <div class="text-2xl sm:text-xl font-semibold py-1 pt-2 text-center sm:text-left ">{{i.subheader}}</div>
+                
+                {% if i.description %}
+                <div class="">
+                    <ul class="py-2">
+                        {% for line in i.description.splitlines %}
+                          <li class="text-xl text-center sm:text-left py-1">{{ line|safe }}</li>
+                        {% endfor %}
+                    </ul>
+                    
+                </div>
+
+                {% endif %}
+
+               {% if i.profile  %}
+                <button onclick="openModal('{{i.id}}')" class="btn hidden sm:block mt-7 text-lg hover:text-orange-200 hover:border-orange-200 hover:border-2 bg-red-800 text-gray-200 mx-auto sm:self-start">{% translate 'poznaj mnie lepiej' %}</button>
+                
+                <button  class="btn sm:hidden mt-3 sm:mt-7 py-10  uppercase text-xl  hover:text-orange-100 hover:border-orange-100 hover:border-2 bg-slate-800 text-gray-200 mx-auto">
+                    <a href="{% url 'person' i.id %}" >{% translate 'poznaj mnie lepiej' %}</a>
+                    
+                    </button>
+
+<!-- MODAL -->
+                
+                    {% include 'elements/modal/base.html' %}
+
+               
+
+                {% endif %}
+            
+            </div>
+        </div>
+        {% if not forloop.last %} 
+        <div class="border-b border-slate-400 my-5 w-[35%]   mx-auto"></div>   
+        {% endif %}
+        {% endfor %}
+
+        
+    </div>
+</section>
+
+{% include 'elements/footer.html' %}
+
+  
+{% endblock  %}
+
+  {% block script %}
+  <script src="{% static 'js/modal_tabs.js' %}"></script>
+  <script src="{% static 'js/modal_close.js' z%}"></script>
+  <script src="{% static 'js/modal_gallery.js' %}"></script>
+  
+  {% endblock  %}

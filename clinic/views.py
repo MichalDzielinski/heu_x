@@ -104,7 +104,7 @@ class WizytaView(TemplateView):
     template_name = 'clinic/wizyta.html'
 
 class ZespolView(ListView):
-    template_name = 'clinic/zespol.html'
+    template_name = 'clinic/zespol2.html'
 
     context_object_name = 'query'  # optional: defaults to 'object_list'
 

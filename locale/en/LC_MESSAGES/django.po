@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-06 14:03+0100\n"
-"PO-Revision-Date: 2026-02-06 14:50+0100\n"
+"PO-Revision-Date: 2026-02-07 13:00+0100\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -357,20 +357,20 @@ msgstr "at the center"
 
 #: .\templates\clinic\zespol.html:27
 msgid "Nasi lekarze"
-msgstr ""
+msgstr "Our doctors"
 
 #: .\templates\clinic\zespol.html:73 .\templates\clinic\zespol.html:138
 #: .\templates\clinic\zespol.html:203
 msgid "poznaj mnie lepiej"
-msgstr ""
+msgstr "Get to know me better"
 
 #: .\templates\clinic\zespol.html:92
 msgid "Nasi rehabilitanci"
-msgstr ""
+msgstr "Our physiotherapists"
 
 #: .\templates\clinic\zespol.html:157
 msgid "Zarząd Ośrodka"
-msgstr ""
+msgstr "The Centre’s Management Board"
 
 #: .\templates\elements\button\contact\contact-button.html:10
 #: .\templates\elements\contact\contact-form.html:10
