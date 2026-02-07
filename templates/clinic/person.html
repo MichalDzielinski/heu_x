@@ -46,6 +46,7 @@
             </div>
         </div>
 <div class="border-b border-slate-400 w-full my-5 mx-auto"></div>
+
 <!-- PROCEDURY -->
         <div class="text-xl text-slate-800">
             <h1 class="font-primary text-3xl mx-5 my-5">Procedury</h1>
@@ -89,9 +90,27 @@
           </div>
         </div>
 {% else %}
-<div class=""></div>
+
 
  {% endif  %}
+<div class="border-b border-slate-400 w-full my-5 mx-auto"></div>
+            <h1 class="font-primary text-3xl mx-5 my-5">Galeria</h1>
+
+
+ <div class="text-slate-800 text-3xl   xl:block  xl:w-[110%]">
+    <div class="grid gallery grid-cols-3 gap-2 w-full h-auto ">
+        
+        <div class="gs_el main-img col-span-2 row-span-2 rounded-md aspect-square overflow-hidden">
+            <img src="{{ object.profile.gallery.first.image.url }}" class="object-cover w-full h-full" alt="">
+        </div>
+          
+        {% for image in object.profile.gallery.all|slice:"1:" %}
+        <div class="gs_el aspect-square overflow-hidden rounded-md">
+            <img src="{{ image.image.url }}" class="w-full h-full object-cover" alt="">
+        </div>
+        {% endfor %}
+    </div>
+  </div>
 
 
 
@@ -103,48 +122,7 @@
     </div>
 
 
-    {% if object.profile.kalendarium %}
-    <div class="cnt px-[25px]  ">
-    <div class="text-gray-700 my-9 text-2xl">{{object.profile.kalendarium_intro|safe}}</div>
-    <div class="max-w-4xl h-[415px] overflow-y-auto pb-5 mt-[30px]  ">
-      
-      <div class="relative  ">
-          <!-- Vertical line in the center -->
-          <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-sky-900 transform -translate-x-1/2"></div>
     
-          <!-- Timeline items -->
-          <div class="space-y-2 ">
-              <!-- Item 1 (Left) -->
-
-              {% for j in objec.profile.kalendarium.all %}
-              <div class="relative flex {% if forloop.counter|divisibleby:2 %} items-start justify-start {% else %} items-start justify-end {% endif %}">
-                  <div class="w-1/2 {% if forloop.counter|divisibleby:2 %} pr-5 text-right {% else %} pl-5 text-left {% endif %}">
-                      <div class="bg-white px-3 py-2 rounded-lg shadow-md shadow-slate-800">
-                          <h3 class="text-lg font-semibold text-gray-800">{% if j.month %}{{j.get_month_display}}{% endif %}&nbsp;{{j.year}}</h3>
-                          <p class="text-gray-600">{{j.content|safe}}</p>
-                      </div>
-                  </div>
-                  <div class="absolute left-1/2 w-6 h-6 bg-slate-800 rounded-full mt-1 -translate-x-1/2"></div>
-              </div>
-              
-              {% endfor %}
-
-
-             
-              
-            
-           
-              
-             
-          </div>
-      </div>
-  </div>
-    
-   
-  </div>
-
-
-    {% endif %}
 
     
     
