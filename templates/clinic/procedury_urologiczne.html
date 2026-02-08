@@ -15,7 +15,7 @@
 {% include 'elements/header.html' %}
 <section class="grid grid-cols-1 gap-x-5 gap-y-1  md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[120px] md:mt-[180px]">
     <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
-        <h2 class="uppercase pb-2 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Badania urologiczne' %}</h2>
+        <h2 class="uppercase pb-2 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Procedury urologiczne' %}</h2>
         
         <div class="flex flex-col md:block  items-center">
 
@@ -81,7 +81,18 @@
                     <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                     
                     <h2 class="font-semibold text-xl py-3 mb-3">
-                        Na czym polega {% if i.typ_usługi == 'badanie' %}badanie{% elif i.typ_usługi == 'zabieg' %}zabieg{% elif i.typ_usługi == 'procedura' %}procedura{% endif %}
+                        
+                        {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Na czym polega badanie' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Na czym polega zabieg' %}
+                        {% elif i.typ_usługi == 'procedura' %}
+                        
+                        {% translate 'Na czym polega procedura' %}
+                        
+                        {% endif %}
                          
                     
                     </h2>
@@ -98,8 +109,20 @@
                     
                     
                     <h2 class="font-semibold text-xl py-3 mb-3">
-                        Jak przebiega {% if i.typ_usługi == 'badanie' %}badanie{% elif i.typ_usługi == 'zabieg' %}zabieg{% elif i.typ_usługi == 'procedura' %}procedura{% endif %}
                      
+                        {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Jak przebiega badanie' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Jak przebiega zabieg' %}
+                        {% elif i.typ_usługi == 'procedura' %}
+                        
+                        {% translate 'Jak przebiega procedura' %}
+                        {% else %}
+                        {% translate 'Jak przebiega' %}
+                        
+                        {% endif %}
                     
                     </h2>
                     
@@ -119,7 +142,21 @@
 
                         
                         
-                        Wskazania {% if i.typ_usługi == 'badanie' %}do badania{% elif i.typ_usługi == 'zabieg' %}do zabiegu{% else %}{% endif %}
+                    
+                        {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Wskazania do badanie' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Wskazania do zabieg' %}
+                        {% else %}
+                        
+                        {% translate 'Wskazania' %}
+                        
+                        {% endif %}
+                    
+                    
+                    
                     </h2>
                     
                     <div class="px-9">
@@ -153,8 +190,12 @@
                             <div class="block w-[85%]  sm:text-lg xl:text-xl">
                                 <p>
 
-                                    Czas oczekiwania {% if i.typ_usługi == 'badanie' %}na badanie{% elif i.typ_usługi == 'zabieg' %}na zabieg{% elif i.typ_usługi == 'konsultacja' %}na konsultację{% endif %}
+                                    {% translate 'Czas oczekiwania' %}
                                     
+
+                        
+
+
                                 </p>
                                 <p class="text-sm">({% translate 'liczony od dnia zapisu' %})</p>
                                 
@@ -171,7 +212,7 @@
                             
                             <div class="sm:text-lg xl:text-xl ">
                                 
-                                Czas trwania {% if i.typ_usługi == 'badanie' %}badania{% elif i.typ_usługi == 'zabieg' %}zabiegu{% endif %}
+                                {% translate 'Czas trwania' %}
                                 
 
                             </div>
@@ -199,7 +240,8 @@
                         <div class="grid grid-cols-2">
                             
                             <div class="sm:text-lg xl:text-xl ">
-                                {% if i.typ_usługi == 'konsultacja' or  i.typ_usługi == 'procedura' %}Lekarz{% elif i.typ_usługi == 'zabieg' %}Zabieg wykonuje{% else %}{% translate 'Badanie wykonuje' %}{% endif %} 
+                                
+                                {% translate 'Lekarz' %}
 
                             </div>
                             <div class="text-end  text-xl">{{i.lekarz}}</div>
@@ -220,7 +262,11 @@
                         <div class="grid grid-cols-2">
         
                             <div class="mb-5 justify-start w-[75%] sm:text-lg xl:text-xl ">
-                               Instruktaż przygotowania do {% if i.typ_usługi == 'zabieg' %}zabiegu{% elif i.typ_usługi == 'procedury' %}procedury{% else %}badania{% endif %} (plik PDF)
+                               {% translate 'Instruktaż przygotowania' %}  
+                               
+                               <br>
+
+                               ({% translate 'plik PDF' %})
         
                             </div>
                             <div class="flex mb-3 justify-items-end justify-center items-center font-tertiary   font-semibold text-lg bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
@@ -256,8 +302,17 @@
 
                 <h2 class="py-3  mb-3 sm:text-lg xl:text-xl ">
                     
-                    Po {% if i.typ_usługi == 'zabieg' %}zabiegu{% elif i.typ_usługi == 'procedura' %}zakończeniu procedury{% else %}badaniu{% endif %}  pacjent otrzymuje:
-                
+                    {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Po badaniu pacjent otrzymuje:' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Po zabiegu pacjent otrzymuje:' %}
+                        {% else  %}
+                        
+                        {% translate 'Pacjent otrzymuje:' %}
+                        
+                        {% endif %}
 
                 </h2>
 
