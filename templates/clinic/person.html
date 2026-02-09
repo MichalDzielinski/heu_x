@@ -30,7 +30,7 @@
 
 <!-- O mnie -->
         <div class="text-xl text-slate-800">
-            <h1 class="font-primary text-3xl mx-5 my-5">O mnie</h1>
+            <h1 class="font-primary text-3xl mx-5 my-5">{% translate 'O mnie' %}</h1>
 
            
             <div class="text-gray-700 mx-5 text-justify ">
@@ -42,7 +42,7 @@
 
 <!-- PROCEDURY -->
         <div class="text-xl text-slate-800">
-            <h1 class="font-primary text-3xl mx-5 my-5">Procedury</h1>
+            <h1 class="font-primary text-3xl mx-5 my-5">{% translate 'Procedury' %}</h1>
 
            
             <div class="text-gray-700 mx-5 text-justify   ">
@@ -58,7 +58,7 @@
  <!-- REKOMENDACJE -->
  
  {% if object.profile.rekomendacja.all|length > 0 %}
- <h1 class="font-primary text-3xl mx-5 my-5">Rekomendacje</h1>
+ <h1 class="font-primary text-3xl mx-5 my-5">{% translate 'Rekomendacje' %}</h1>
  
 <div class="cnt  items-center px-[25px]" ">
   <div class=" text-xl mt-9 my-1">
@@ -108,7 +108,7 @@
 <!-- Kalendarium -->
  {% if object.profile.kalendarium.all|length > 0 %}
         <div class="text-xl text-slate-800">
-            <h1 class="font-primary text-3xl mx-5 my-5">Kalendarium</h1>
+            <h1 class="font-primary text-3xl mx-5 my-5">{% translate 'Kalendarium' %}</h1>
 
             <div class="relative">
             <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-sky-900 transform -translate-x-1/2"></div>
@@ -136,7 +136,7 @@
  {% endif  %}
 
  <!-- GALERIA -->
- <h1 class="font-primary text-3xl mx-5 my-5">Galeria</h1>
+ <h1 class="font-primary text-3xl mx-5 my-5">{% translate 'Galeria' %}</h1>
 
 
  <div class="text-slate-800 text-3xl   xl:block  xl:w-[110%]">

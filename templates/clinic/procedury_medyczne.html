@@ -20,7 +20,7 @@
         <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Procedury medyczne' %}</h2>
         
         <p class="text-lg font-primary   ">{% translate 'Procedury medyczne dostępne' %}</p>
-        <p class="text-lg font-primary flex  ">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'img/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span> </p>
+        <p class="text-lg font-primary flex  ">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'icons/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span> </p>
         <p class="text-sm font-primary  ">{% translate '(kliknij na nazwę badania, żeby poznać szczegóły)' %}</p>
     </div>
     
@@ -79,7 +79,22 @@
                     
                     <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                     
-                    <h2 class="font-semibold text-xl py-3 mb-3">{% trans 'Na czym polega badanie' %}</h2>
+                    <h2 class="font-semibold text-xl py-3 mb-3">
+                        
+                        {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Na czym polega badanie' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Na czym polega zabieg' %}
+                        {% elif i.typ_usługi == 'procedura' %}
+                        
+                        {% translate 'Na czym polega procedura' %}
+                        
+                        {% endif %}
+                         
+                    
+                    </h2>
                     
                     <div class="">
                         {{i.polega|safe}}                        
@@ -92,7 +107,23 @@
                     <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                     
                     
-                    <h2 class="font-semibold text-xl py-3 mb-3">{% trans 'Jak przebiega badanie' %} </h2>
+                    <h2 class="font-semibold text-xl py-3 mb-3">
+                     
+                        {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Jak przebiega badanie' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Jak przebiega zabieg' %}
+                        {% elif i.typ_usługi == 'procedura' %}
+                        
+                        {% translate 'Jak przebiega procedura' %}
+                        {% else %}
+                        {% translate 'Jak przebiega' %}
+                        
+                        {% endif %}
+                    
+                    </h2>
                     
                     
                     <div class="">
@@ -106,12 +137,31 @@
                      {% if i.wskazania %}
                     <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                     
-                    <h2 class="font-semibold py-3 text-xl mb-3">{% trans 'Wskazania do badania' %}</h2>
+                    <h2 class="font-semibold text-xl py-3 mb-3"> 
+
+                        
+                        
+                    
+                        {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Wskazania do badanie' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Wskazania do zabieg' %}
+                        {% else %}
+                        
+                        {% translate 'Wskazania' %}
+                        
+                        {% endif %}
+                    
+                    
+                    
+                    </h2>
                     
                     <div class="px-9">
                         <ul class="list-disc">
                             {% for line in i.wskazania.splitlines %}
-                              <li class="my-1">{{ line }}</li>
+                              <li class="my-1">{{ line|safe }}</li>
                             {% endfor %}
                         </ul>
                         
@@ -126,7 +176,7 @@
         
                 <div class="px-1 py-[55px] my-5 order-1 xl:order-2  font-primary text-lg text-justify border-b-2 border-slate-200  md:border-none   items-center   text-slate-800   ">
                     <h2 class="font-primary flex  text-xl justify-start">{{i.nazwa}}</h2>
-                    <h2 class="font-primary flex  text-xl justify-start">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'img/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span></h2>
+                    <h2 class="font-primary flex  text-xl justify-start">{% translate 'w ośrodku' %} <span class="flex text-2xl mx-1 uppercase font-heureka"><img src="{% static 'icons/heureka_logo_3.png' %}" class="size-7 mr-1 " alt="">heureka</span></h2>
                     
                     <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                     <section class="my-3 font-primary flex flex-col">
@@ -138,8 +188,13 @@
                             
                             <div class="block w-[85%]  sm:text-lg xl:text-xl">
                                 <p>
-                                    {% translate 'Czas oczekiwania na badanie' %} 
+
+                                    {% translate 'Czas oczekiwania' %}
                                     
+
+                        
+
+
                                 </p>
                                 <p class="text-sm">({% translate 'liczony od dnia zapisu' %})</p>
                                 
@@ -148,18 +203,23 @@
                             
                         </div>
                         
+                        {% if i.czas_trwania %}
                         <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                         
                         <!-- czas badania -->
                         <div class="grid grid-cols-2">
                             
                             <div class="sm:text-lg xl:text-xl ">
-                                {% translate 'Czas trwania badania' %}  
                                 
+                                {% translate 'Czas trwania' %}
+                                
+
                             </div>
                             <div class="text-end  text-xl">{% translate 'ok.' %} {{i.czas_badania}} {% translate 'minut' %} </div>
                             
                         </div>
+
+                        {% endif %}
                         
                         <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
                         <!-- Koszt -->
@@ -169,24 +229,25 @@
                                 {% translate 'Koszt' %}
                                 
                             </div>
-                            <div class="text-end   text-xl">{{i.koszt}} zł</div>
+                            <div class="text-end   text-xl">{% if i.cena_od %}od {% endif %}{{i.koszt}} zł</div>
                             
                         </div>
-                        
                         {% if i.lekarz %}
                         <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
+                        
                         
                         <div class="grid grid-cols-2">
                             
                             <div class="sm:text-lg xl:text-xl ">
-                                {% translate 'Badanie wykonuje' %} 
                                 
+                                {% translate 'Lekarz' %}
+
                             </div>
                             <div class="text-end  text-xl">{{i.lekarz}}</div>
                             
                         </div>
+                        {% endif  %}
 
-                        {% endif %}
 
                         {% if i.dokumenty %}
 
@@ -200,7 +261,11 @@
                         <div class="grid grid-cols-2">
         
                             <div class="mb-5 justify-start w-[75%] sm:text-lg xl:text-xl ">
-                               {% translate  'Instruktaż przygotowania do badania (plik PDF)' %}
+                               {% translate 'Instruktaż przygotowania' %}  
+                               
+                               <br>
+
+                               ({% translate 'plik PDF' %})
         
                             </div>
                             <div class="flex mb-3 justify-items-end justify-center items-center font-tertiary   font-semibold text-lg bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
@@ -234,12 +299,26 @@
                 <div class="border-b border-slate-400 my-9 w-[35%]   mx-auto"></div>
 
 
-                <h2 class="py-3  mb-3 sm:text-lg xl:text-xl ">{% translate 'Po badaniu pacjent otrzymuje:' %}</h2>
+                <h2 class="py-3  mb-3 sm:text-lg xl:text-xl ">
+                    
+                    {% if i.typ_usługi == 'badanie' %}
+                        {% translate 'Po badaniu pacjent otrzymuje:' %}
+                        
+                        {% elif i.typ_usługi == 'zabieg' %}
+                        
+                        {% translate 'Po zabiegu pacjent otrzymuje:' %}
+                        {% else  %}
+                        
+                        {% translate 'Pacjent otrzymuje:' %}
+                        
+                        {% endif %}
+
+                </h2>
 
             <div class="px-9">
                 <ul class="list-disc">
                     {% for line in i.after.splitlines %}
-                      <li class="my-1">{{ line }}</li>
+                      <li class="my-1">{{ line|safe }}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -270,18 +349,18 @@
         
         {% endfor %}  
         
-</section>
+    </section>
 {% else %}
  
 <!-- WSZYSTKIE - BRAK WYNIKÓW -->
 
-<section class="grid grid-cols-1 pb-7   gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
+        <section class="grid grid-cols-1 pb-7   gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
             <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
                 <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center text-center  ">{% trans 'Brak wyników'%}</h2>
                 
             </div>
             
-</section>
+        </section>
 
 {% endif %}
 </div>
