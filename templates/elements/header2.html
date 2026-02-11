@@ -84,7 +84,11 @@
                               <div 
                                 class="bg-green-700 z-50 rounded-r-md origin-top-left absolute -left-6  mt-5 delay-250 group-hover:delay-0 group-hover:z-10 w-68   opacity-0 scale-95 transform transition-all duration-200 ease-out group-hover:opacity-100 group-hover:scale-100"
                               >
-                              
+                                <div class=" flex flex-col pl-2   bg-linear-to-tr from-sky-900 to-slate-800 justify-start text-md uppercase ml-3 rounded-r-md ">
+                                  <a href="{% url 'procedury kardiologiczne' %}" class=" pt-3 py-1  hover:text-orange-200">Procedury kardiologiczne</a>
+                                  <a href="{% url 'procedury medyczne' %}" class="  py-1 hover:text-orange-200 ">Procedury medyczne</a>
+                                  <a href="{% url 'pakiety' %}" class="pb-3  py-1  hover:text-orange-200 ">Pakiety</a>
+                                </div>
                               </div>
                             </div>
                         </h2>
@@ -93,24 +97,26 @@
             </li>
             <li class="mr-2 hidden md:flex">
                 <div class="sample-transition-4">
-                    <a href="{% url 'strefa pacjenta' %}" class="flex group items-center">
-                        <h2 id='troo' class="nsd uppercase text-md  flex group-hover:text-orange-300">
+
+
+                    
+                    <div class="dropdown dropdown-hover flex">
+  <a href="{% url 'strefa' %}" class="flex">
                             <img src="{% static 'icons/heureka_logo_3.png' %}" class=" hidden sm:block  sm:size-4 sm:mt-1 xl:mt-0 xl:size-5 mr-1 transition-all group-hover:rotate-[47deg]  " alt="">
-                            <div class="relative inline-block text-left group">
-                                
-                                {% trans 'strefa pacjenta' %}
-                                  
-                                  
-                               
-                                <div 
-                                  class="bg-green-700 z-50 rounded-r-md origin-top-left absolute -left-2  mt-5 w-45 delay-250 group-hover:delay-0   opacity-0 scale-95 transform transition-all duration-200 ease-out group-hover:opacity-100 group-hover:scale-100"
-                                >
-                                 
-                                </div>
-                              </div>
-                              
-                        </h2>
-                    </a>
+
+<div class="">
+    {% translate 'strefa pacjenta' %}
+
+</div>
+  </a>
+
+  <ul class="dropdown-content menu w-52 mt-9 rounded-md bg-base-100 opacity-75 shadow-sm z-60">
+    <li><a href="/item-1">Item 1</a></li>
+    <li><a href="/item-2">Item 2</a></li>
+  </ul>
+                    </div>
+
+                    
                 </div>
             </li>
             <li class="mr-2">

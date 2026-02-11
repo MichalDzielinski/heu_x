@@ -1,35 +1,148 @@
 {% extends 'base.html' %}
-
-{% block title %}Badania kliniczne{% endblock title %}
-
 {% load i18n %}
 
 
+{% block title %}{% translate 'Strefa pacjenta' %}{% endblock title %}
 
 
 {% block content %}
-
-{% include 'elements/button/contact/contact-button.html' %}
-{% include 'elements/contact/contact-base.html' %}
 {% include 'elements/header.html' %}
 
-<section class="grid grid-cols-1 gap-x-5 gap-y-1 md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[210px]">
+<section class="grid grid-cols-1 gap-x-5 gap-y-1  md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[140px] md:mt-[200px]">
     <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
-        <h2 class="uppercase pb-9 font-primary flex  text-4xl justify-center md:justify-start ">{% translate 'Strefa pacjenta' %}</h2>
+        <h2 class="uppercase pb-2 font-primary flex  text-4xl justify-center text-center md:justify-start ">{% translate 'Strefa pacjenta' %}</h2>
         
-        <div class="text-md font-primary mb-5  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore tempore magnam veniam fuga itaque aspernatur vitae consequuntur, temporibus id quae perspiciatis odit distinctio, exercitationem nesciunt ipsam nemo, eius sit fugiat odio sapiente similique facilis. Necessitatibus at laudantium, expedita id fugiat ad iste architecto enim. </div>
+        <p class="pt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis accusamus labore reiciendis voluptas veritatis aliquid nulla perspiciatis tenetur harum? Dicta nesciunt pariatur necessitatibus deserunt odio.</p>
         
     </div>
     
-  </section>
+</section>
 
-<section class="grid  cols-1">
 
-    <div class="p-3 my-5 py-auto w-[95%] xl:w-[80%] mx-auto  flex justify-center items-center isolate rounded-xl h-[550px] bg-white/90 shadow-lg ring-1 ring-black/5">
 
-        <h1 class="text-6xl font-primary text-center text-gray-600 items-center align-middle">{% translate 'Wkrótce...' %}</h1>
+<section class="grid  cols-1 ">
+
+    <div class="px-7 py-5 my-5 xl:px-12  w-[95%] xl:w-[80%]  xl:py-[75px]  mx-auto text-slate-800 rounded-xl  bg-white/90 shadow-lg ring-1 ring-black/5">
+
+        <!-- WIZYTA -->
+        <div class="">
+
+
+            <div class="flex text-center md:text-left">
+                
+                
+                
+                <h2 class="text-4xl font-primary py-9 mx-auto lg:mx-0 lg:text-left mt-7 md:mt-0  ">{% translate 'Wizyta' %}</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-start items-start w-full sm:w-[450px]">
+                
+                <a href="{% url 'wizyta' %}" class="w-full" >
+                    <button class="flex mb-5 mr-2 justify-center w-full items-center font-tertiary font-semibold text-xl bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                        
+                        
+                        
+                        {% translate 'Jak umówić i przygotować się do wizyty' %}
+                </button>
+            </a>
+        </div>
+            
+          
+        </div>
+
+        <div class="border-1 border-b border-slate-300 w-[75%] md:w-full mx-auto my-7 "></div>
+
+
+        <!-- DO POBRANIA -->
+        <div class="">
+            <div class="flex text-center sm:text-left ">
+                <h2 class="text-4xl font-primary py-9 mx-auto lg:mx-0 lg:text-left   ">{% translate 'Użyteczne pliki do pobrania dla pacjentów' %}</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-start items-start w-full sm:w-[450px]">
+                
+                <a href="{% url 'do pobrania' %}" class="w-full" >
+                    <button class="flex mb-5 mr-2 justify-center w-full items-center font-tertiary font-semibold text-xl bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                        
+                        
+                        
+                        {% translate 'Do pobrania' %}
+                </button>
+            </a>
+        </div>
+
+
+            
+          
+        </div>
+
+       <div class="border-1 border-b border-slate-300 w-[75%] md:w-full mx-auto my-7 "></div>
+
+   
+        <!-- Profilaktyka -->
+        <div class="">
+
+
+            <div class="flex">
+                <h2 class="text-4xl font-primary py-9 mx-auto lg:mx-0 lg:text-left  ">{% translate 'Profilaktyka urlogiczna' %}</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-start items-start w-full sm:w-[450px]">
+                
+                <a href="{% url 'profilaktyka' %}" class="w-full" >
+                    <button class="flex mb-5 mr-2 justify-center w-full items-center font-tertiary font-semibold text-xl bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                        
+                        
+                        
+                        {% translate 'Sprawdź jak zadbać o swój urologiczny dobrostan na co dzień' %}
+                </button>
+            </a>
+        </div>
+            
+          
+        </div>
+
+        <div class="border-1 border-b border-slate-300 w-[75%] md:w-full mx-auto my-7 "></div>
+        
+
+
+        <!-- Pakiety -->
+        <div class="">
+
+
+            <div class="flex text-center lg:text-left ">
+                
+                
+                <h2 class="text-4xl font-primary py-9 mx-auto lg:mx-0 lg:text-left  ">{% translate 'Pakiety monitorowanych sesji rehabilitacji urologicznej' %}</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-start items-start w-full sm:w-[450px]">
+                
+                <a href="{% url 'pakiety' %}" class="w-full" >
+                    <button class="flex mb-5 mr-2 justify-center w-full items-center font-tertiary font-semibold text-xl bg-linear-to-tr from-sky-900 to-slate-800 p-5  text-gray-100 rounded-lg">
+                        
+                        
+                        
+                        {% translate 'Sprawdź ofertę naszych pakietów' %}
+                </button>
+            </a>
+        </div>
+            
+          
+        </div>
+      
+        <div class="border-1 border-b border-slate-300 w-[75%] md:w-full mx-auto my-7 "></div>
+
+
+
+
+
+
+
+
 
     </div>
+
 
     
     

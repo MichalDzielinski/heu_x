@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-09 12:35+0100\n"
-"PO-Revision-Date: 2026-02-09 12:38+0100\n"
+"PO-Revision-Date: 2026-02-11 10:41+0100\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -440,7 +440,6 @@ msgid "Poniżej lista badań urologicznych dostępnych"
 msgstr "Below is a list of urological procedures available"
 
 #: .\templates\clinic\strefa.html:18
-#, fuzzy
 #| msgid "strefa pacjenta"
 msgid "Strefa pacjenta"
 msgstr "Patient zone"
