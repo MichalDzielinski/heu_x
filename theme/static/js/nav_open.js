@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('small_nav');
-  const navBtn = document.getElementById('navBtn');
+  const openBtn = document.getElementById('navbarOpen');
+  const closeBtn = document.getElementById('navbarClose');
 
   const navTimeline = gsap.timeline({ paused: true, reversed: true });
 
-  // ustawienie startowe – tylko przesunięcie w poziomie
+  // ustawienie startowe – przesunięcie w poziomie i brak interakcji
   navTimeline.set(nav, {
     x: '120%',
     autoAlpha: 0,
@@ -20,7 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: 'power3.out'
   });
 
-  navBtn.addEventListener('click', () => {
-    navTimeline.reversed() ? navTimeline.play() : navTimeline.reverse();
+  // przycisk otwierający navbar
+  openBtn.addEventListener('click', () => {
+    if (navTimeline.reversed()) {
+      navTimeline.play();
+    }
+  });
+
+  // przycisk zamykający navbar
+  closeBtn.addEventListener('click', () => {
+    if (!navTimeline.reversed()) {
+      navTimeline.reverse();
+    }
   });
 });

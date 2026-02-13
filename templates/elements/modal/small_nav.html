@@ -4,57 +4,91 @@
 <div
   id="small_nav"
   class="sm:hidden frame-gradient fixed 
-         bottom-0 
+         top-0 
          left-1/2 -translate-x-1/2
-         z-50 box-border
+         z-60 box-border
          border-2 border-gray-100 rounded-b-lg
-         w-[99%] p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]
+         w-[99%] p-4 
          text-center"
   style="opacity:0; visibility:hidden;"
 >
 
+<!-- MOBILE NAVBAR BUTTON -->
+    <div id="navbarClose"   class="sm:hidden z-50 cursor-pointer h-10 w-10 border-gray-150 border-2 flex items-center text-center justify-center rounded-md fixed top-5 right-3 ">
+        <i class="ri-close-large-line cursor-pointer text-center text-gray-150 text-2xl p-3 "></i>
+    </div>
+
+<!-- HEADER -->
+
+ <div class="    relative ">
+<!-- LOGO & NAME -->
+        <div class="p-5 mr-8 md:mr-0">
+            <div class=" flex gap-2  justify-center sm:justify-start items-center">
+                <a href="{% url 'index' %}" class="flex gap-2 relative group justify-center md:justify-start items-center">
+                    <img src="{% static 'icons/heureka_logo_3.png' %}" alt="" class="logo z-20 size-10 xl:size-14 mb-2 justify-center drop-shadow-orange-500 shadow-2xl">
+                    <h1 class="   font-heureka-2 text-5xl xl:text-6xl text-gray-50  text-shadow-2xs text-shadow-green-700 uppercase z-20">heureka</h1>
+                    
+                   
+                    
+                   
+                    <!-- light blob -->
+                    <div  class=" rounded-full absolute -left-1  bg-pink-100 blur-xl z-1 hover:delay-150 transition duration-300 ease-in-out flex-none w-[55px] h-[55px]"></div>
+                   <div  class=" rounded-full absolute -left-1  bg-sky-500 blur-xl z-1 hidden  group-hover:inline  flex-none w-[75px] h-[55px]"></div>
+                    </a>
+            </div>
+
+           
+
+        <!-- sub name -->
+            <div class=" sample-transition">
+                <h3 id="roo" class=" font-tertiary text-gray-200 pt-2 text-xl text-center md:text-left">{% trans 'Ośrodek urologii czynnościowej' %}</h3>
+                <h3 id="roo" class="text-gray-100 font-primary  text-2xl  text-center md:text-left">{% trans 'Pawła Szaleckiego' %}</h3>
+            </div>
+        </div>
+    </div> 
+
   <!-- MENU LINKS -->
-  <div class="text-gray-100 text-xl font-primary py-3 group">
+  <div class="text-gray-100 text-2xl font-primary py-3 group">
     <a href="{% url 'badanie urodynamiczne' %}" class="group-hover:text-orange-300">
       {% trans 'Badanie urodynamiczne' %}
     </a>
   </div>
-  <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  <p class="border-b border-1 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-xl font-primary py-3 group">
+  <div class="text-gray-100 text-2xl font-primary py-3 group">
     <a href="{% url 'procedury urologiczne' %}" class="group-hover:text-orange-300">
       {% trans 'Procedury urologiczne' %}
     </a>
   </div>
-  <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  <p class="border-b border-1 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-xl font-primary py-3 group">
+  <div class="text-gray-100 text-2xl font-primary py-3 group">
     <a href="{% url 'pozostałe procedury' %}" class="group-hover:text-orange-300">
       {% trans 'Pozostałe procedury' %}
     </a>
   </div>
-  <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  <p class="border-b border-1 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-xl font-primary py-3 group">
+  <div class="text-gray-100 text-2xl font-primary py-3 group">
     <a href="{% url 'strefa pacjenta' %}" class="group-hover:text-orange-300">
       {% trans 'Strefa pacjenta' %}
     </a>
   </div>
-  <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  <p class="border-b border-1 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-xl font-primary py-3 group">
+  <div class="text-gray-100 text-2xl font-primary py-3 group">
     <a href="{% url 'badania kliniczne' %}" class="group-hover:text-orange-300">
       {% trans 'Badania kliniczne' %}
     </a>
   </div>
-  <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  <p class="border-b border-1 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-xl font-primary py-3 group">
+  <div class="text-gray-100 text-2xl font-primary py-3 group">
     <a href="{% url 'kontakt' %}" class="group-hover:text-orange-300">
       {% trans 'Kontakt' %}
     </a>
   </div>
-  <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  <p class="border-b border-1 border-gray-100 w-[75%] mx-auto"></p>
 
   <!-- LANGUAGE FLAGS -->
   <div class="flex mx-auto w-[75%] items-center justify-center py-3 gap-3">
@@ -87,7 +121,7 @@
     </form>
 
   </div>
-  <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+  <p class="border-b border-1 border-gray-100 w-[75%] mx-auto"></p>
 
   <!-- SEARCHBAR -->
   <div class="font-primary flex w-full justify-center pt-3 pb-9">
