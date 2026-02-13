@@ -3,10 +3,13 @@
 
 <div
   id="small_nav"
-  class="sm:hidden frame-gradient fixed bottom-0 left-1/2
-         -translate-x-1/2  z-50
+  class="sm:hidden frame-gradient fixed 
+         bottom-[calc(1.25rem+env(safe-area-inset-bottom))] 
+         left-1/2 -translate-x-1/2
+         z-50 box-border
          border-2 border-gray-100 rounded-b-lg
-          w-[99%] p-4 pointer-events-none text-center pr-7"
+         w-[99%] p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]
+         text-center pr-7"
   style="opacity:0; visibility:hidden;"
 >
 
