@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!openBtn || !closeBtn || !nav) return; // bezpieczeństwo
 
     const navTimeline = gsap.timeline({ paused: true, reversed: true });
-    navTimeline.set(nav, { x: '150%', autoAlpha: 0, pointerEvents: 'none' });
+    navTimeline.set(nav, { x: '200%', autoAlpha: 0, pointerEvents: 'none' });
     navTimeline.to(nav, { x: '0%', autoAlpha: 0.97, pointerEvents: 'auto', duration: 0.8, ease: 'power3.out' });
 
     openBtn.addEventListener('click', () => { if (navTimeline.reversed()) navTimeline.play(); });
