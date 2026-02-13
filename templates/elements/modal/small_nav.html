@@ -14,42 +14,42 @@
 >
 
   <!-- MENU LINKS -->
-  <div class="text-gray-100 text-2xl font-primary py-5 group">
+  <div class="text-gray-100 text-xl font-primary py-3 group">
     <a href="{% url 'badanie urodynamiczne' %}" class="group-hover:text-orange-300">
       {% trans 'Badanie urodynamiczne' %}
     </a>
   </div>
   <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-2xl font-primary py-5 group">
+  <div class="text-gray-100 text-xl font-primary py-3 group">
     <a href="{% url 'procedury urologiczne' %}" class="group-hover:text-orange-300">
       {% trans 'Procedury urologiczne' %}
     </a>
   </div>
   <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-2xl font-primary py-5 group">
+  <div class="text-gray-100 text-xl font-primary py-3 group">
     <a href="{% url 'pozostałe procedury' %}" class="group-hover:text-orange-300">
       {% trans 'Pozostałe procedury' %}
     </a>
   </div>
   <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-2xl font-primary py-5 group">
+  <div class="text-gray-100 text-xl font-primary py-3 group">
     <a href="{% url 'strefa pacjenta' %}" class="group-hover:text-orange-300">
       {% trans 'Strefa pacjenta' %}
     </a>
   </div>
   <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-2xl font-primary py-5 group">
+  <div class="text-gray-100 text-xl font-primary py-3 group">
     <a href="{% url 'badania kliniczne' %}" class="group-hover:text-orange-300">
       {% trans 'Badania kliniczne' %}
     </a>
   </div>
   <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
-  <div class="text-gray-100 text-2xl font-primary py-5 group">
+  <div class="text-gray-100 text-xl font-primary py-3 group">
     <a href="{% url 'kontakt' %}" class="group-hover:text-orange-300">
       {% trans 'Kontakt' %}
     </a>
@@ -64,7 +64,7 @@
       {% csrf_token %}
       <input type="hidden" name="language" value="pl">
       <button type="submit" class="bg-transparent border-none cursor-pointer">
-        <img src="{% static 'icons/flag_round_pl.png' %}" alt="PL" class="w-8 h-8 rounded-full hover:scale-110 transition-all">
+        <img src="{% static 'icons/flag_round_pl.png' %}" alt="PL" class="w-11 h-11 rounded-full hover:scale-110 transition-all">
       </button>
     </form>
 
@@ -73,7 +73,7 @@
       {% csrf_token %}
       <input type="hidden" name="language" value="en">
       <button type="submit" class="bg-transparent border-none cursor-pointer">
-        <img src="{% static 'icons/flag_round_gb.png' %}" alt="EN" class="w-8 h-8 rounded-full hover:scale-110 transition-all">
+        <img src="{% static 'icons/flag_round_gb.png' %}" alt="EN" class="w-11 h-11 rounded-full hover:scale-110 transition-all">
       </button>
     </form>
 
@@ -82,7 +82,7 @@
       {% csrf_token %}
       <input type="hidden" name="language" value="uk">
       <button type="submit" class="bg-transparent border-none cursor-pointer">
-        <img src="{% static 'icons/flag_round_uk.png' %}" alt="UK" class="w-8 h-8 rounded-full hover:scale-110 transition-all">
+        <img src="{% static 'icons/flag_round_uk.png' %}" alt="UK" class="w-11 h-11 rounded-full hover:scale-110 transition-all">
       </button>
     </form>
 
@@ -90,7 +90,7 @@
   <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
 
   <!-- SEARCHBAR -->
-  <div class="font-primary flex w-full justify-center pt-3">
+  <div class="font-primary flex w-full justify-center pt-3 pb-9">
     <div class="group w-[70%]">
       <form method="get" action="{% url 'wyszukaj' %}" class="w-full mx-auto">
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
