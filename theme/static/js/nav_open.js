@@ -4,26 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const navTimeline = gsap.timeline({ paused: true, reversed: true });
 
-  // ustawienie startowe: nad ekranem + niewidoczny
+  // ustawienie startowe – tylko przesunięcie w poziomie
   navTimeline.set(nav, {
-    y: '10%',
-    x: '250%',
-    autoAlpha: 0,       // opacity + visibility
+    x: '120%',
+    autoAlpha: 0,
     pointerEvents: 'none'
   });
 
   // animacja wjazdu
   navTimeline.to(nav, {
-    x: '5%',
-    autoAlpha: 0.97,    // fade in
+    x: '0%',
+    autoAlpha: 0.97,
     pointerEvents: 'auto',
     duration: 0.8,
     ease: 'power3.out'
   });
 
-  // toggle po kliknięciu
   navBtn.addEventListener('click', () => {
     navTimeline.reversed() ? navTimeline.play() : navTimeline.reverse();
   });
 });
-
