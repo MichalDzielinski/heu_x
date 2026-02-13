@@ -1,24 +1,27 @@
 from django.urls import path
 from . import views
+from django.conf.urls.i18n import i18n_patterns
+from django.utils.translation import gettext_lazy as _
 
 
 
 urlpatterns = [
-    path("badanie-urodynamiczne", views.BadanieUrodynamiczneView.as_view(), name='badanie urodynamiczne'),
-    path("procedury-urologiczne", views.ProceduryUrlogiczneView.as_view(), name='procedury urologiczne'),
-    path("pozostałe-procedury", views.PozostałeProceduryView.as_view(), name='pozostałe procedury'),
+ 
+    path(_("badanie-urodynamiczne"), views.BadanieUrodynamiczneView.as_view(), name='badanie urodynamiczne'),
+    path(_("procedury-urologiczne"), views.ProceduryUrlogiczneView.as_view(), name='procedury urologiczne'),
+    path(_("pozostałe-procedury"), views.PozostałeProceduryView.as_view(), name='pozostałe procedury'),
     path("procedury-kardiologiczne", views.ProceduryKardiologiczneView.as_view(), name='procedury kardiologiczne'),
     path("procedury-medyczne", views.ProceduryMedyczneView.as_view(), name='procedury medyczne'),
     
     path("do-pobrania", views.DoPobraniaView.as_view(), name='do pobrania'),
     path("profilaktyka", views.ProfilaktykaView.as_view(), name='profilaktyka'),
     path("pakiety", views.PakietyView.as_view(), name='pakiety'),
-    path("badania-kliniczne", views.BadaniaKliniczneView.as_view(), name='badania kliniczne'),
+    path(_("badania-kliniczne"), views.BadaniaKliniczneView.as_view(), name='badania kliniczne'),
 
     path("kontakt", views.KontaktView.as_view(), name='kontakt'),
     path("jak-nas-znalezc", views.JakNasZnalezcView.as_view(), name='jak nas znalezc'),
     path("wizyta", views.WizytaView.as_view(), name='wizyta'),
-    path("strefa-pacjenta", views.StrefaView.as_view(), name='strefa pacjenta'),
+    path(_("strefa-pacjenta"), views.StrefaView.as_view(), name='strefa pacjenta'),
     
     path("zespół", views.ZespolView.as_view(), name='zespół'),
 

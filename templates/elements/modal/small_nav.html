@@ -3,10 +3,10 @@
 
 <div
   id="small_nav"
-  class="sm:hidden frame-gradient fixed top-1/2 left-1/2
-         -translate-x-1/2 -translate-y-1/2 z-50
+  class="sm:hidden frame-gradient fixed bottom-1 left-1/2
+         -translate-x-1/2  z-50
          border-2 border-gray-100 rounded-b-lg
-         h-[75%] w-[99%] p-4 pointer-events-none text-center pr-7"
+         h-[90%] w-[99%] p-4 pointer-events-none text-center pr-7"
   style="opacity:0; visibility:hidden;"
 >
 
@@ -52,12 +52,8 @@
   </a>
 </div>
 <p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
-  
-  <div class="mx-auto w-[75%] flex py-5 ">
-    <!-- LANGUAGES -->
-    
-    <div class="w-1/2 font-primary "">
-      <div class="flex">
+ 
+<div class="flex mx-auto w-[75%] items-center justify-center">
     
     <!-- LANGUAGE 1 -->
     <div id="lang1">
@@ -72,7 +68,7 @@
     </div>
 
     <!-- LANGUAGE 2 -->
-    <div id="lang2">
+    <div id="lang2" class="py-3 mx-2">
         <form action="{% url 'set_language' %}" hx-post="{% url 'set_language' %}" hx-target="body" hx-redirect="true" hx-swap="outerHTML transition:true" hx-push-url="true"  style="display:inline;">
             {% csrf_token %}
             <input type="hidden" name="language" value="en">
@@ -94,25 +90,24 @@
         </form>
     </div>
     </div>
-    
-  
-  
-    </div>
+<p class="border-b border-2 border-gray-100 w-[75%] mx-auto"></p>
+
+ 
 
     <!-- SEARCHBAR -->
 
-     <div class="w-1/2 font-primary "">
+     <div class=" font-primary flex w-full justify-center pt-3 "">
     
-      <div class=" group absolute ">
+      <div class=" group w-[70%]  ">
         
-        <form method="get" action="{% url 'wyszukaj' %}" class=" max-w-md mx-auto">
+        <form method="get" action="{% url 'wyszukaj' %}" class="w-full  mx-auto">
           <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-          <div class="relative">
+          <div class="relative ">
             
-            <input type="search" name="query" value="" id="default-search" class="block w-full p-4  text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            <input type="search" name="query" value=""  id="default-search" class="block w-full p-4   text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
             <button type="submit"
             class="text-white absolute end-2.5 bottom-2.5 bg-green-800 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-700 dark:hover:bg-green-800 dark:focus:ring-white">
-            <i class="ri-search-line"></i>
+            <i class="ri-search-line"></i>&nbsp;&nbsp;{% translate 'Wyszukaj' %}
           </button>
         </div>
       </form>

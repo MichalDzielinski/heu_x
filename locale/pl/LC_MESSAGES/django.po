@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-09 12:35+0100\n"
+"POT-Creation-Date: 2026-02-13 10:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,23 +20,45 @@ msgstr ""
 "(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
 "n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
+#: .\clinic\urls.py:10
+msgid "badanie-urodynamiczne"
+msgstr ""
+
+#: .\clinic\urls.py:11
+msgid "procedury-urologiczne"
+msgstr ""
+
+#: .\clinic\urls.py:12
+msgid "pozostałe-procedury"
+msgstr ""
+
+#: .\clinic\urls.py:19
+msgid "badania-kliniczne"
+msgstr ""
+
+#: .\clinic\urls.py:24
+msgid "strefa-pacjenta"
+msgstr ""
+
+#: .\templates\clinic\badania_kliniczne.html:4
 #: .\templates\clinic\badania_kliniczne.html:18
-#: .\templates\elements\header.html:129
+#: .\templates\elements\header.html:121 .\templates\elements\header2.html:127
 #: .\templates\elements\modal\small_nav.html:44
 msgid "Badania kliniczne"
 msgstr ""
 
 #: .\templates\clinic\badania_kliniczne.html:30
 #: .\templates\clinic\jak_nas_znalezc.html:26
-#: .\templates\clinic\kontakt.html:26 .\templates\clinic\pakiety.html:26
-#: .\templates\clinic\procedury.html:26 .\templates\clinic\profilaktyka.html:26
-#: .\templates\clinic\strefa.html:30 .\templates\clinic\wizyta.html:26
+#: .\templates\clinic\kontakt.html:26 .\templates\clinic\pakiety.html:25
+#: .\templates\clinic\procedury.html:26 .\templates\clinic\profilaktyka.html:25
+#: .\templates\clinic\wizyta.html:25
 msgid "Wkrótce..."
 msgstr ""
 
+#: .\templates\clinic\badanie_urodynamiczne.html:8
 #: .\templates\clinic\badanie_urodynamiczne.html:24
 #: .\templates\clinic\badanie_urodynamiczne.html:95
-#: .\templates\elements\header.html:58
+#: .\templates\elements\header.html:58 .\templates\elements\header2.html:58
 #: .\templates\elements\modal\small_nav.html:16
 msgid "Badanie urodynamiczne"
 msgstr ""
@@ -73,8 +95,8 @@ msgstr ""
 #: .\templates\clinic\procedury_kardiologiczne.html:173
 #: .\templates\clinic\procedury_medyczne.html:23
 #: .\templates\clinic\procedury_medyczne.html:179
-#: .\templates\clinic\procedury_urologiczne.html:23
-#: .\templates\clinic\procedury_urologiczne.html:180
+#: .\templates\clinic\procedury_urologiczne.html:24
+#: .\templates\clinic\procedury_urologiczne.html:181
 #: .\templates\clinic\wyszukaj.html:137 .\templates\clinic\wyszukaj.html:335
 msgid "w ośrodku"
 msgstr ""
@@ -88,7 +110,7 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:201
 #: .\templates\clinic\procedury_kardiologiczne.html:193
 #: .\templates\clinic\procedury_medyczne.html:199
-#: .\templates\clinic\procedury_urologiczne.html:200
+#: .\templates\clinic\procedury_urologiczne.html:201
 #: .\templates\clinic\wyszukaj.html:153 .\templates\clinic\wyszukaj.html:455
 msgid "liczony od dnia zapisu"
 msgstr ""
@@ -101,8 +123,8 @@ msgstr ""
 #: .\templates\clinic\procedury_kardiologiczne.html:212
 #: .\templates\clinic\procedury_medyczne.html:202
 #: .\templates\clinic\procedury_medyczne.html:218
-#: .\templates\clinic\procedury_urologiczne.html:203
-#: .\templates\clinic\procedury_urologiczne.html:219
+#: .\templates\clinic\procedury_urologiczne.html:204
+#: .\templates\clinic\procedury_urologiczne.html:220
 #: .\templates\clinic\wyszukaj.html:156 .\templates\clinic\wyszukaj.html:172
 #: .\templates\clinic\wyszukaj.html:458 .\templates\clinic\wyszukaj.html:471
 msgid "ok."
@@ -112,7 +134,7 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:204
 #: .\templates\clinic\procedury_kardiologiczne.html:196
 #: .\templates\clinic\procedury_medyczne.html:202
-#: .\templates\clinic\procedury_urologiczne.html:203
+#: .\templates\clinic\procedury_urologiczne.html:204
 #: .\templates\clinic\wyszukaj.html:156 .\templates\clinic\wyszukaj.html:458
 msgid "dni"
 msgstr ""
@@ -126,7 +148,7 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:220
 #: .\templates\clinic\procedury_kardiologiczne.html:212
 #: .\templates\clinic\procedury_medyczne.html:218
-#: .\templates\clinic\procedury_urologiczne.html:219
+#: .\templates\clinic\procedury_urologiczne.html:220
 #: .\templates\clinic\wyszukaj.html:172 .\templates\clinic\wyszukaj.html:471
 msgid "minut"
 msgstr ""
@@ -135,7 +157,7 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:231
 #: .\templates\clinic\procedury_kardiologiczne.html:223
 #: .\templates\clinic\procedury_medyczne.html:229
-#: .\templates\clinic\procedury_urologiczne.html:230
+#: .\templates\clinic\procedury_urologiczne.html:231
 #: .\templates\clinic\wyszukaj.html:183 .\templates\clinic\wyszukaj.html:480
 msgid "Koszt"
 msgstr ""
@@ -154,12 +176,12 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:307
 #: .\templates\clinic\procedury_kardiologiczne.html:299
 #: .\templates\clinic\procedury_medyczne.html:305
-#: .\templates\clinic\procedury_urologiczne.html:306
+#: .\templates\clinic\procedury_urologiczne.html:307
 #: .\templates\clinic\wyszukaj.html:546
 msgid "Po badaniu pacjent otrzymuje:"
 msgstr ""
 
-#: .\templates\clinic\do_pobrania.html:13
+#: .\templates\clinic\do_pobrania.html:13 .\templates\clinic\strefa.html:69
 msgid "Do pobrania"
 msgstr ""
 
@@ -210,12 +232,17 @@ msgstr ""
 msgid "rehabilitacja urologiczna"
 msgstr ""
 
-#: .\templates\clinic\index.html:139 .\templates\clinic\profilaktyka.html:14
+#: .\templates\clinic\index.html:139
 msgid "Profilaktyka"
 msgstr ""
 
 #: .\templates\clinic\index.html:163
 msgid "sprawdż listę pozostalych badań"
+msgstr ""
+
+#: .\templates\clinic\indxxx4.html:5 .\templates\elements\footer.html:27
+#: .\templates\elements\header.html:40 .\templates\elements\header2.html:40
+msgid "Ośrodek urologii czynnościowej"
 msgstr ""
 
 #: .\templates\clinic\indxxx4.html:43
@@ -232,7 +259,7 @@ msgstr ""
 msgid "Kontakt"
 msgstr ""
 
-#: .\templates\clinic\pakiety.html:14
+#: .\templates\clinic\pakiety.html:13
 msgid "Pakiety"
 msgstr ""
 
@@ -256,6 +283,12 @@ msgstr ""
 msgid "Galeria"
 msgstr ""
 
+#: .\templates\clinic\pozostale_procedury.html:5
+#: .\templates\elements\header.html:80 .\templates\elements\header2.html:80
+#: .\templates\elements\modal\small_nav.html:30
+msgid "Pozostałe procedury"
+msgstr ""
+
 #: .\templates\clinic\pozostale_procedury.html:19
 msgid "Pozostałe badania"
 msgstr ""
@@ -267,7 +300,7 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:25
 #: .\templates\clinic\procedury_kardiologiczne.html:18
 #: .\templates\clinic\procedury_medyczne.html:24
-#: .\templates\clinic\procedury_urologiczne.html:24
+#: .\templates\clinic\procedury_urologiczne.html:25
 #: .\templates\clinic\wyszukaj.html:336
 msgid "(kliknij na nazwę badania, żeby poznać szczegóły)"
 msgstr ""
@@ -275,7 +308,7 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:87
 #: .\templates\clinic\procedury_kardiologiczne.html:79
 #: .\templates\clinic\procedury_medyczne.html:85
-#: .\templates\clinic\procedury_urologiczne.html:86
+#: .\templates\clinic\procedury_urologiczne.html:87
 #: .\templates\clinic\wyszukaj.html:393
 msgid "Na czym polega badanie"
 msgstr ""
@@ -283,21 +316,21 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:91
 #: .\templates\clinic\procedury_kardiologiczne.html:83
 #: .\templates\clinic\procedury_medyczne.html:89
-#: .\templates\clinic\procedury_urologiczne.html:90
+#: .\templates\clinic\procedury_urologiczne.html:91
 msgid "Na czym polega zabieg"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:94
 #: .\templates\clinic\procedury_kardiologiczne.html:86
 #: .\templates\clinic\procedury_medyczne.html:92
-#: .\templates\clinic\procedury_urologiczne.html:93
+#: .\templates\clinic\procedury_urologiczne.html:94
 msgid "Na czym polega procedura"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:115
 #: .\templates\clinic\procedury_kardiologiczne.html:107
 #: .\templates\clinic\procedury_medyczne.html:113
-#: .\templates\clinic\procedury_urologiczne.html:114
+#: .\templates\clinic\procedury_urologiczne.html:115
 #: .\templates\clinic\wyszukaj.html:406
 msgid "Jak przebiega badanie"
 msgstr ""
@@ -305,98 +338,98 @@ msgstr ""
 #: .\templates\clinic\pozostale_procedury.html:119
 #: .\templates\clinic\procedury_kardiologiczne.html:111
 #: .\templates\clinic\procedury_medyczne.html:117
-#: .\templates\clinic\procedury_urologiczne.html:118
+#: .\templates\clinic\procedury_urologiczne.html:119
 msgid "Jak przebiega zabieg"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:122
 #: .\templates\clinic\procedury_kardiologiczne.html:114
 #: .\templates\clinic\procedury_medyczne.html:120
-#: .\templates\clinic\procedury_urologiczne.html:121
+#: .\templates\clinic\procedury_urologiczne.html:122
 msgid "Jak przebiega procedura"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:124
 #: .\templates\clinic\procedury_kardiologiczne.html:116
 #: .\templates\clinic\procedury_medyczne.html:122
-#: .\templates\clinic\procedury_urologiczne.html:123
+#: .\templates\clinic\procedury_urologiczne.html:124
 msgid "Jak przebiega"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:148
 #: .\templates\clinic\procedury_kardiologiczne.html:140
 #: .\templates\clinic\procedury_medyczne.html:146
-#: .\templates\clinic\procedury_urologiczne.html:147
+#: .\templates\clinic\procedury_urologiczne.html:148
 msgid "Wskazania do badanie"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:152
 #: .\templates\clinic\procedury_kardiologiczne.html:144
 #: .\templates\clinic\procedury_medyczne.html:150
-#: .\templates\clinic\procedury_urologiczne.html:151
+#: .\templates\clinic\procedury_urologiczne.html:152
 msgid "Wskazania do zabieg"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:155
 #: .\templates\clinic\procedury_kardiologiczne.html:147
 #: .\templates\clinic\procedury_medyczne.html:153
-#: .\templates\clinic\procedury_urologiczne.html:154
+#: .\templates\clinic\procedury_urologiczne.html:155
 msgid "Wskazania"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:194
 #: .\templates\clinic\procedury_kardiologiczne.html:186
 #: .\templates\clinic\procedury_medyczne.html:192
-#: .\templates\clinic\procedury_urologiczne.html:193
+#: .\templates\clinic\procedury_urologiczne.html:194
 msgid "Czas oczekiwania"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:216
 #: .\templates\clinic\procedury_kardiologiczne.html:208
 #: .\templates\clinic\procedury_medyczne.html:214
-#: .\templates\clinic\procedury_urologiczne.html:215
+#: .\templates\clinic\procedury_urologiczne.html:216
 msgid "Czas trwania"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:245
 #: .\templates\clinic\procedury_kardiologiczne.html:237
 #: .\templates\clinic\procedury_medyczne.html:243
-#: .\templates\clinic\procedury_urologiczne.html:244
+#: .\templates\clinic\procedury_urologiczne.html:245
 msgid "Lekarz"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:266
 #: .\templates\clinic\procedury_kardiologiczne.html:258
 #: .\templates\clinic\procedury_medyczne.html:264
-#: .\templates\clinic\procedury_urologiczne.html:265
+#: .\templates\clinic\procedury_urologiczne.html:266
 msgid "Instruktaż przygotowania"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:270
 #: .\templates\clinic\procedury_kardiologiczne.html:262
 #: .\templates\clinic\procedury_medyczne.html:268
-#: .\templates\clinic\procedury_urologiczne.html:269
+#: .\templates\clinic\procedury_urologiczne.html:270
 msgid "plik PDF"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:311
 #: .\templates\clinic\procedury_kardiologiczne.html:303
 #: .\templates\clinic\procedury_medyczne.html:309
-#: .\templates\clinic\procedury_urologiczne.html:310
+#: .\templates\clinic\procedury_urologiczne.html:311
 msgid "Po zabiegu pacjent otrzymuje:"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:314
 #: .\templates\clinic\procedury_kardiologiczne.html:306
 #: .\templates\clinic\procedury_medyczne.html:312
-#: .\templates\clinic\procedury_urologiczne.html:313
+#: .\templates\clinic\procedury_urologiczne.html:314
 msgid "Pacjent otrzymuje:"
 msgstr ""
 
 #: .\templates\clinic\pozostale_procedury.html:361
 #: .\templates\clinic\procedury_kardiologiczne.html:353
 #: .\templates\clinic\procedury_medyczne.html:359
-#: .\templates\clinic\procedury_urologiczne.html:360
+#: .\templates\clinic\procedury_urologiczne.html:361
 #: .\templates\clinic\wyszukaj.html:319 .\templates\clinic\wyszukaj.html:589
 msgid "Brak wyników"
 msgstr ""
@@ -417,22 +450,52 @@ msgstr ""
 msgid "Procedury medyczne dostępne"
 msgstr ""
 
-#: .\templates\clinic\procedury_urologiczne.html:18
-#: .\templates\elements\header.html:68
+#: .\templates\clinic\procedury_urologiczne.html:5
+#: .\templates\clinic\procedury_urologiczne.html:19
+#: .\templates\elements\header.html:68 .\templates\elements\header2.html:68
 #: .\templates\elements\modal\small_nav.html:23
 msgid "Procedury urologiczne"
 msgstr ""
 
-#: .\templates\clinic\procedury_urologiczne.html:22
+#: .\templates\clinic\procedury_urologiczne.html:23
 msgid "Poniżej lista badań urologicznych dostępnych"
 msgstr ""
 
-#: .\templates\clinic\strefa.html:18
+#: .\templates\clinic\profilaktyka.html:13
+msgid "Profilaktyka urologiczna"
+msgstr ""
+
+#: .\templates\clinic\strefa.html:5 .\templates\clinic\strefa.html:13
+#: .\templates\elements\modal\small_nav.html:37
 msgid "Strefa pacjenta"
 msgstr ""
 
-#: .\templates\clinic\wizyta.html:14
+#: .\templates\clinic\strefa.html:35 .\templates\clinic\wizyta.html:13
 msgid "Wizyta"
+msgstr ""
+
+#: .\templates\clinic\strefa.html:45
+msgid "Jak umówić i przygotować się do wizyty"
+msgstr ""
+
+#: .\templates\clinic\strefa.html:59
+msgid "Użyteczne pliki do pobrania dla pacjentów"
+msgstr ""
+
+#: .\templates\clinic\strefa.html:87
+msgid "Profilaktyka urlogiczna"
+msgstr ""
+
+#: .\templates\clinic\strefa.html:97
+msgid "Sprawdź jak zadbać o swój urologiczny dobrostan na co dzień"
+msgstr ""
+
+#: .\templates\clinic\strefa.html:116
+msgid "Pakiety monitorowanych sesji rehabilitacji urologicznej"
+msgstr ""
+
+#: .\templates\clinic\strefa.html:126
+msgid "Sprawdź ofertę naszych pakietów"
 msgstr ""
 
 #: .\templates\clinic\wyszukaj.html:21 .\templates\clinic\wyszukaj.html:332
@@ -519,10 +582,6 @@ msgstr ""
 msgid "wyślij"
 msgstr ""
 
-#: .\templates\elements\footer.html:27 .\templates\elements\header.html:40
-msgid "Ośrodek urologii czynnościowej"
-msgstr ""
-
 #: .\templates\elements\footer.html:28
 msgid "ulica Ludowa 5"
 msgstr ""
@@ -555,17 +614,11 @@ msgstr ""
 msgid "lub"
 msgstr ""
 
-#: .\templates\elements\header.html:41
+#: .\templates\elements\header.html:41 .\templates\elements\header2.html:41
 msgid "Pawła Szaleckiego"
 msgstr ""
 
-#: .\templates\elements\header.html:80
-#: .\templates\elements\modal\small_nav.html:30
-msgid "Pozostałe procedury"
-msgstr ""
-
-#: .\templates\elements\header.html:105
-#: .\templates\elements\modal\small_nav.html:37
+#: .\templates\elements\header.html:101 .\templates\elements\header2.html:108
 msgid "strefa pacjenta"
 msgstr ""
 
