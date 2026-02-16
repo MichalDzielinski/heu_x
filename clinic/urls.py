@@ -18,15 +18,15 @@ urlpatterns = [
     path("pakiety", views.PakietyView.as_view(), name='pakiety'),
     path(_("badania-kliniczne"), views.BadaniaKliniczneView.as_view(), name='badania kliniczne'),
 
-    path("kontakt", views.KontaktView.as_view(), name='kontakt'),
-    path("jak-nas-znalezc", views.JakNasZnalezcView.as_view(), name='jak nas znalezc'),
+    path(_("kontakt"), views.KontaktView.as_view(), name='kontakt'),
+    path(_("jak-nas-znalezc"), views.JakNasZnalezcView.as_view(), name='jak nas znalezc'),
     path("wizyta", views.WizytaView.as_view(), name='wizyta'),
     path(_("strefa-pacjenta"), views.StrefaView.as_view(), name='strefa pacjenta'),
     
     path("zespół", views.ZespolView.as_view(), name='zespół'),
 
-    path("contact", views.ContactView.as_view(), name='contact'),
-    path("wyszukaj", views.WyszukajView.as_view(), name='wyszukaj'),
+    path(_("kontakt"), views.ContactView.as_view(), name='contact'),
+    path(_("wyszukaj"), views.WyszukajView.as_view(), name='wyszukaj'),
 
     path('person/<slug:id>/', views.PersonView.as_view(), name='person'),
 

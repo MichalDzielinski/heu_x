@@ -8,14 +8,19 @@
 
 
 {% block content %}
+{% include 'elements/button/contact/contact-button.html' %}
+{% include 'elements/contact/contact-base.html' %}
 {% include 'elements/header.html' %}
 
-<section class="grid grid-cols-1 gap-x-5 gap-y-1  md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto mt-[140px] md:mt-[200px]">
-    <div class="px-7 xl:px-12 py-[60px] mt-7  col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
-        <h2 class="uppercase pb-2 font-primary flex  text-4xl justify-center text-center md:justify-start ">{% translate 'Strefa pacjenta' %}</h2>
+<section class="grid grid-cols-1 gap-x-5 gap-y-1 mt-[120px] md:mt-[180px] md:grid-cols-2 w-[95%] xl:w-[80%] mx-auto">
+    
+    <div class="px-7 xl:px-12 py-[60px] mt-7 col-span-2 font-primary text-lg text-justify items-center text-slate-800 rounded-xl bg-white/90 shadow-lg ring-1 ring-black/5">
+
+        <h2 class="uppercase  font-primary flex  text-4xl justify-center md:justify-start text-center md:text-start ">{% translate 'Strefa pacjenta' %}</h2>
+        
         
         <p class="pt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis accusamus labore reiciendis voluptas veritatis aliquid nulla perspiciatis tenetur harum? Dicta nesciunt pariatur necessitatibus deserunt odio.</p>
-        
+
     </div>
     
 </section>

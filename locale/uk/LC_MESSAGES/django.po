@@ -8,15 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 10:31+0100\n"
-"PO-Revision-Date: 2026-02-13 10:32+0100\n"
+"POT-Creation-Date: 2026-02-16 12:53+0100\n"
+"PO-Revision-Date: 2026-02-16 12:51+0100\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Translated-Using: django-rosetta 0.10.2\n"
 
 #: .\clinic\urls.py:10
@@ -32,34 +35,44 @@ msgid "pozostałe-procedury"
 msgstr "інші-процедури"
 
 #: .\clinic\urls.py:19
-#| msgid "Badania kliniczne"
 msgid "badania-kliniczne"
 msgstr "клінічні-випробування"
+
+#: .\clinic\urls.py:21
+msgid "kontakt"
+msgstr "контакт"
+
+#: .\clinic\urls.py:22
+msgid "jak-nas-znalezc"
+msgstr "як-нас-знайти"
 
 #: .\clinic\urls.py:24
 msgid "strefa-pacjenta"
 msgstr "Зона-для-пацієнтів"
 
+#: .\clinic\urls.py:28
+msgid "wyszukaj"
+msgstr "пошук"
+
 #: .\templates\clinic\badania_kliniczne.html:4
 #: .\templates\clinic\badania_kliniczne.html:18
-#: .\templates\elements\header.html:121 .\templates\elements\header2.html:127
-#: .\templates\elements\modal\small_nav.html:44
+#: .\templates\elements\header.html:122 .\templates\elements\header2.html:127
+#: .\templates\elements\modal\small_nav.html:99
 msgid "Badania kliniczne"
 msgstr "Клінічні дослідження"
 
 #: .\templates\clinic\badania_kliniczne.html:30
-#: .\templates\clinic\jak_nas_znalezc.html:26
-#: .\templates\clinic\kontakt.html:26 .\templates\clinic\pakiety.html:25
-#: .\templates\clinic\procedury.html:26
-#: .\templates\clinic\profilaktyka.html:25 .\templates\clinic\wizyta.html:25
+#: .\templates\clinic\kontakt.html:27 .\templates\clinic\pakiety.html:25
+#: .\templates\clinic\procedury.html:26 .\templates\clinic\profilaktyka.html:25
+#: .\templates\clinic\wizyta.html:25
 msgid "Wkrótce..."
 msgstr ""
 
 #: .\templates\clinic\badanie_urodynamiczne.html:8
 #: .\templates\clinic\badanie_urodynamiczne.html:24
 #: .\templates\clinic\badanie_urodynamiczne.html:95
-#: .\templates\elements\header.html:58 .\templates\elements\header2.html:58
-#: .\templates\elements\modal\small_nav.html:16
+#: .\templates\elements\header.html:59 .\templates\elements\header2.html:58
+#: .\templates\elements\modal\small_nav.html:71
 msgid "Badanie urodynamiczne"
 msgstr "Уродинамічне дослідження"
 
@@ -187,7 +200,7 @@ msgstr "Інструкція з підготовки до обстеження (
 msgid "Po badaniu pacjent otrzymuje:"
 msgstr "Після обстеження пацієнт отримує:"
 
-#: .\templates\clinic\do_pobrania.html:13 .\templates\clinic\strefa.html:69
+#: .\templates\clinic\do_pobrania.html:13 .\templates\clinic\strefa.html:76
 msgid "Do pobrania"
 msgstr ""
 
@@ -249,7 +262,8 @@ msgid "sprawdż listę pozostalych badań"
 msgstr ""
 
 #: .\templates\clinic\indxxx4.html:5 .\templates\elements\footer.html:27
-#: .\templates\elements\header.html:40 .\templates\elements\header2.html:40
+#: .\templates\elements\header.html:41 .\templates\elements\header2.html:40
+#: .\templates\elements\modal\small_nav.html:44
 msgid "Ośrodek urologii czynnościowej"
 msgstr "Центр функціональної урології"
 
@@ -259,13 +273,14 @@ msgstr "Центр функціональної урології"
 msgid "nasz zespół"
 msgstr "Познайомся з нашою командою"
 
-#: .\templates\clinic\jak_nas_znalezc.html:14
+#: .\templates\clinic\jak_nas_znalezc.html:5
+#: .\templates\clinic\jak_nas_znalezc.html:20
 #: .\templates\elements\footer.html:36
 msgid "Jak nas znaleźć"
 msgstr "як нас знайти"
 
-#: .\templates\clinic\kontakt.html:14 .\templates\elements\footer.html:42
-#: .\templates\elements\modal\small_nav.html:51
+#: .\templates\clinic\kontakt.html:15 .\templates\elements\footer.html:42
+#: .\templates\elements\modal\small_nav.html:106
 msgid "Kontakt"
 msgstr "контакт"
 
@@ -294,8 +309,8 @@ msgid "Galeria"
 msgstr "Галерея"
 
 #: .\templates\clinic\pozostale_procedury.html:5
-#: .\templates\elements\header.html:80 .\templates\elements\header2.html:80
-#: .\templates\elements\modal\small_nav.html:30
+#: .\templates\elements\header.html:81 .\templates\elements\header2.html:80
+#: .\templates\elements\modal\small_nav.html:85
 msgid "Pozostałe procedury"
 msgstr "Інші процедури"
 
@@ -464,8 +479,8 @@ msgstr "медичні процедури Доступні "
 
 #: .\templates\clinic\procedury_urologiczne.html:5
 #: .\templates\clinic\procedury_urologiczne.html:19
-#: .\templates\elements\header.html:68 .\templates\elements\header2.html:68
-#: .\templates\elements\modal\small_nav.html:23
+#: .\templates\elements\header.html:69 .\templates\elements\header2.html:68
+#: .\templates\elements\modal\small_nav.html:78
 msgid "Procedury urologiczne"
 msgstr "Урологічні процедури"
 
@@ -479,38 +494,38 @@ msgstr "Нижче наведено перелік доступних уроло
 msgid "Profilaktyka urologiczna"
 msgstr "Урологічні процедури"
 
-#: .\templates\clinic\strefa.html:5 .\templates\clinic\strefa.html:13
-#: .\templates\elements\modal\small_nav.html:37
+#: .\templates\clinic\strefa.html:5 .\templates\clinic\strefa.html:19
+#: .\templates\elements\modal\small_nav.html:92
 msgid "Strefa pacjenta"
 msgstr "Зона для пацієнтів"
 
-#: .\templates\clinic\strefa.html:35 .\templates\clinic\wizyta.html:13
+#: .\templates\clinic\strefa.html:42 .\templates\clinic\wizyta.html:13
 msgid "Wizyta"
 msgstr ""
 
-#: .\templates\clinic\strefa.html:45
+#: .\templates\clinic\strefa.html:52
 msgid "Jak umówić i przygotować się do wizyty"
 msgstr ""
 
-#: .\templates\clinic\strefa.html:59
+#: .\templates\clinic\strefa.html:66
 msgid "Użyteczne pliki do pobrania dla pacjentów"
 msgstr ""
 
-#: .\templates\clinic\strefa.html:87
+#: .\templates\clinic\strefa.html:94
 #, fuzzy
 #| msgid "Procedury urologiczne"
 msgid "Profilaktyka urlogiczna"
 msgstr "Урологічні процедури"
 
-#: .\templates\clinic\strefa.html:97
+#: .\templates\clinic\strefa.html:104
 msgid "Sprawdź jak zadbać o swój urologiczny dobrostan na co dzień"
 msgstr ""
 
-#: .\templates\clinic\strefa.html:116
+#: .\templates\clinic\strefa.html:123
 msgid "Pakiety monitorowanych sesji rehabilitacji urologicznej"
 msgstr ""
 
-#: .\templates\clinic\strefa.html:126
+#: .\templates\clinic\strefa.html:133
 msgid "Sprawdź ofertę naszych pakietów"
 msgstr ""
 
@@ -633,14 +648,16 @@ msgstr "Запис"
 msgid "lub"
 msgstr "або"
 
-#: .\templates\elements\header.html:41 .\templates\elements\header2.html:41
+#: .\templates\elements\header.html:42 .\templates\elements\header2.html:41
+#: .\templates\elements\modal\small_nav.html:45
 msgid "Pawła Szaleckiego"
 msgstr ""
 
-#: .\templates\elements\header.html:101 .\templates\elements\header2.html:108
+#: .\templates\elements\header.html:102 .\templates\elements\header2.html:108
 msgid "strefa pacjenta"
 msgstr "Зона для пацієнтів"
 
+#: .\templates\elements\modal\small_nav.html:60
 #: .\templates\elements\searchbar.html:16
 msgid "Wyszukaj"
 msgstr "пошук"
@@ -991,8 +1008,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:297
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
-" hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:309
@@ -1211,8 +1228,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1570
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD "
-"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1575
@@ -1391,8 +1408,7 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the
-#. label
+#. characters will prevent the default label_suffix to be appended to the label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:185
 msgid ":?.!"
 msgstr ""
@@ -1442,8 +1458,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:644
 #, python-format
-msgid ""
-"Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -1550,8 +1565,7 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1450
-msgid ""
-"Select a valid choice. That choice is not one of the available choices."
+msgid "Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1594
@@ -2011,10 +2025,10 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:45
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
-" including the “Referrer-Policy: no-referrer” header, please remove them. "
-"The CSRF protection requires the “Referer” header to do strict referer "
-"checking. If you’re concerned about privacy, use alternatives like <a "
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
 "rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
@@ -2125,10 +2139,10 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
 #, python-format
 msgid ""
-"You are seeing this page because <a "
-"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
-"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
-"and you have not configured any URLs."
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
